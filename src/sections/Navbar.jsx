@@ -1,31 +1,44 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "motion/react"
-function Navigation() {
+import useScrollSpy from "../hooks/useScrollSpy";
+
+const sections = ["home", "about", "work", "contact"];
+
+function Navigation({ isMobile = true }) {
+  const activeId = useScrollSpy(sections);
+
   return (
-    <ul className="nav-ul">
-      <li className="nav-li">
-        <a className="nav-link" href="#home">
-          Home
-        </a>
-      </li>
-      <li className="nav-li">
-        <a className="nav-link" href="#about">
-          About
-        </a>
-      </li>
-      <li className="nav-li">
-        <a className="nav-link" href="#work">
-          Work
-        </a>
-      </li>
-      <li className="nav-li">
-        <a className="nav-link" href="#contact">
-          Contact
-        </a>
-      </li>
+<ul className={`nav-ul ${isMobile ? "flex-col space-y-4" : "flex gap-6"}`}>
+      {sections.map((id) => (
+        <li key={id} className="nav-li relative mb-auto">
+          <motion.a
+            href={`#${id}`}
+            className={`nav-link transition-colors ${
+              activeId === id ? "text-white font-bold" : "text-gray-400"
+            }`}
+            whileHover={{ scale: 1.1 }}
+            transition={{ type: "spring", stiffness: 300 }}
+          >
+          <span className="inline-block leading-none">
+            {id.charAt(0).toUpperCase() + id.slice(1)}
+          </span>
+          </motion.a>
+
+          {/* Animated underline */}
+          {activeId === id && (
+            <motion.div
+              layoutId="underline"
+              className="absolute left-0 h-[2px] w-full bg-white"
+              transition={{ type: "spring", stiffness: 500, damping: 30 }}
+            />
+          )}
+        </li>
+      ))}
     </ul>
   );
 }
+
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
@@ -55,7 +68,7 @@ const Navbar = () => {
       </div>
       {isOpen && (
         <motion.div
-          className="block overflow-hidden text-center sm:hidden"
+          className="block overflow-hidden text-center md:hidden"
           initial={{ opacity: 0, x: -10 }}
           animate={{ opacity: 1, x: 0 }}
           style={{ maxHeight: "100vh" }}

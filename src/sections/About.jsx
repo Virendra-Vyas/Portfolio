@@ -1,16 +1,11 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef } from "react";
 import Card from "../components/Card";
 import { Globe } from "../components/globe";
 import CopyEmailButton from "../components/CopyEmailButton";
 import { Frameworks } from "../components/Frameworks";
 
 const TimeZoneDisplay = () => {
-  const [timeZone, setTimeZone] = useState("");
-
-  useEffect(() => {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    setTimeZone(tz);
-  }, []);
+  const timeZone = "London, United Kingdom (GMT+1)";
 
   return (
     <>
@@ -26,7 +21,7 @@ const About = () => {
   const grid2Container = useRef();
 
   return (
-    <section className="c-space section-spacing" id="about">
+    <section className="c-space section-spacing scroll-mt-18" id="about">
       <h2 className="text-heading">About Me</h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
         {/* Grid 1 */}
