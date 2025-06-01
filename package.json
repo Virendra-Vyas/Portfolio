@@ -3,17 +3,17 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-"scripts": {
-  "dev": "remix dev",
-  "build": "remix build",
-  "start": "remix-serve build",
-  "lint": "eslint ."
-},
+  "scripts": {
+    "dev": "remix dev",
+    "build": "remix build",
+    "start": "remix-serve build",
+    "lint": "eslint ."
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
-    "@remix-run/dev": "^2.16.8",
     "@react-three/drei": "^9.1.0",
     "@react-three/fiber": "^8.13.1",
+    "@remix-run/dev": "^2.16.8",
     "@tailwindcss/vite": "^4.1.8",
     "cobe": "^0.6.3",
     "framer-motion": "^12.15.0",
