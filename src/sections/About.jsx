@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import Card from "../components/Card";
 import { Globe } from "../components/globe";
 import CopyEmailButton from "../components/CopyEmailButton";
-import { FrameWorks } from "../components/FrameWorks";
+import { Frameworks } from "../components/FrameWorks";
 
 const TimeZoneDisplay = () => {
   const [timeZone, setTimeZone] = useState("");
@@ -95,7 +95,7 @@ const About = () => {
             </p>
           </div>
           <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
-            <FrameWorks />
+            <Frameworks />
           </div>
         </div>
       </div>
