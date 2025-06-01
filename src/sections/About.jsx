@@ -2,7 +2,7 @@ import { useRef, useState, useEffect } from "react";
 import Card from "../components/Card";
 import { Globe } from "../components/globe";
 import CopyEmailButton from "../components/CopyEmailButton";
-import Frameworks from "../components/Frameworks";
+import { Frameworks } from "../components/FrameWorks";
 
 const TimeZoneDisplay = () => {
   const [timeZone, setTimeZone] = useState("");
