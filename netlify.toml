@@ -1,6 +1,6 @@
 [build]
-  command = "remix vite:build"
-  publish = "public"  # or your actual Remix build output folder, often "public" or "dist/client"
+command = "npm install && remix vite:build"
+publish = "public"
 
 [build.environment]
-  NODE_ENV = "development"   # Ensures devDependencies are installed during build
+NODE_ENV = "development"
