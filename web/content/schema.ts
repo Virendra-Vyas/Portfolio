@@ -200,3 +200,20 @@ export type Writing = {
   articles: Article[];
   openSource: OpenSourceContribution[];
 };
+
+/* --------------------------------------------------------------------- Home */
+
+export type SectionCopy = {
+  heading: string;
+  intro?: string;
+  link?: AnyLink;
+};
+
+export type HomePage = {
+  primaryAction: AnyLink;
+  secondaryAction: AnyLink;
+  proof: SectionCopy;
+  work: SectionCopy;
+  ai: SectionCopy;
+  contact: SectionCopy;
+};
