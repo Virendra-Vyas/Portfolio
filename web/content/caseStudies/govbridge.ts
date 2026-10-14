@@ -22,6 +22,11 @@ export const govbridge: CaseStudy = {
     "Python",
   ],
   links: [{ label: "api.govbridge.co.uk", href: "https://api.govbridge.co.uk" }],
+  diagram: {
+    src: "/diagrams/govbridge.svg",
+    description:
+      "Three kinds of client call the GovBridge API: developers' applications over REST with an API key, the React developer portal on Cloudflare Pages, and AI clients (a Python tool-calling agent and an MCP server). The API is an ASP.NET Core service on Render in Frankfurt exposing one consistent contract over 40+ endpoints. Inside it: rate limiting per API key, encrypted OAuth token storage, HMRC fraud prevention headers, log redaction of NINO, UTR and VRN, a SandboxOnly guard attribute and explicit \"HMRC not connected\" errors. It uses PostgreSQL on Supabase and Redis on Upstash, and calls six UK government services: HMRC Making Tax Digital (VAT, Income Tax, PAYE, CIS, Savings Income), HMRC GovTalk for Corporation Tax CT600 returns with an IRmark, Companies House, DVLA, Land Registry and the Food Hygiene Rating Scheme.",
+  },
   problem: {
     heading: "Problem",
     paragraphs: [
@@ -36,7 +41,8 @@ export const govbridge: CaseStudy = {
         "I built a single gateway that started with VAT only and has grown to 40+ endpoints, all behind one consistent contract.",
       ],
       points: [
-        "HMRC Making Tax Digital: VAT, Income Tax, PAYE, CIS Deductions, Savings Income and Corporation Tax",
+        "HMRC Making Tax Digital: VAT, Income Tax, PAYE, CIS Deductions and Savings Income",
+        "HMRC Corporation Tax: CT600 returns through GovTalk",
         "Companies House",
         "DVLA",
         "Land Registry",

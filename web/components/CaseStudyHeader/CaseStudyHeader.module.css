@@ -1,0 +1,46 @@
+.header {
+  padding-block: var(--space-6) var(--space-6);
+}
+
+.back {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}
+
+.status {
+  margin-top: var(--space-6);
+}
+
+.title {
+  margin-top: var(--space-3);
+  font-size: var(--text-3xl);
+}
+
+.summary {
+  margin-top: var(--space-4);
+  max-width: var(--width-prose);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}
+
+.tech {
+  margin-top: var(--space-5);
+}
+
+.techHeading {
+  margin-bottom: var(--space-2);
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-regular);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}

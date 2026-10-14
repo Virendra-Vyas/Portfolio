@@ -217,3 +217,25 @@ export type HomePage = {
   ai: SectionCopy;
   contact: SectionCopy;
 };
+
+/* --------------------------------------------------------------------- Work */
+
+export type WorkPage = {
+  title: string;
+  intro: string;
+  caseStudies: SectionCopy;
+  furtherWork: SectionCopy;
+  /** Labels used by the case study template. */
+  labels: {
+    backToWork: string;
+    role: string;
+    context: string;
+    period: string;
+    technologies: string;
+    whatIDid: string;
+    diagramHeading: string;
+    diagramDescription: string;
+    diagramFullSize: string;
+    nextCaseStudy: string;
+  };
+};
