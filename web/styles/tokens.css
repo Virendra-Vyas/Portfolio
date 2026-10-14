@@ -1,4 +1,66 @@
-/* Design tokens. Filled in at build step 3. */
+/*
+ * Design tokens. Light mode only (brief, section 12).
+ * Contrast ratios are against --color-bg (#ffffff) unless noted; all text pairs meet WCAG AA.
+ */
 :root {
-  --color-accent: #2b2870;
+  /* Colour */
+  --color-bg: #ffffff;
+  --color-surface: #f6f6f9;          /* panels, code blocks */
+  --color-text: #15151c;             /* 18.2:1 */
+  --color-text-muted: #4f4f5c;       /* 8.0:1 */
+  --color-border: #dedee6;
+  --color-border-strong: #b9b9c6;
+  --color-accent: #2b2870;           /* navy from CV, 12.8:1 */
+  --color-accent-hover: #1d1a52;
+  --color-accent-soft: #ecebf6;      /* tinted background; accent text on it 10.8:1 */
+  --color-positive: #1b6e45;         /* small green accent, 6.2:1 */
+  --color-positive-soft: #e7f3ec;
+  --color-focus: #2b2870;
+
+  /* Typography */
+  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Consolas, monospace;
+
+  --text-xs: 0.8125rem;   /* 13px */
+  --text-sm: 0.9375rem;   /* 15px */
+  --text-base: 1.0625rem; /* 17px */
+  --text-lg: 1.25rem;
+  --text-xl: 1.5rem;
+  --text-2xl: clamp(1.75rem, 1.4rem + 1.4vw, 2.25rem);
+  --text-3xl: clamp(2.125rem, 1.6rem + 2.4vw, 3.25rem);
+
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-body: 1.65;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* Space (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+  --space-9: 6rem;
+
+  /* Layout */
+  --width-page: 72rem;
+  --width-prose: 42rem;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem);
+  --header-height: 4rem;
+
+  /* Shape */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --border-width: 1px;
+  --focus-ring: 0 0 0 3px var(--color-bg), 0 0 0 5px var(--color-focus);
+
+  /* Motion */
+  --duration-fast: 120ms;
 }
