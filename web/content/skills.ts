@@ -62,7 +62,7 @@ export const skills: SkillGroup[] = [
     ],
     evidence: [
       { label: "DeviceHub", href: "/work/devicehub/" },
-      { label: "Research marketplace", href: "/work/research-marketplace/" },
+      { label: "ConnectResearch", href: "/work/connectresearch/" },
     ],
   },
   {

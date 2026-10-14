@@ -2,14 +2,14 @@ import type { CaseStudy } from "../schema";
 import { devicehub } from "./devicehub";
 import { govbridge } from "./govbridge";
 import { intellibooks } from "./intellibooks";
-import { researchMarketplace } from "./researchMarketplace";
+import { connectResearch } from "./connectResearch";
 import { stringline } from "./stringline";
 
 export const caseStudies: CaseStudy[] = [
   govbridge,
   devicehub,
   stringline,
-  researchMarketplace,
+  connectResearch,
   intellibooks,
 ].sort((a, b) => a.order - b.order);
 

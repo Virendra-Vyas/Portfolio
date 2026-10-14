@@ -22,14 +22,14 @@ export const timeline: TimelineEntry[] = [
     caseStudy: "/work/intellibooks/",
   },
   {
-    organisation: "Research marketplace client (freelance, through Yug Solutions)",
+    organisation: "ConnectResearch (freelance, through Yug Solutions)",
     role: "Tech Lead",
     start: { year: 2025, month: 7 },
     end: { year: 2025, month: 12 },
     kind: "freelance",
     summary:
       "A multi-tenant B2B marketplace with an event-driven backend on Azure Service Bus, Stripe milestone payments and a rules-driven financial calculation engine.",
-    caseStudy: "/work/research-marketplace/",
+    caseStudy: "/work/connectresearch/",
   },
   {
     organisation: "Datascope Systems Ltd",

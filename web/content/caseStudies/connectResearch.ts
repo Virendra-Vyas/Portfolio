@@ -1,11 +1,10 @@
 import type { CaseStudy } from "../schema";
 
-// Client is unnamed until naming is confirmed (brief, section 3).
-export const researchMarketplace: CaseStudy = {
-  slug: "research-marketplace",
-  title: "Multi-tenant research marketplace",
+export const connectResearch: CaseStudy = {
+  slug: "connectresearch",
+  title: "ConnectResearch",
   summary:
-    "Tech Lead on a B2B marketplace connecting researchers with domain-expert consultants: event-driven backend on Azure Service Bus, a rules-driven financial engine, Stripe milestone payments and embedding-based matching.",
+    "Tech Lead on a multi-tenant B2B marketplace connecting researchers with domain-expert consultants: event-driven backend on Azure Service Bus, a rules-driven financial engine, Stripe milestone payments and embedding-based matching.",
   role: "Tech Lead",
   context: "Client work through Yug Solutions Ltd",
   period: "July 2025 to December 2025",
@@ -77,7 +76,7 @@ export const researchMarketplace: CaseStudy = {
   honestStatus: {
     heading: "Status",
     paragraphs: [
-      "I worked on this as Tech Lead from July to December 2025. The client is not named here.",
+      "I worked on ConnectResearch as Tech Lead from July to December 2025, through Yug Solutions.",
     ],
   },
 };
