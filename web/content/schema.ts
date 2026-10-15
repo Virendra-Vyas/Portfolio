@@ -28,7 +28,7 @@ export type Site = {
   role: string;
   /** Default meta description. */
   description: string;
-  /** Production origin, e.g. https://example.com. Undefined until the domain is confirmed. */
+  /** Production origin, e.g. https://example.com. */
   url?: `https://${string}`;
   nav: NavItem[];
   contact: {
@@ -276,12 +276,30 @@ export type AboutPage = {
 
 /* ------------------------------------------------------------------ Contact */
 
+export type ContactForm = {
+  heading: string;
+  intro: string;
+  fields: { name: string; email: string; message: string; honeypot: string };
+  hints: { email: string; message: string };
+  submit: string;
+  sending: string;
+  service: { checking: string; ready: string; unreachable: string };
+  errorSummary: string;
+  sent: { heading: string; body: string };
+  rateLimited: string;
+  failed: string;
+  fallbackLink: string;
+  fallbackSubject: string;
+  privacy: string;
+};
+
 export type ContactPage = {
   title: string;
   intro: string;
   routesHeading: string;
   emailLabel: string;
   arrangementsHeading: string;
+  form: ContactForm;
 };
 
 /* ---------------------------------------------------------------- API page */

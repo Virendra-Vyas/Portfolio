@@ -1,0 +1,24 @@
+# Render blueprint for the contact API (free plan).
+# In Render: New > Blueprint, pick this repository, then fill in the secret it asks for.
+services:
+  - type: web
+    name: portfolio-contact-api
+    runtime: docker
+    plan: free
+    region: frankfurt
+    rootDir: api
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /health
+    autoDeploy: true
+    # Only rebuild when the API changes, not on every site edit.
+    buildFilter:
+      paths:
+        - api/**
+    envVars:
+      - key: Resend__ApiKey
+        sync: false # secret: entered in the Render dashboard, never committed
+      - key: Contact__AllowedOrigins__0
+        value: https://virendravyas.dev
+      - key: Contact__AllowedOrigins__1
+        value: https://www.virendravyas.dev

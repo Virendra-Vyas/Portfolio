@@ -15,7 +15,7 @@ type SectionProps = {
 export function Section({ id, copy, children, tone = "plain" }: SectionProps) {
   const headingId = `${id}-heading`;
   return (
-    <section id={id} aria-labelledby={headingId} className={`${styles.section} ${styles[tone]}`}>
+    <section id={id} aria-labelledby={headingId} className={tone === "tinted" ? `${styles.section} ${styles.tinted}` : styles.section}>
       <Container>
         <div className={styles.head}>
           <h2 id={headingId} className={styles.heading}>

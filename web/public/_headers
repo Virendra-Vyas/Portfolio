@@ -1,0 +1,18 @@
+# Cloudflare Pages response headers. https://developers.cloudflare.com/pages/configuration/headers/
+# Next's static export uses inline scripts and styles, hence 'unsafe-inline'; nothing is loaded from other origins
+# except the contact API, which is the only allowed connect-src.
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self' https://api.virendravyas.dev; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=()
+  Cross-Origin-Opener-Policy: same-origin
+
+# The JSON API is public and read-only: let anyone call it from a browser.
+/api/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
+
+/_next/static/*
+  Cache-Control: public, max-age=31536000, immutable

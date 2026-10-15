@@ -10,7 +10,7 @@ type ProseSectionProps = {
 
 export function ProseSection({ section, headingLevel: Heading = "h2", tone = "plain" }: ProseSectionProps) {
   return (
-    <section className={`${styles.section} ${styles[tone]} ${styles[Heading]}`}>
+    <section className={[styles.section, tone === "callout" ? styles.callout : "", styles[Heading]].filter(Boolean).join(" ")}>
       <Heading className={styles.heading}>{section.heading}</Heading>
       {section.paragraphs?.map((paragraph) => (
         <p key={paragraph} className={styles.paragraph}>

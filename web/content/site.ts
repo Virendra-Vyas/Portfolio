@@ -3,6 +3,7 @@ import type { Site } from "./schema";
 export const site: Site = {
   name: "Virendra Vyas",
   role: "Senior full-stack .NET engineer",
+  url: "https://virendravyas.dev",
   description:
     "Senior full-stack .NET engineer in Eastbourne, UK. Lead Software Engineer at Datascope Systems and founder of Yug Solutions Ltd.",
   nav: [

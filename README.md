@@ -55,6 +55,38 @@ Set `SITE_URL` at build time so preview links are absolute.
 
 Copy `.env.example` to `.env` and fill in values. Never commit `.env`.
 
-## Deploy
+## Deploy (all on free plans; the domain is the only cost)
 
-Written up at build step 10.
+| Piece | Where | Address |
+| --- | --- | --- |
+| Site | Cloudflare Pages | https://virendravyas.dev |
+| Contact API | Render (free web service, Docker) | https://api.virendravyas.dev |
+| Email | Resend (free plan) | sends from contact@virendravyas.dev |
+
+### 1. Email: Resend
+
+1. Create a Resend account and add the domain `virendravyas.dev`.
+2. Resend shows DNS records (SPF, DKIM, and optionally DMARC). Add them in Cloudflare DNS, then press Verify.
+3. Create an API key with "Sending access" only. Keep it for step 2.
+
+### 2. Contact API: Render
+
+1. In Render: New > Blueprint, and pick this repository. Render reads `render.yaml`.
+2. When asked, paste the Resend API key into `Resend__ApiKey`.
+3. After the first deploy, open `https://<service>.onrender.com/health`; it should return `{"status":"ok"}`.
+4. Settings > Custom Domains > add `api.virendravyas.dev`. In Cloudflare DNS add the CNAME Render shows,
+   with the proxy **off** (grey cloud) so Render can issue the certificate.
+
+Free services sleep after 15 minutes idle and take up to a minute to wake. The Contact page wakes the API
+when it loads and falls back to a pre-filled email if sending fails.
+
+### 3. Site: Cloudflare Pages
+
+1. Workers & Pages > Create > Pages > Connect to Git, and pick this repository.
+2. Build settings: root directory `web`, build command `npm ci && npm run build`, output directory `out`.
+3. Environment variables: `NODE_VERSION=22`, `SITE_URL=https://virendravyas.dev`,
+   `NEXT_PUBLIC_CONTACT_API_URL=https://api.virendravyas.dev`.
+4. Custom domains > add `virendravyas.dev` (and `www.virendravyas.dev`, redirected to the apex).
+
+`web/public/_headers` sets the security headers, including a Content Security Policy that only allows the
+contact API as an outside connection.
