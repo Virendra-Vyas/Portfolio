@@ -19,6 +19,7 @@ export const site: Site = {
       { label: "GitHub", href: "https://github.com/virendra-vyas" },
     ],
   },
+  notFound: { title: "Page not found", linkLabel: "Back to the home page" },
   footer: {
     company: "Yug Solutions Ltd, registered in England and Wales",
     privacyNote:

@@ -1,12 +1,13 @@
 import Link from "next/link";
+import { site } from "@/content/site";
 import { PageHeader } from "@/components/PageHeader/PageHeader";
 
 export default function NotFound() {
   return (
     <PageHeader
       eyebrow="404"
-      title="Page not found"
-      intro={<Link href="/">Back to the home page</Link>}
+      title={site.notFound.title}
+      intro={<Link href="/">{site.notFound.linkLabel}</Link>}
     />
   );
 }

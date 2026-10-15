@@ -1,12 +1,45 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
+import { about } from "@/content/about";
+import { profile, profileFacts } from "@/content/profile";
+import { skills } from "@/content/skills";
+import { timeline } from "@/content/timeline";
+import { Credentials } from "@/components/Credentials/Credentials";
+import { FactList } from "@/components/FactList/FactList";
 import { PageHeader } from "@/components/PageHeader/PageHeader";
+import { Section } from "@/components/Section/Section";
+import { SkillGroups } from "@/components/SkillGroups/SkillGroups";
+import { Timeline } from "@/components/Timeline/Timeline";
+import styles from "./page.module.css";
 
-// Placeholder: real page arrives in a later build step.
-const label = site.nav.find((item) => item.href === "/about/")?.label ?? "";
+export const metadata: Metadata = { title: about.title, description: profile.about[0] };
 
-export const metadata: Metadata = { title: label };
+export default function AboutPage() {
+  const [lead, ...rest] = profile.about;
 
-export default function Page() {
-  return <PageHeader title={label} />;
+  return (
+    <>
+      <PageHeader title={about.title} intro={lead} />
+      <Section id="story" copy={{ heading: about.storyHeading }}>
+        <div className={styles.story}>
+          {rest.map((paragraph) => (
+            <p key={paragraph}>{paragraph}</p>
+          ))}
+        </div>
+        <FactList facts={profileFacts} />
+      </Section>
+      <Section id="career" copy={{ heading: about.timelineHeading }}>
+        <Timeline
+          entries={timeline}
+          presentLabel={about.presentLabel}
+          caseStudyLinkLabel={about.caseStudyLinkLabel}
+        />
+      </Section>
+      <Section id="skills" copy={{ heading: about.skillsHeading, intro: about.skillsIntro }} tone="tinted">
+        <SkillGroups groups={skills} evidenceLabel={about.evidenceLabel} />
+      </Section>
+      <Section id="credentials" copy={{ heading: about.credentialsHeading }}>
+        <Credentials profile={profile} copy={about} />
+      </Section>
+    </>
+  );
 }

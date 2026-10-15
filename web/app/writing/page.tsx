@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
+import { writing } from "@/content/writing";
+import { ArticleList } from "@/components/ArticleList/ArticleList";
 import { PageHeader } from "@/components/PageHeader/PageHeader";
+import { Section } from "@/components/Section/Section";
 
-// Placeholder: real page arrives in a later build step.
-const label = site.nav.find((item) => item.href === "/writing/")?.label ?? "";
+export const metadata: Metadata = { title: writing.title, description: writing.intro };
 
-export const metadata: Metadata = { title: label };
-
-export default function Page() {
-  return <PageHeader title={label} />;
+export default function WritingPage() {
+  return (
+    <>
+      <PageHeader title={writing.title} intro={writing.intro} />
+      <Section id="articles" copy={{ heading: writing.articlesHeading }}>
+        <ArticleList kind="articles" items={writing.articles} pendingNote={writing.linkPendingNote} />
+      </Section>
+      <Section id="open-source" copy={{ heading: writing.openSourceHeading }}>
+        <ArticleList kind="openSource" items={writing.openSource} />
+      </Section>
+    </>
+  );
 }

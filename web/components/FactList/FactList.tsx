@@ -1,6 +1,5 @@
+import type { Fact } from "@/content/schema";
 import styles from "./FactList.module.css";
-
-export type Fact = { term: string; detail: string };
 
 export function FactList({ facts }: { facts: Fact[] }) {
   return (

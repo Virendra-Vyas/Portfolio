@@ -18,7 +18,8 @@
 
 .image {
   width: 100%;
-  min-width: 640px;
+  min-width: 560px;
+  margin-inline: auto;
 }
 
 .caption {

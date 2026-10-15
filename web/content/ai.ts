@@ -1,6 +1,7 @@
 import type { AiPage } from "./schema";
 
 export const ai: AiPage = {
+  title: "How I work with AI",
   intro:
     "I use AI every day on production work, and I build systems on top of it. In both cases the rule is the same: output gets reviewed, tested or scored before anyone relies on it.",
   practices: [

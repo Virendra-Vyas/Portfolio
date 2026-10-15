@@ -1,12 +1,19 @@
 import type { Metadata } from "next";
-import { site } from "@/content/site";
+import { ai } from "@/content/ai";
+import { Container } from "@/components/Container/Container";
 import { PageHeader } from "@/components/PageHeader/PageHeader";
+import { PracticeList } from "@/components/PracticeList/PracticeList";
+import styles from "./page.module.css";
 
-// Placeholder: real page arrives in a later build step.
-const label = site.nav.find((item) => item.href === "/ai/")?.label ?? "";
+export const metadata: Metadata = { title: ai.title, description: ai.intro };
 
-export const metadata: Metadata = { title: label };
-
-export default function Page() {
-  return <PageHeader title={label} />;
+export default function AiPage() {
+  return (
+    <>
+      <PageHeader title={ai.title} intro={ai.intro} />
+      <Container className={styles.body}>
+        <PracticeList practices={ai.practices} />
+      </Container>
+    </>
+  );
 }

@@ -1,4 +1,4 @@
-import type { Profile } from "./schema";
+import type { Fact, Profile } from "./schema";
 
 export const profile: Profile = {
   hero: {
@@ -14,6 +14,7 @@ export const profile: Profile = {
     "Contract work through Yug Solutions Ltd, outside IR35.",
     "Fully remote, or hybrid in London.",
   ],
+  factLabels: { location: "Based in", rightToWork: "Right to work", availability: "Availability" },
   proofPoints: [
     {
       title: "Zero-incident .NET 7 to .NET 10 migration",
@@ -65,3 +66,10 @@ export const profile: Profile = {
   ],
   languages: ["English", "Gujarati", "Hindi"],
 };
+
+/** Location, right to work and availability as label/value pairs. */
+export const profileFacts: Fact[] = [
+  { term: profile.factLabels.location, detail: profile.location },
+  { term: profile.factLabels.rightToWork, detail: profile.rightToWork },
+  { term: profile.factLabels.availability, detail: profile.availability },
+];

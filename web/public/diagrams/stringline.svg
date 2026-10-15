@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 740" width="760" height="740" role="img" aria-labelledby="t d" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+  <title id="t">Stringline six-step pipeline</title>
+  <desc id="d">Data comes from Dynamics 365 Business Central over OData and passes through six steps in order: ingestion, classification, bank reconciliation, anomaly detection, plain-English commentary, and sector intelligence through web search. Every step gets a confidence score: deterministic scores for measurable steps and Claude self-assessment for narrative steps. The pipeline produces a branded Word month-end pack and an Excel reviewer checklist for SharePoint.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#4f4f5c"/>
+    </marker>
+    <style>
+      .label { font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; letter-spacing: 0.06em; fill: #2b2870; font-weight: 500; }
+      .box { fill: #ffffff; stroke: #b9b9c6; stroke-width: 1.5; }
+      .step { fill: #ffffff; stroke: #2b2870; stroke-width: 1.5; }
+      .num { fill: #2b2870; }
+      .num-text { font-size: 13px; font-weight: 700; fill: #ffffff; }
+      .title { font-size: 16px; font-weight: 700; fill: #15151c; }
+      .sub { font-size: 13px; fill: #4f4f5c; }
+      .score { fill: #ecebf6; }
+      .score-title { font-size: 16px; font-weight: 700; fill: #2b2870; }
+      .score-text { font-size: 13px; fill: #2b2870; }
+      .score-strong { font-size: 13px; font-weight: 600; fill: #2b2870; }
+      .line { stroke: #4f4f5c; stroke-width: 1.5; fill: none; }
+      .dash { stroke: #2b2870; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+    </style>
+  </defs>
+
+  <text class="label" x="20" y="24">SOURCE</text>
+  <rect class="box" x="20" y="36" width="420" height="64" rx="8"/>
+  <text class="title" x="230" y="64" text-anchor="middle">Dynamics 365 Business Central</text>
+  <text class="sub" x="230" y="86" text-anchor="middle">OData</text>
+  <path class="line" d="M230 100 V128" marker-end="url(#arrow)"/>
+
+  <!-- Steps: y = 132 + i * 76 -->
+  <rect class="step" x="20" y="132" width="420" height="56" rx="8"/>
+  <circle class="num" cx="50" cy="160" r="13"/><text class="num-text" x="50" y="165" text-anchor="middle">1</text>
+  <text class="title" x="76" y="166">Ingestion</text>
+  <path class="line" d="M230 188 V204" marker-end="url(#arrow)"/>
+
+  <rect class="step" x="20" y="208" width="420" height="56" rx="8"/>
+  <circle class="num" cx="50" cy="236" r="13"/><text class="num-text" x="50" y="241" text-anchor="middle">2</text>
+  <text class="title" x="76" y="242">Classification</text>
+  <path class="line" d="M230 264 V280" marker-end="url(#arrow)"/>
+
+  <rect class="step" x="20" y="284" width="420" height="56" rx="8"/>
+  <circle class="num" cx="50" cy="312" r="13"/><text class="num-text" x="50" y="317" text-anchor="middle">3</text>
+  <text class="title" x="76" y="318">Bank reconciliation</text>
+  <path class="line" d="M230 340 V356" marker-end="url(#arrow)"/>
+
+  <rect class="step" x="20" y="360" width="420" height="56" rx="8"/>
+  <circle class="num" cx="50" cy="388" r="13"/><text class="num-text" x="50" y="393" text-anchor="middle">4</text>
+  <text class="title" x="76" y="394">Anomaly detection</text>
+  <path class="line" d="M230 416 V432" marker-end="url(#arrow)"/>
+
+  <rect class="step" x="20" y="436" width="420" height="56" rx="8"/>
+  <circle class="num" cx="50" cy="464" r="13"/><text class="num-text" x="50" y="469" text-anchor="middle">5</text>
+  <text class="title" x="76" y="470">Commentary</text>
+  <text class="sub" x="424" y="469" text-anchor="end">Plain English</text>
+  <path class="line" d="M230 492 V508" marker-end="url(#arrow)"/>
+
+  <rect class="step" x="20" y="512" width="420" height="56" rx="8"/>
+  <circle class="num" cx="50" cy="540" r="13"/><text class="num-text" x="50" y="545" text-anchor="middle">6</text>
+  <text class="title" x="76" y="546">Sector intelligence</text>
+  <text class="sub" x="424" y="545" text-anchor="end">Web search</text>
+
+  <!-- Confidence scoring -->
+  <path class="dash" d="M440 160 H480"/>
+  <path class="dash" d="M440 236 H480"/>
+  <path class="dash" d="M440 312 H480"/>
+  <path class="dash" d="M440 388 H480"/>
+  <path class="dash" d="M440 464 H480"/>
+  <path class="dash" d="M440 540 H480"/>
+  <text class="label" x="480" y="120">EVERY STEP</text>
+  <rect class="score" x="480" y="132" width="260" height="436" rx="8"/>
+  <text class="score-title" x="500" y="168">Confidence score</text>
+  <text class="score-strong" x="500" y="212">Measurable steps</text>
+  <text class="score-text" x="500" y="232">Deterministic score</text>
+  <text class="score-strong" x="500" y="276">Narrative steps</text>
+  <text class="score-text" x="500" y="296">Claude self-assessment</text>
+  <text class="score-text" x="500" y="532">Output is evaluated,</text>
+  <text class="score-text" x="500" y="550">not trusted.</text>
+
+  <!-- Outputs -->
+  <path class="line" d="M230 568 V600 H190 V640" marker-end="url(#arrow)"/>
+  <path class="line" d="M230 600 H560 V640" marker-end="url(#arrow)"/>
+  <text class="label" x="20" y="626">OUTPUT</text>
+  <rect class="box" x="20" y="644" width="340" height="72" rx="8"/>
+  <text class="title" x="190" y="674" text-anchor="middle">Word month-end pack</text>
+  <text class="sub" x="190" y="696" text-anchor="middle">Branded .docx</text>
+  <rect class="box" x="380" y="644" width="360" height="72" rx="8"/>
+  <text class="title" x="560" y="674" text-anchor="middle">Excel reviewer checklist</text>
+  <text class="sub" x="560" y="696" text-anchor="middle">For SharePoint</text>
+</svg>

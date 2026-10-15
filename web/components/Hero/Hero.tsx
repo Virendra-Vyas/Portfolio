@@ -1,4 +1,4 @@
-import type { AnyLink, Profile } from "@/content/schema";
+import type { AnyLink, Fact, Profile } from "@/content/schema";
 import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 import { Container } from "@/components/Container/Container";
 import { FactList } from "@/components/FactList/FactList";
@@ -7,11 +7,12 @@ import styles from "./Hero.module.css";
 type HeroProps = {
   name: string;
   profile: Profile;
+  facts: Fact[];
   primaryAction: AnyLink;
   secondaryAction: AnyLink;
 };
 
-export function Hero({ name, profile, primaryAction, secondaryAction }: HeroProps) {
+export function Hero({ name, profile, facts, primaryAction, secondaryAction }: HeroProps) {
   return (
     <Container as="header" className={styles.hero}>
       <h1 className={styles.name}>{name}</h1>
@@ -21,13 +22,7 @@ export function Hero({ name, profile, primaryAction, secondaryAction }: HeroProp
         <ButtonLink link={primaryAction} />
         <ButtonLink link={secondaryAction} variant="secondary" />
       </div>
-      <FactList
-        facts={[
-          { term: "Based in", detail: profile.location },
-          { term: "Right to work", detail: profile.rightToWork },
-          { term: "Availability", detail: profile.availability },
-        ]}
-      />
+      <FactList facts={facts} />
     </Container>
   );
 }

@@ -1,7 +1,7 @@
 import { ai } from "@/content/ai";
 import { featuredCaseStudies } from "@/content/caseStudies";
 import { home } from "@/content/home";
-import { profile } from "@/content/profile";
+import { profile, profileFacts } from "@/content/profile";
 import { site } from "@/content/site";
 import { AiTeaser } from "@/components/AiTeaser/AiTeaser";
 import { CaseStudyCard } from "@/components/CaseStudyCard/CaseStudyCard";
@@ -17,6 +17,7 @@ export default function Home() {
       <Hero
         name={site.name}
         profile={profile}
+        facts={profileFacts}
         primaryAction={home.primaryAction}
         secondaryAction={home.secondaryAction}
       />

@@ -35,6 +35,7 @@ export type Site = {
     email: string;
     links: ExternalLink[];
   };
+  notFound: { title: string; linkLabel: string };
   footer: {
     company: string;
     /** Companies House number. Shown only once confirmed. */
@@ -44,6 +45,9 @@ export type Site = {
 };
 
 /* ------------------------------------------------------------------ Profile */
+
+/** A label/value pair, rendered as a definition list. */
+export type Fact = { term: string; detail: string };
 
 export type ProofPoint = {
   /** The claim in a few words, e.g. "Zero-incident .NET 7 to .NET 10 migration". */
@@ -73,6 +77,8 @@ export type Profile = {
   rightToWork: string;
   availability: string;
   workingArrangements: string[];
+  /** Labels for location, right to work and availability where they are shown as facts. */
+  factLabels: { location: string; rightToWork: string; availability: string };
   proofPoints: ProofPoint[];
   about: string[];
   education: Qualification[];
@@ -118,6 +124,9 @@ export type Diagram = {
   src: InternalHref;
   /** Full text alternative describing what the diagram shows. */
   description: string;
+  /** Intrinsic size from the SVG viewBox, so the browser reserves space and nothing shifts. */
+  width: number;
+  height: number;
 };
 
 export type CaseStudy = {
@@ -174,6 +183,7 @@ export type AiPractice = {
 };
 
 export type AiPage = {
+  title: string;
   intro: string;
   practices: AiPractice[];
 };
@@ -196,7 +206,12 @@ export type OpenSourceContribution = {
 };
 
 export type Writing = {
+  title: string;
   intro: string;
+  articlesHeading: string;
+  openSourceHeading: string;
+  /** Shown on an article card while its URL is still to be added. */
+  linkPendingNote: string;
   articles: Article[];
   openSource: OpenSourceContribution[];
 };
@@ -238,4 +253,32 @@ export type WorkPage = {
     diagramFullSize: string;
     nextCaseStudy: string;
   };
+};
+
+/* -------------------------------------------------------------------- About */
+
+export type AboutPage = {
+  title: string;
+  storyHeading: string;
+  timelineHeading: string;
+  /** Label for an entry with no end date. */
+  presentLabel: string;
+  caseStudyLinkLabel: string;
+  skillsHeading: string;
+  skillsIntro: string;
+  evidenceLabel: string;
+  credentialsHeading: string;
+  educationHeading: string;
+  certificationsHeading: string;
+  languagesHeading: string;
+};
+
+/* ------------------------------------------------------------------ Contact */
+
+export type ContactPage = {
+  title: string;
+  intro: string;
+  routesHeading: string;
+  emailLabel: string;
+  arrangementsHeading: string;
 };

@@ -113,7 +113,9 @@ export const skills: SkillGroup[] = [
   {
     name: "Integrations",
     items: [
-      "HMRC Making Tax Digital: VAT, Income Tax, PAYE, CIS, Corporation Tax (GovTalk), National Insurance, Customs",
+      "HMRC Making Tax Digital: VAT, Income Tax, PAYE, CIS",
+      "HMRC Corporation Tax (CT600 through GovTalk)",
+      "HMRC Self Assessment, National Insurance and Customs",
       "Companies House",
       "DVLA",
       "Land Registry",

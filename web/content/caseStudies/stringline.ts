@@ -15,6 +15,13 @@ export const stringline: CaseStudy = {
   links: [
     { label: "Code on GitHub", href: "https://github.com/Virendra-Vyas/stringline-pipeline" },
   ],
+  diagram: {
+    src: "/diagrams/stringline.svg",
+    width: 760,
+    height: 740,
+    description:
+      "Data comes from Dynamics 365 Business Central over OData and passes through six steps in order: ingestion, classification, bank reconciliation, anomaly detection, plain-English commentary, and sector intelligence through web search. Every step gets a confidence score: deterministic scores for measurable steps and Claude self-assessment for narrative steps. The pipeline produces a branded Word month-end pack and an Excel reviewer checklist for SharePoint.",
+  },
   problem: {
     heading: "Problem",
     paragraphs: [

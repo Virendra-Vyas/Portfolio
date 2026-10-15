@@ -1,6 +1,10 @@
 import type { Writing } from "./schema";
 
 export const writing: Writing = {
+  title: "Writing and open source",
+  articlesHeading: "Articles",
+  openSourceHeading: "Open source",
+  linkPendingNote: "Link coming soon",
   intro:
     "Technical write-ups from my own integration work, and contributions back to the libraries I use.",
   articles: [

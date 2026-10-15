@@ -17,7 +17,15 @@ export function ArchitectureDiagram({ diagram, heading, alt, descriptionLabel, f
       {/* Scrolls sideways on narrow screens so labels stay readable instead of shrinking. */}
       <div className={styles.frame} tabIndex={0} role="region" aria-label={heading}>
         {/* eslint-disable-next-line @next/next/no-img-element -- static export, SVG needs no optimisation */}
-        <img src={diagram.src} alt={alt} width={960} height={680} className={styles.image} loading="lazy" />
+        <img
+          src={diagram.src}
+          alt={alt}
+          width={diagram.width}
+          height={diagram.height}
+          className={styles.image}
+          style={{ maxWidth: diagram.width }}
+          loading="lazy"
+        />
       </div>
       <figcaption className={styles.caption}>
         <details>

@@ -1,0 +1,36 @@
+.list {
+  display: grid;
+}
+
+.row {
+  display: grid;
+  gap: var(--space-1) var(--space-6);
+  padding-block: var(--space-4);
+  border-top: var(--border-width) solid var(--color-border);
+}
+
+@media (min-width: 40rem) {
+  .row {
+    grid-template-columns: 8rem 1fr;
+    align-items: baseline;
+  }
+}
+
+.term {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.detail {
+  margin: 0;
+  font-size: var(--text-lg);
+  font-weight: var(--weight-medium);
+  overflow-wrap: anywhere;
+}
+
+.email {
+  font-weight: var(--weight-semibold);
+}

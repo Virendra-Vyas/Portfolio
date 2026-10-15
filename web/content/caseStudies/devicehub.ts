@@ -28,6 +28,13 @@ export const devicehub: CaseStudy = {
     "Moq",
   ],
   links: [],
+  diagram: {
+    src: "/diagrams/devicehub.svg",
+    width: 960,
+    height: 400,
+    description:
+      "Requests flow from the React app to the backend-for-frontend, then to the core API, then to the database. The React app has an AuthContext with a can() helper that drives permission-driven UI. The backend-for-frontend and the core API both enforce permissions, using JWT bearer authentication and a dedicated authorisation library. Roles and permissions live in the database and are managed through EF Core migrations.",
+  },
   problem: {
     heading: "Context",
     paragraphs: [

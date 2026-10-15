@@ -1,7 +1,19 @@
 import type { TimelineEntry } from "./schema";
 
-/** Newest first. Dates and titles must match the CV and LinkedIn exactly. */
+/**
+ * Current roles first (main employment, then my company), then past roles newest first.
+ * Dates and titles must match the CV and LinkedIn exactly.
+ */
 export const timeline: TimelineEntry[] = [
+  {
+    organisation: "Datascope Systems Ltd",
+    role: "Lead Software Engineer",
+    start: { year: 2022, month: 8 },
+    kind: "employment",
+    summary:
+      "I lead a team of five engineers on DeviceHub, an IoT device management and access-control platform, and own delivery end to end.",
+    caseStudy: "/work/devicehub/",
+  },
   {
     organisation: "Yug Solutions Ltd",
     role: "Founder and Principal Engineer",
@@ -30,15 +42,6 @@ export const timeline: TimelineEntry[] = [
     summary:
       "A multi-tenant B2B marketplace with an event-driven backend on Azure Service Bus, Stripe milestone payments and a rules-driven financial calculation engine.",
     caseStudy: "/work/connectresearch/",
-  },
-  {
-    organisation: "Datascope Systems Ltd",
-    role: "Lead Software Engineer",
-    start: { year: 2022, month: 8 },
-    kind: "employment",
-    summary:
-      "I lead a team of five engineers on DeviceHub, an IoT device management and access-control platform, and own delivery end to end.",
-    caseStudy: "/work/devicehub/",
   },
   {
     organisation: "Mondaq Ltd",
