@@ -8,7 +8,9 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "check:content": "node scripts/check-content.mjs",
-    "check:api": "node scripts/check-api.mjs"
+    "check:api": "node scripts/check-api.mjs",
+    "cv": "node scripts/cv/render.mjs",
+    "check:cv": "node scripts/cv/check.mjs"
   },
   "dependencies": {
     "next": "16.4.0",
@@ -23,6 +25,7 @@
     "ajv-formats": "^3.0.1",
     "eslint": "^9",
     "eslint-config-next": "16.4.0",
+    "playwright": "1.56.1",
     "typescript": "^5"
   },
   "engines": {

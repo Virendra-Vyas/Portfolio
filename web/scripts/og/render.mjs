@@ -1,16 +1,7 @@
 // Renders the social preview image and the Apple touch icon with Playwright.
 // One-off generator: the PNGs are committed, so CI does not need a browser for this.
-import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
-
-// Use the project's Playwright if installed, otherwise a global install.
-const require = createRequire(import.meta.url);
-let chromium;
-try {
-  ({ chromium } = require("playwright"));
-} catch {
-  ({ chromium } = createRequire("/opt/node22/lib/node_modules/")("playwright"));
-}
+import { chromium } from "playwright";
 
 const here = (path) => fileURLToPath(new URL(path, import.meta.url));
 const browser = await chromium.launch();

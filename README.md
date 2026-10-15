@@ -34,6 +34,7 @@ npm run typecheck
 npm run check:content   # banned wording, unconfirmed claims, personal details
 npm run build           # static output in web/out
 npm run check:api       # validates every built JSON response against the OpenAPI document
+npm run check:cv        # fails if the CV PDF is older than the content it is built from
 
 cd api && dotnet test
 ```
@@ -45,10 +46,17 @@ document at `/api/openapi.json` and explorable at `/api/`. The JSON is generated
 from the same typed content as the pages (`web/lib/publicApi.ts`); `check:api` fails the build
 if a response and the contract drift apart.
 
+## CV
+
+The CV at `/cv/` is rendered from the same content files. The PDF (`public/cv/virendra-vyas-cv.pdf`)
+is printed from that page and committed: after changing content, run `npm run cv` (it builds the site first)
+and commit the PDF. CI fails if it is out of date. The first time, install the browser Playwright uses:
+`npx playwright install chromium`.
+
 ## Images
 
 `public/og.png` (social preview) and `app/apple-icon.png` are rendered from
-`scripts/og/template.html` and `app/icon.svg` with `node scripts/og/render.mjs` (needs Playwright).
+`scripts/og/template.html` and `app/icon.svg` with `node scripts/og/render.mjs` (uses the same Playwright browser).
 Set `SITE_URL` at build time so preview links are absolute.
 
 ## Configuration

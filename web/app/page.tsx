@@ -31,6 +31,7 @@ export default function Home() {
         facts={profileFacts}
         primaryAction={home.primaryAction}
         secondaryAction={home.secondaryAction}
+        cvAction={home.cvAction}
       />
       <Section id="proof" copy={home.proof} tone="tinted">
         <ProofPoints points={profile.proofPoints} />

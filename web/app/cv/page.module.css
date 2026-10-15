@@ -1,0 +1,11 @@
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: var(--space-5);
+}
+
+@media print {
+  .actions {
+    display: none;
+  }
+}

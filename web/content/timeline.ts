@@ -51,6 +51,7 @@ export const timeline: TimelineEntry[] = [
     kind: "employment",
     summary:
       "Backend and front-end features on a high-traffic, global B2B legal content platform. Improved API performance by about 18 percent through query refactoring.",
+    project: "B2B legal content platform",
   },
   {
     organisation: "Goodmaysys Software Technologies",
@@ -60,6 +61,7 @@ export const timeline: TimelineEntry[] = [
     kind: "employment",
     summary:
       "Built and maintained GSLFx, a live money-transfer platform, including real-time status updates, Cosmos DB data modelling, reporting, and HMRC and DVLA integrations.",
+    project: "GSLFx money-transfer platform",
   },
   {
     organisation: "Whizability",

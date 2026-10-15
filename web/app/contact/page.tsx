@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import { contact } from "@/content/contact";
+import { cv } from "@/content/cv";
 import { profile, profileFacts } from "@/content/profile";
 import { site } from "@/content/site";
+import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 import { ContactForm } from "@/components/ContactForm/ContactForm";
 import { ContactRoutes } from "@/components/ContactRoutes/ContactRoutes";
 import { FactList } from "@/components/FactList/FactList";
@@ -21,6 +23,10 @@ export default function ContactPage() {
       </Section>
       <Section id="routes" copy={{ heading: contact.routesHeading }} tone="tinted">
         <ContactRoutes contact={site.contact} copy={contact} />
+        <div className={styles.cv}>
+          <ButtonLink link={cv.pdf} variant="secondary" />
+          <ButtonLink link={cv.viewOnline} variant="secondary" />
+        </div>
       </Section>
       <Section id="arrangements" copy={{ heading: contact.arrangementsHeading }}>
         <ul className={styles.arrangements}>

@@ -7,7 +7,10 @@ import { SiteFooter } from "@/components/SiteFooter/SiteFooter";
 import "./globals.css";
 
 // Downloaded at build time and served from this site: the browser never contacts Google.
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
+// "optional" avoids a late re-paint of the large headline when the font arrives after first paint,
+// which Lighthouse otherwise counts as the Largest Contentful Paint. The font is preloaded, so it is
+// almost always ready in time; if not, the metric-matched fallback is used for that visit.
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "optional" });
 const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],

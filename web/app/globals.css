@@ -102,3 +102,22 @@ pre {
     scroll-behavior: auto !important;
   }
 }
+
+/* Printing (the CV page): plain A4, no site chrome. */
+@page {
+  size: A4;
+  margin: 11mm 13mm;
+}
+
+@media print {
+  body > a:first-child,
+  body > header,
+  body > footer {
+    display: none;
+  }
+
+  body {
+    min-height: 0;
+    font-size: 8.8pt;
+  }
+}

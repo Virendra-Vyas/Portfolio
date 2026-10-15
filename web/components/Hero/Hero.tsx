@@ -10,9 +10,10 @@ type HeroProps = {
   facts: Fact[];
   primaryAction: AnyLink;
   secondaryAction: AnyLink;
+  cvAction: AnyLink;
 };
 
-export function Hero({ name, profile, facts, primaryAction, secondaryAction }: HeroProps) {
+export function Hero({ name, profile, facts, primaryAction, secondaryAction, cvAction }: HeroProps) {
   return (
     <Container as="header" className={styles.hero}>
       <h1 className={styles.name}>{name}</h1>
@@ -21,6 +22,7 @@ export function Hero({ name, profile, facts, primaryAction, secondaryAction }: H
       <div className={styles.actions}>
         <ButtonLink link={primaryAction} />
         <ButtonLink link={secondaryAction} variant="secondary" />
+        <ButtonLink link={cvAction} variant="secondary" />
       </div>
       <FactList facts={facts} />
     </Container>
