@@ -8,3 +8,10 @@
 .arrangements li::marker {
   color: var(--color-accent);
 }
+
+.cv {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-5);
+}

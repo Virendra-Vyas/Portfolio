@@ -1,10 +1,12 @@
 import type { HomePage } from "./schema";
+import { cv } from "./cv";
 import { site } from "./site";
 
 /** Section headings and calls to action for the home page. The body content comes from the other content files. */
 export const home: HomePage = {
   primaryAction: { label: "Email me", href: `mailto:${site.contact.email}` },
   secondaryAction: { label: "See my work", href: "/work/" },
+  cvAction: cv.pdf,
   proof: { heading: "What I've delivered" },
   work: {
     heading: "Selected work",

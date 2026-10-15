@@ -38,6 +38,8 @@ jobs:
       - run: npm run check:content
       - run: npm run build
       - run: npm run check:api
+      - name: CV PDF is up to date with the content
+        run: npm run check:cv
 
       - name: Lighthouse (95+ performance, best practices and SEO; 100 accessibility)
         run: npx --yes @lhci/cli@0.15.1 autorun

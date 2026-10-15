@@ -34,6 +34,7 @@ npm run typecheck
 npm run check:content   # banned wording, unconfirmed claims, personal details
 npm run build           # static output in web/out
 npm run check:api       # validates every built JSON response against the OpenAPI document
+npm run check:cv        # fails if the CV PDF is older than the content it is built from
 
 cd api && dotnet test
 ```
@@ -44,6 +45,12 @@ Every page's data is published as static JSON under `/api/v1/`, described by an 
 document at `/api/openapi.json` and explorable at `/api/`. The JSON is generated at build time
 from the same typed content as the pages (`web/lib/publicApi.ts`); `check:api` fails the build
 if a response and the contract drift apart.
+
+## CV
+
+The CV at `/cv/` is rendered from the same content files. The PDF (`public/cv/virendra-vyas-cv.pdf`)
+is printed from that page and committed: after changing content, run `npm run build && npm run cv`
+(needs Playwright) and commit the PDF. CI fails if it is out of date.
 
 ## Images
 

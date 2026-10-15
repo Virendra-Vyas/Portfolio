@@ -101,6 +101,8 @@ export type TimelineEntry = {
   summary: string;
   /** Case study for this role, if there is one. */
   caseStudy?: InternalHref;
+  /** Title of a further-work card for this role, used for CV bullet points when there is no case study. */
+  project?: string;
 };
 
 /* ------------------------------------------------------------- Case studies */
@@ -227,6 +229,7 @@ export type SectionCopy = {
 export type HomePage = {
   primaryAction: AnyLink;
   secondaryAction: AnyLink;
+  cvAction: AnyLink;
   proof: SectionCopy;
   work: SectionCopy;
   ai: SectionCopy;
@@ -323,4 +326,26 @@ export type ApiPageCopy = {
   };
   /** Short teaser used on the home page. */
   teaser: SectionCopy;
+};
+
+/* ----------------------------------------------------------------------- CV */
+
+export type CvCopy = {
+  title: string;
+  /** The generated PDF, committed under /public. */
+  pdf: AnyLink;
+  viewOnline: AnyLink;
+  headings: {
+    summary: string;
+    achievements: string;
+    experience: string;
+    skills: string;
+    writing: string;
+    education: string;
+    certifications: string;
+    languages: string;
+  };
+  presentLabel: string;
+  websiteLabel: string;
+  footnote: string;
 };

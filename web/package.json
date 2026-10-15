@@ -8,7 +8,9 @@
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
     "check:content": "node scripts/check-content.mjs",
-    "check:api": "node scripts/check-api.mjs"
+    "check:api": "node scripts/check-api.mjs",
+    "cv": "node scripts/cv/render.mjs",
+    "check:cv": "node scripts/cv/check.mjs"
   },
   "dependencies": {
     "next": "16.4.0",
