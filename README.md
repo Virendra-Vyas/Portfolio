@@ -49,13 +49,14 @@ if a response and the contract drift apart.
 ## CV
 
 The CV at `/cv/` is rendered from the same content files. The PDF (`public/cv/virendra-vyas-cv.pdf`)
-is printed from that page and committed: after changing content, run `npm run build && npm run cv`
-(needs Playwright) and commit the PDF. CI fails if it is out of date.
+is printed from that page and committed: after changing content, run `npm run cv` (it builds the site first)
+and commit the PDF. CI fails if it is out of date. The first time, install the browser Playwright uses:
+`npx playwright install chromium`.
 
 ## Images
 
 `public/og.png` (social preview) and `app/apple-icon.png` are rendered from
-`scripts/og/template.html` and `app/icon.svg` with `node scripts/og/render.mjs` (needs Playwright).
+`scripts/og/template.html` and `app/icon.svg` with `node scripts/og/render.mjs` (uses the same Playwright browser).
 Set `SITE_URL` at build time so preview links are absolute.
 
 ## Configuration

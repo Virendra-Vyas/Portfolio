@@ -1,22 +1,19 @@
-// Prints /cv/ from the built site (web/out) to public/cv/virendra-vyas-cv.pdf and records the
-// source hash that `npm run check:cv` compares against. Run after `npm run build`:
-//   npm run build && node scripts/cv/render.mjs
+// Builds the site, prints /cv/ to public/cv/virendra-vyas-cv.pdf and records the source hash
+// that `npm run check:cv` compares against. Run with `npm run cv`.
+// Building first means the PDF and the recorded hash always come from the same sources.
+import { spawnSync } from "node:child_process";
 import { createReadStream, existsSync, statSync, writeFileSync } from "node:fs";
 import { createServer } from "node:http";
-import { createRequire } from "node:module";
 import { extname, join } from "node:path";
+import { chromium } from "playwright";
 import { HASH_FILE, PDF, WEB, sourceHash } from "./source.mjs";
 
-const require = createRequire(import.meta.url);
-let chromium;
-try {
-  ({ chromium } = require("playwright"));
-} catch {
-  ({ chromium } = createRequire("/opt/node22/lib/node_modules/")("playwright"));
-}
+// Hash before building, so an edit made during the build can't be recorded as covered.
+const hash = sourceHash();
+const build = spawnSync("npm", ["run", "build"], { cwd: WEB, stdio: "inherit" });
+if (build.status !== 0) process.exit(build.status ?? 1);
 
 const OUT = join(WEB, "out");
-if (!existsSync(join(OUT, "cv/index.html"))) throw new Error("Build the site first: npm run build");
 
 const types = { ".html": "text/html", ".js": "text/javascript", ".css": "text/css", ".woff2": "font/woff2", ".svg": "image/svg+xml", ".png": "image/png", ".json": "application/json" };
 const server = createServer((req, res) => {
@@ -37,5 +34,9 @@ await page.pdf({ path: PDF, format: "A4", printBackground: true, preferCSSPageSi
 await browser.close();
 server.close();
 
-writeFileSync(HASH_FILE, `${sourceHash()}\n`);
+if (sourceHash() !== hash) {
+  console.error("Sources changed while the CV was being generated. Run npm run cv again.");
+  process.exit(1);
+}
+writeFileSync(HASH_FILE, `${hash}\n`);
 console.log(`Wrote ${PDF.replace(WEB, "")} and updated ${HASH_FILE.replace(WEB, "")}`);

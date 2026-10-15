@@ -1,4 +1,4 @@
-// The files the CV is built from. If any of them changes, the committed PDF is out of date.
+// The files the CV is built from, including how it is rendered. If any of them changes, the committed PDF is out of date.
 import { createHash } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
@@ -20,6 +20,13 @@ const SOURCES = [
   "components/CvDocument/CvDocument.tsx",
   "components/CvDocument/CvDocument.module.css",
   "lib/dates.ts",
+  // Rendering inputs: the page, global print rules, tokens and the layout (fonts, metadata title).
+  "app/cv/page.tsx",
+  "app/cv/page.module.css",
+  "app/globals.css",
+  "app/layout.tsx",
+  "styles/tokens.css",
+  "package-lock.json",
 ].sort();
 
 export function sourceHash() {

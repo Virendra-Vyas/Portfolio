@@ -22,6 +22,8 @@ jobs:
         working-directory: web
     env:
       SITE_URL: https://virendravyas.dev
+      # Playwright is only used locally to render the CV and preview image; CI never needs its browsers.
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: "1"
       NEXT_PUBLIC_CONTACT_API_URL: https://api.virendravyas.dev
     steps:
       - uses: actions/checkout@v7
