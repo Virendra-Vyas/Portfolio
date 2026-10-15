@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+# A newer push to the same branch cancels the run it replaces.
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  web:
+    name: Site (lint, types, content, build, API contract, Lighthouse)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: web
+    env:
+      SITE_URL: https://virendravyas.dev
+      NEXT_PUBLIC_CONTACT_API_URL: https://api.virendravyas.dev
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run check:content
+      - run: npm run build
+      - run: npm run check:api
+
+      - name: Lighthouse (95+ performance, best practices and SEO; 100 accessibility)
+        run: npx --yes @lhci/cli@0.15.1 autorun
+
+      - name: Keep Lighthouse reports
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: lighthouse-reports
+          path: web/.lighthouseci
+          if-no-files-found: ignore
+          retention-days: 14
+
+  api:
+    name: Contact API (build, test, container)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: api
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-dotnet@v6
+        with:
+          dotnet-version: 10.0.x
+
+      - run: dotnet restore
+      - run: dotnet build --no-restore -c Release
+      - run: dotnet test --no-build -c Release --logger "console;verbosity=normal"
+
+      - name: Build the container Render will run
+        run: docker build -t portfolio-contact-api .
