@@ -1,0 +1,38 @@
+.hero {
+  padding-block: var(--space-8) var(--space-7);
+}
+
+.name {
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.headline {
+  margin-top: var(--space-4);
+  max-width: 30ch;
+  /* Smaller floor than --text-3xl: the headline is a full sentence, so it must not fill a phone screen. */
+  font-size: clamp(1.5rem, 1.1rem + 2.2vw, 3rem);
+  font-weight: var(--weight-bold);
+  line-height: var(--leading-tight);
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+.summary {
+  margin-top: var(--space-5);
+  max-width: var(--width-prose);
+  color: var(--color-text-muted);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+}

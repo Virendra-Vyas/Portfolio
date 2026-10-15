@@ -1,0 +1,170 @@
+.form {
+  display: grid;
+  gap: var(--space-5);
+  max-width: var(--width-prose);
+}
+
+.field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.field label {
+  font-weight: var(--weight-semibold);
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: var(--space-3);
+  border: 2px solid var(--color-border-strong);
+  border-radius: var(--radius-sm);
+  background: var(--color-bg);
+  color: var(--color-text);
+  font: inherit;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 10rem;
+}
+
+.field input:focus-visible,
+.field textarea:focus-visible {
+  border-color: var(--color-accent);
+}
+
+.field [aria-invalid="true"] {
+  border-color: var(--color-negative);
+}
+
+.hint {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.error {
+  color: var(--color-negative);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.summary,
+.problem {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4) var(--space-5);
+  border-left: 4px solid var(--color-negative);
+  background: var(--color-surface);
+}
+
+.summary p {
+  font-weight: var(--weight-semibold);
+}
+
+.summary ul {
+  padding-left: var(--space-5);
+}
+
+.summary a {
+  color: var(--color-negative);
+}
+
+.problem {
+  justify-items: start;
+}
+
+.fallback {
+  font-weight: var(--weight-semibold);
+}
+
+/* Off-screen rather than display:none, so naive bots still see and fill it. */
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-3) var(--space-5);
+}
+
+.submit {
+  min-height: 2.75rem;
+  padding: 0 var(--space-6);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font: inherit;
+  font-weight: var(--weight-semibold);
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: var(--color-accent-hover);
+}
+
+.submit:disabled {
+  cursor: progress;
+  opacity: 0.8;
+}
+
+.service {
+  flex: 1 1 16rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.service::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: var(--space-2);
+  border-radius: 50%;
+  background: var(--color-border-strong);
+  vertical-align: 0.05em;
+}
+
+.checking::before {
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+.ready::before {
+  background: var(--color-positive);
+}
+
+.unreachable::before {
+  background: var(--color-negative);
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.3;
+  }
+}
+
+.privacy {
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+}
+
+.sent {
+  display: grid;
+  gap: var(--space-2);
+  max-width: var(--width-prose);
+  padding: var(--space-5);
+  border-left: 4px solid var(--color-positive);
+  background: var(--color-positive-soft);
+}
+
+.sentHeading {
+  color: var(--color-positive);
+  font-size: var(--text-lg);
+}

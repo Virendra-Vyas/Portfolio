@@ -1,0 +1,29 @@
+.nav {
+  margin-top: var(--space-8);
+}
+
+.link {
+  display: grid;
+  gap: var(--space-1);
+  padding-top: var(--space-5);
+  border-top: var(--border-width) solid var(--color-border);
+  text-decoration: none;
+}
+
+.label {
+  color: var(--color-text-muted);
+  font-family: var(--font-mono);
+  font-size: var(--text-xs);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: var(--text-xl);
+  font-weight: var(--weight-bold);
+}
+
+.link:hover .title {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}

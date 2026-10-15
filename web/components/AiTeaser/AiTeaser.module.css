@@ -1,0 +1,31 @@
+.teaser {
+  display: grid;
+  gap: var(--space-6);
+}
+
+@media (min-width: 48rem) {
+  .teaser {
+    grid-template-columns: 1.2fr 1fr;
+    align-items: start;
+  }
+}
+
+.intro {
+  max-width: var(--width-prose);
+  font-size: var(--text-lg);
+  line-height: var(--leading-snug);
+}
+
+.list {
+  display: grid;
+  gap: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+
+.item {
+  padding-left: var(--space-4);
+  border-left: 2px solid var(--color-accent);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+}

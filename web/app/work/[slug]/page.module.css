@@ -1,0 +1,14 @@
+.body {
+  display: grid;
+  gap: var(--space-7);
+  padding-top: var(--space-5);
+}
+
+.group {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.groupHeading {
+  font-size: var(--text-2xl);
+}
