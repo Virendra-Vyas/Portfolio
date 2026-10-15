@@ -1,0 +1,14 @@
+.actions {
+  margin-top: var(--space-5);
+}
+
+.points {
+  display: grid;
+  gap: var(--space-3);
+  max-width: var(--width-prose);
+  padding-left: var(--space-5);
+}
+
+.points li::marker {
+  color: var(--color-accent);
+}

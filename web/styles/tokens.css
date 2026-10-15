@@ -15,6 +15,7 @@
   --color-accent-soft: #ecebf6;      /* tinted background; accent text on it 10.8:1 */
   --color-positive: #1b6e45;         /* small green accent, 6.2:1 */
   --color-positive-soft: #e7f3ec;
+  --color-negative: #a3261b;         /* errors, 7.4:1 */
   --color-focus: #2b2870;
 
   /* Typography */

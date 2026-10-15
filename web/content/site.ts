@@ -10,6 +10,7 @@ export const site: Site = {
     { label: "About", href: "/about/" },
     { label: "AI", href: "/ai/" },
     { label: "Writing", href: "/writing/" },
+    { label: "API", href: "/api/" },
     { label: "Contact", href: "/contact/" },
   ],
   contact: {

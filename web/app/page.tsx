@@ -1,17 +1,28 @@
 import { ai } from "@/content/ai";
+import { apiPage } from "@/content/apiPage";
 import { featuredCaseStudies } from "@/content/caseStudies";
 import { home } from "@/content/home";
 import { profile, profileFacts } from "@/content/profile";
 import { site } from "@/content/site";
 import { AiTeaser } from "@/components/AiTeaser/AiTeaser";
+import { ApiTeaser } from "@/components/ApiTeaser/ApiTeaser";
 import { CaseStudyCard } from "@/components/CaseStudyCard/CaseStudyCard";
 import { ContactCta } from "@/components/ContactCta/ContactCta";
 import { Hero } from "@/components/Hero/Hero";
 import { ProofPoints } from "@/components/ProofPoints/ProofPoints";
 import { Section } from "@/components/Section/Section";
+import { endpoints, profileResponse } from "@/lib/publicApi";
 import styles from "./page.module.css";
 
 export default function Home() {
+  // A real excerpt of the profile endpoint, so the teaser shows exactly what the API returns.
+  const { data } = profileResponse();
+  const excerpt = JSON.stringify(
+    { data: { name: data.name, role: data.role, location: data.location, availability: data.availability } },
+    null,
+    2,
+  );
+
   return (
     <>
       <Hero
@@ -36,7 +47,10 @@ export default function Home() {
       <Section id="ai" copy={home.ai} tone="tinted">
         <AiTeaser ai={ai} />
       </Section>
-      <Section id="contact" copy={home.contact}>
+      <Section id="api" copy={apiPage.teaser}>
+        <ApiTeaser request={`GET ${endpoints.profile}`} excerpt={excerpt} />
+      </Section>
+      <Section id="contact" copy={home.contact} tone="tinted">
         <ContactCta profile={profile} contact={site.contact} primaryAction={home.primaryAction} />
       </Section>
     </>

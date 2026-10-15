@@ -252,6 +252,7 @@ export type WorkPage = {
     diagramDescription: string;
     diagramFullSize: string;
     nextCaseStudy: string;
+    viewAsJson: string;
   };
 };
 
@@ -281,4 +282,27 @@ export type ContactPage = {
   routesHeading: string;
   emailLabel: string;
   arrangementsHeading: string;
+};
+
+/* ---------------------------------------------------------------- API page */
+
+export type ApiPageCopy = {
+  title: string;
+  eyebrow: string;
+  intro: string;
+  howHeading: string;
+  howPoints: string[];
+  endpointsHeading: string;
+  openapiLink: AnyLink;
+  labels: {
+    send: string;
+    sending: string;
+    copy: string;
+    copied: string;
+    caseStudy: string;
+    response: string;
+    error: string;
+  };
+  /** Short teaser used on the home page. */
+  teaser: SectionCopy;
 };

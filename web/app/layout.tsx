@@ -17,10 +17,24 @@ const plexMono = IBM_Plex_Mono({
 
 const MAIN_ID = "main";
 
+// Absolute URLs for social previews need the production origin: content first, then the build environment.
+const siteUrl = site.url ?? process.env.SITE_URL;
+
 export const metadata: Metadata = {
   title: { default: `${site.name}, ${site.role}`, template: `%s | ${site.name}` },
   description: site.description,
-  ...(site.url ? { metadataBase: new URL(site.url) } : {}),
+  ...(siteUrl
+    ? {
+        metadataBase: new URL(siteUrl),
+        openGraph: {
+          type: "website",
+          locale: "en_GB",
+          siteName: site.name,
+          images: [{ url: "/og.png", width: 1200, height: 630, alt: `${site.name}, ${site.role}` }],
+        },
+        twitter: { card: "summary_large_image", images: ["/og.png"] },
+      }
+    : {}),
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

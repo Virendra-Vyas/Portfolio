@@ -9,9 +9,12 @@ type SmartLinkProps = {
   "aria-label"?: string;
 };
 
-/** Internal paths use client-side navigation; external and mailto links are plain anchors. */
+/** A path ending in a file extension (/og.png, /api/openapi.json) is a file, not a page. */
+const isFile = (href: string) => /\.[a-z0-9]+$/i.test(href.split(/[?#]/)[0]);
+
+/** Internal pages use client-side navigation; files, external and mailto links are plain anchors. */
 export function SmartLink({ href, children, className, ...rest }: SmartLinkProps) {
-  if (href.startsWith("/")) {
+  if (href.startsWith("/") && !isFile(href)) {
     return (
       <Link href={href} className={className} {...rest}>
         {children}

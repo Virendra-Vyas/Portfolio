@@ -5,6 +5,7 @@ import { Container } from "@/components/Container/Container";
 import { FactList } from "@/components/FactList/FactList";
 import { StatusBadge } from "@/components/StatusBadge/StatusBadge";
 import { TagList } from "@/components/TagList/TagList";
+import { endpoints } from "@/lib/publicApi";
 import styles from "./CaseStudyHeader.module.css";
 
 type CaseStudyHeaderProps = {
@@ -15,10 +16,16 @@ type CaseStudyHeaderProps = {
 export function CaseStudyHeader({ study, labels }: CaseStudyHeaderProps) {
   return (
     <Container as="header" className={styles.header}>
-      <Link href="/work/" className={styles.back}>
-        <span aria-hidden="true">← </span>
-        {labels.backToWork}
-      </Link>
+      <div className={styles.topRow}>
+        <Link href="/work/" className={styles.back}>
+          <span aria-hidden="true">← </span>
+          {labels.backToWork}
+        </Link>
+        {/* A plain anchor: the target is a JSON file, not a page. */}
+        <a href={endpoints.caseStudy(study.slug)} className={styles.json}>
+          {labels.viewAsJson}
+        </a>
+      </div>
       <div className={styles.status}>
         <StatusBadge status={study.status} />
       </div>
