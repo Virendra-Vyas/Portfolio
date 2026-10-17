@@ -1,0 +1,15 @@
+// Cloudflare Workers config: serves the static export in ./out. No Worker script runs;
+// every request is answered from the built files, with public/_headers applied.
+// Cloudflare's Git build runs (root directory "web"): npm ci && npm run build, then npx wrangler deploy.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "portfolio",
+  "compatibility_date": "2026-10-16",
+  "assets": {
+    "directory": "./out",
+    // /work/govbridge serves /work/govbridge/index.html and redirects to the trailing-slash URL.
+    "html_handling": "force-trailing-slash",
+    // Unknown paths get the site's own 404 page with a 404 status.
+    "not_found_handling": "404-page"
+  }
+}

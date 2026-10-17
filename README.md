@@ -67,7 +67,7 @@ Copy `.env.example` to `.env` and fill in values. Never commit `.env`.
 
 | Piece | Where | Address |
 | --- | --- | --- |
-| Site | Cloudflare Pages | https://virendravyas.dev |
+| Site | Cloudflare Workers (static assets) | https://virendravyas.dev |
 | Contact API | Render (free web service, Docker) | https://api.virendravyas.dev |
 | Email | Resend (free plan) | sends from contact@virendravyas.dev |
 
@@ -88,13 +88,25 @@ Copy `.env.example` to `.env` and fill in values. Never commit `.env`.
 Free services sleep after 15 minutes idle and take up to a minute to wake. The Contact page wakes the API
 when it loads and falls back to a pre-filled email if sending fails.
 
-### 3. Site: Cloudflare Pages
+### 3. Site: Cloudflare Workers (static assets)
 
-1. Workers & Pages > Create > Pages > Connect to Git, and pick this repository.
-2. Build settings: root directory `web`, build command `npm ci && npm run build`, output directory `out`.
-3. Environment variables: `NODE_VERSION=22`, `SITE_URL=https://virendravyas.dev`,
-   `NEXT_PUBLIC_CONTACT_API_URL=https://api.virendravyas.dev`.
-4. Custom domains > add `virendravyas.dev` (and `www.virendravyas.dev`, redirected to the apex).
+The site is served by a Worker with no script: `web/wrangler.jsonc` points it at the static export in
+`web/out`, adds trailing-slash handling and the site's own 404 page, and Cloudflare applies
+`web/public/_headers`.
+
+1. Workers & Pages > Create > Import a repository, and pick this repository.
+2. Settings > Builds:
+   - Root directory: `web`
+   - Build command: `npm ci && npm run build`
+   - Deploy command: `npx wrangler deploy`
+   - API token: create one if the dropdown says the configured token is unavailable.
+3. No build variables are needed: the production URLs are the defaults, and `web/.node-version` pins Node 22.
+4. Settings > Domains & Routes > add `virendravyas.dev` only. Don't attach `www` to the Worker as well,
+   or the full site is served from two addresses. To make `www.virendravyas.dev` work, redirect it to the apex
+   with a Redirect Rule (Rules > Redirect Rules > "Redirect from WWW to root"), plus a proxied DNS record for
+   `www`. See https://developers.cloudflare.com/workers/configuration/routing/custom-domains/#redirect-between-www-and-root-domain
+
+Check the result locally with `npm run build && npx wrangler dev`.
 
 `web/public/_headers` sets the security headers, including a Content Security Policy that only allows the
 contact API as an outside connection.
