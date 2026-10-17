@@ -1,41 +1,67 @@
-import type { AnyLink, CaseStudy, Fact, HomePage, Profile } from "@/content/schema";
+import type { AnyLink, Fact, HomePage, Profile } from "@/content/schema";
 import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 import { Container } from "@/components/Container/Container";
 import { FactList } from "@/components/FactList/FactList";
-import { InkBand } from "@/components/InkBand/InkBand";
-import { StatusBoard } from "@/components/StatusBoard/StatusBoard";
+import { Trace } from "@/components/Trace/Trace";
+import { buildTrace } from "@/lib/trace";
 import styles from "./Hero.module.css";
 
 type HeroProps = {
   name: string;
   profile: Profile;
   facts: Fact[];
-  studies: CaseStudy[];
-  board: HomePage["board"];
+  trace: HomePage["trace"];
   primaryAction: AnyLink;
   secondaryAction: AnyLink;
   cvAction: AnyLink;
 };
 
-export function Hero({ name, profile, facts, studies, board, primaryAction, secondaryAction, cvAction }: HeroProps) {
+export function Hero({
+  name,
+  profile,
+  facts,
+  trace,
+  primaryAction,
+  secondaryAction,
+  cvAction,
+}: HeroProps) {
+  // Built when the site is built, so "present" means the month of the latest deploy.
+  const data = buildTrace();
+  const current =
+    data.spans.find((span) => span.current && span.kind === "employment") ??
+    data.spans[0];
+
   return (
-    <InkBand>
-      <Container className={styles.grid}>
-        <div className={styles.copy}>
-          <h1 className={styles.name}>{name}</h1>
+    <header className={styles.hero}>
+      <Container>
+        <div className={styles.top}>
+          <h1 className={styles.name}>
+            {name.split(" ").map((word, index, words) => (
+              <span key={word} className={styles.word}>
+                {word}
+                {index < words.length - 1 ? " " : null}
+              </span>
+            ))}
+          </h1>
+        </div>
+        <div className={styles.intro}>
           <p className={styles.headline}>{profile.hero.headline}</p>
-          <p className={styles.summary}>{profile.hero.summary}</p>
-          <div className={styles.actions}>
-            <ButtonLink link={primaryAction} variant="onInk" />
-            <ButtonLink link={secondaryAction} variant="onInkSecondary" />
-            <ButtonLink link={cvAction} variant="onInkSecondary" />
+          <div className={styles.side}>
+            <p className={styles.summary}>{profile.hero.summary}</p>
+            <div className={styles.actions}>
+              <ButtonLink link={primaryAction} variant="primary" />
+              <ButtonLink link={secondaryAction} variant="secondary" />
+              <ButtonLink link={cvAction} variant="secondary" />
+            </div>
           </div>
         </div>
-        <StatusBoard studies={studies} copy={board} />
         <div className={styles.facts}>
-          <FactList facts={facts} tone="ink" />
+          <FactList facts={facts} />
+        </div>
+        <div className={styles.trace}>
+          <Trace trace={data} copy={trace} initialId={current.id} />
         </div>
       </Container>
-    </InkBand>
+    </header>
   );
 }

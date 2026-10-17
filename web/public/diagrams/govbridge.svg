@@ -1,21 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" role="img" aria-labelledby="t d" font-family="'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" role="img" aria-labelledby="t d" font-family="Archivo, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
   <title id="t">GovBridge UK architecture</title>
   <desc id="d">Three kinds of client call the GovBridge API: developers' applications over REST with an API key, the React developer portal on Cloudflare Pages, and AI clients (a Python tool-calling agent and an MCP server). The GovBridge API is an ASP.NET Core service on Render in Frankfurt that exposes one consistent contract over 40+ endpoints, with rate limiting per API key, encrypted OAuth token storage, HMRC fraud prevention headers, log redaction of NINO, UTR and VRN, a SandboxOnly guard attribute and explicit "HMRC not connected" errors. It uses PostgreSQL on Supabase and Redis on Upstash, and calls six UK government services: HMRC Making Tax Digital (VAT, Income Tax, PAYE, CIS, Savings Income), HMRC GovTalk for Corporation Tax CT600 returns with an IRmark, Companies House, DVLA, Land Registry and the Food Hygiene Rating Scheme.</desc>
 
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 z" fill="#4f4f5c"/>
+      <path d="M0 0 L10 5 L0 10 z" fill="#55555e"/>
     </marker>
     <style>
-      .label { font-size: 13px; fill: #2b2870; font-weight: 600; }
-      .box { fill: #ffffff; stroke: #b9b9c6; stroke-width: 1.5; }
-      .title { font-size: 16px; font-weight: 700; fill: #15151c; }
-      .sub { font-size: 13px; fill: #4f4f5c; }
-      .gateway { fill: #f6f6f9; stroke: #2b2870; stroke-width: 2; }
-      .gw-title { font-size: 20px; font-weight: 700; fill: #2b2870; }
-      .chip { fill: #ecebf6; stroke: none; }
-      .chip-text { font-size: 13px; font-weight: 500; fill: #2b2870; }
-      .line { stroke: #4f4f5c; stroke-width: 1.5; fill: none; }
+      .label { font-size: 13px; fill: #512bd4; font-weight: 600; }
+      .box { fill: #ffffff; stroke: #c4c4bc; stroke-width: 1.5; }
+      .title { font-size: 16px; font-weight: 700; fill: #141418; }
+      .sub { font-size: 13px; fill: #55555e; }
+      .gateway { fill: #f7f6fd; stroke: #512bd4; stroke-width: 2; }
+      .gw-title { font-size: 20px; font-weight: 700; fill: #512bd4; }
+      .chip { fill: #ece8fb; stroke: none; }
+      .chip-text { font-size: 13px; font-weight: 500; fill: #512bd4; }
+      .line { stroke: #55555e; stroke-width: 1.5; fill: none; }
     </style>
   </defs>
 

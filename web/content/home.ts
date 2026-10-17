@@ -4,11 +4,16 @@ import { site } from "./site";
 
 /** Section headings and calls to action for the home page. The body content comes from the other content files. */
 export const home: HomePage = {
-  board: {
-    heading: "Systems I build and run",
-    caption: "Each light shows where that piece of work stands today.",
-    systemLabel: "System",
-    statusLabel: "Status",
+  trace: {
+    heading: "Career trace",
+    caption:
+      "Every role since 2017 on one time axis, laid out like a request trace. Where spans overlap, the work ran at the same time. Select a role for the details.",
+    legendLabel: "Kind of engagement",
+    gapNote: "Between roles: MSc in Computing at De Montfort University",
+    periodLabel: "When",
+    durationLabel: "Length",
+    soFar: "so far",
+    caseStudyLink: "Read the case study",
   },
   outcomes: {
     heading: "Measured, before and after",

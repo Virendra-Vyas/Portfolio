@@ -1,44 +1,49 @@
 <!doctype html>
 <!-- Source for public/og.png (1200x630). Regenerate with: node scripts/og/render.mjs
-     Text is copied from content/profile.ts and content/caseStudies.ts; keep them in step. -->
+     Text is copied from content/profile.ts; the spans are content/timeline.ts as of October 2026. Keep them in step. -->
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,400..800&family=IBM+Plex+Sans:wght@400;500;600&display=block" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,100..900&display=block" rel="stylesheet">
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { width: 1200px; height: 630px; font-family: "IBM Plex Sans", sans-serif; color: #eeedf9; background: #14123a; }
-  .card { position: relative; width: 100%; height: 100%; padding: 64px 72px; display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: center; overflow: hidden; }
-  .card::before { content: ""; position: absolute; inset: 0; background-image: linear-gradient(#34306f 1px, transparent 1px), linear-gradient(90deg, #34306f 1px, transparent 1px); background-size: 48px 48px; opacity: 0.35; mask-image: linear-gradient(180deg, #000, transparent 90%); }
-  .copy, .board { position: relative; }
-  .mark { width: 64px; height: 64px; }
-  h1 { margin-top: 36px; font-family: "Bricolage Grotesque", sans-serif; font-size: 112px; font-weight: 800; font-variation-settings: "wdth" 75; letter-spacing: -0.03em; line-height: 0.92; }
-  .lead { margin-top: 28px; font-size: 30px; line-height: 1.3; color: #adaad6; }
-  .board { border: 1px solid #34306f; border-radius: 14px; background: #1e1b52; }
-  .board h2 { padding: 22px 26px; border-bottom: 1px solid #34306f; font-family: "Bricolage Grotesque", sans-serif; font-size: 24px; font-weight: 600; }
-  .row { display: flex; align-items: center; gap: 16px; padding: 17px 26px; border-bottom: 1px solid #34306f; font-size: 22px; font-weight: 500; }
-  .row:last-child { border-bottom: 0; }
-  .led { width: 14px; height: 14px; border-radius: 50%; flex: none; }
-  .live { background: #4cc48d; box-shadow: 0 0 12px #4cc48d; }
-  .proto { background: #edb04a; box-shadow: 0 0 12px #edb04a; }
-  .idle { background: #8d8ab5; }
+  body { width: 1200px; height: 630px; font-family: Archivo, sans-serif; color: #141418; background: #f4f4f1; }
+  .card { width: 100%; height: 100%; padding: 56px 64px; display: flex; flex-direction: column; }
+  h1 { font-size: 132px; font-weight: 800; font-variation-settings: "wdth" 125; letter-spacing: -0.045em; line-height: 0.9; padding-bottom: 22px; border-bottom: 3px solid #141418; white-space: nowrap; }
+  .lead { margin-top: 22px; font-size: 30px; font-weight: 500; font-variation-settings: "wdth" 104; letter-spacing: -0.01em; }
+  .trace { position: relative; margin-top: auto; padding-bottom: 30px; background: repeating-linear-gradient(90deg, #dadad3 0 1px, transparent 1px 108.10px) top / 100% calc(100% - 30px) no-repeat; }
+  .row { position: relative; display: block; height: 22px; }
+  .bar { position: absolute; top: 5px; height: 12px; border-radius: 4px; }
+  .employment { background: #512bd4; }
+  .company { background: #009a7a; }
+  .freelance { background: #c96a12; }
+  .current { border-radius: 4px 0 0 4px; }
+  .year { position: absolute; bottom: 0; padding-left: 5px; border-left: 2px solid #85857d; font-size: 19px; font-variation-settings: "wdth" 82; color: #55555e; }
 </style>
 </head>
 <body>
   <div class="card">
-    <div class="copy">
-      <svg class="mark" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#2b2870"/><path d="M9 17 L17.5 45 L26 17 M36 17 L44.5 45 L53 17" fill="none" stroke="#eeedf9" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/><circle cx="54" cy="51" r="4.5" fill="#4cc48d"/></svg>
-      <h1>Virendra Vyas</h1>
-      <p class="lead">Senior full-stack .NET engineer. Production systems for fintech, government APIs and connected devices.</p>
-    </div>
-    <div class="board">
-      <h2>Systems I build and run</h2>
-      <p class="row"><span class="led live"></span>GovBridge UK</p>
-      <p class="row"><span class="led live"></span>DeviceHub</p>
-      <p class="row"><span class="led proto"></span>Stringline</p>
-      <p class="row"><span class="led idle"></span>ConnectResearch</p>
-      <p class="row"><span class="led idle"></span>IntelliBooks</p>
+    <h1>Virendra Vyas</h1>
+    <p class="lead">Senior full-stack .NET engineer. Production systems for fintech, government APIs and connected devices.</p>
+    <div class="trace">
+      <span class="row"><span class="bar employment" style="left:0.00%;width:10.92%"></span></span>
+      <span class="row"><span class="bar employment" style="left:10.92%;width:5.88%"></span></span>
+      <span class="row"><span class="bar employment" style="left:27.73%;width:23.53%"></span></span>
+      <span class="row"><span class="bar employment" style="left:51.26%;width:5.88%"></span></span>
+      <span class="row"><span class="bar employment current" style="left:56.30%;width:42.86%"></span></span>
+      <span class="row"><span class="bar company current" style="left:78.99%;width:20.17%"></span></span>
+      <span class="row"><span class="bar freelance" style="left:85.71%;width:6.72%"></span></span>
+      <span class="row"><span class="bar freelance" style="left:85.71%;width:5.04%"></span></span>
+      <span class="year" style="left:0.00%">2017</span>
+      <span class="year" style="left:10.08%">2018</span>
+      <span class="year" style="left:20.17%">2019</span>
+      <span class="year" style="left:30.25%">2020</span>
+      <span class="year" style="left:40.34%">2021</span>
+      <span class="year" style="left:50.42%">2022</span>
+      <span class="year" style="left:60.50%">2023</span>
+      <span class="year" style="left:70.59%">2024</span>
+      <span class="year" style="left:80.67%">2025</span>
+      <span class="year" style="left:90.76%">2026</span>
     </div>
   </div>
 </body>

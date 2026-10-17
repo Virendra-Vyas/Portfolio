@@ -1,12 +1,17 @@
-/* The ink band carries the identity on every page; on the home page it runs straight into the hero. */
 /* Sticky only where the header is one compact row; on a phone it would eat the screen. */
 .header {
   position: relative;
   z-index: 20;
-  background: color-mix(in srgb, var(--color-ink) 92%, transparent);
+  background: color-mix(in srgb, var(--color-bg) 90%, transparent);
   backdrop-filter: saturate(140%) blur(10px);
-  border-bottom: var(--border-width) solid var(--color-ink-line);
-  color: var(--color-on-ink);
+  border-bottom: var(--border-width) solid var(--color-border);
+}
+
+@media (min-width: 48rem) {
+  .header {
+    position: sticky;
+    top: 0;
+  }
 }
 
 .inner {
@@ -23,16 +28,12 @@
   display: flex;
   align-items: center;
   gap: var(--space-3);
-  color: var(--color-on-ink);
+  color: var(--color-text);
   text-decoration: none;
 }
 
 .brand:hover {
-  color: var(--color-on-ink);
-}
-
-.brand:focus-visible {
-  box-shadow: 0 0 0 3px var(--color-ink), 0 0 0 5px var(--led-live);
+  color: var(--color-text);
 }
 
 .text {
@@ -42,22 +43,15 @@
 }
 
 .name {
-  font-family: var(--font-display);
   font-size: 1.0625rem;
-  font-weight: var(--weight-bold);
-  letter-spacing: -0.01em;
+  font-weight: 800;
+  font-variation-settings: "wdth" 118;
+  letter-spacing: -0.02em;
 }
 
 .role {
-  color: var(--color-on-ink-muted);
+  color: var(--color-text-muted);
   font-size: var(--text-xs);
-}
-
-@media (min-width: 48rem) {
-  .header {
-    position: sticky;
-    top: 0;
-  }
 }
 
 /* Lets the link row scroll inside the header instead of widening the page. */

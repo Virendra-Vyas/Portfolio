@@ -1,6 +1,6 @@
 import { ai } from "@/content/ai";
 import { apiPage } from "@/content/apiPage";
-import { caseStudies, featuredCaseStudies } from "@/content/caseStudies";
+import { featuredCaseStudies } from "@/content/caseStudies";
 import { home } from "@/content/home";
 import { profile, profileFacts } from "@/content/profile";
 import { site } from "@/content/site";
@@ -29,8 +29,7 @@ export default function Home() {
         name={site.name}
         profile={profile}
         facts={profileFacts}
-        studies={caseStudies}
-        board={home.board}
+        trace={home.trace}
         primaryAction={home.primaryAction}
         secondaryAction={home.secondaryAction}
         cvAction={home.cvAction}

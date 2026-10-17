@@ -239,7 +239,18 @@ export type SectionCopy = {
 };
 
 export type HomePage = {
-  board: { heading: string; caption: string; systemLabel: string; statusLabel: string };
+  trace: {
+    heading: string;
+    caption: string;
+    legendLabel: string;
+    /** Read out by the crosshair for a month with no role running (the year of my MSc). */
+    gapNote: string;
+    periodLabel: string;
+    durationLabel: string;
+    /** Appended to the duration of a role that is still running. */
+    soFar: string;
+    caseStudyLink: string;
+  };
   outcomes: SectionCopy & { items: Outcome[] };
   primaryAction: AnyLink;
   secondaryAction: AnyLink;
@@ -269,6 +280,8 @@ export type WorkPage = {
     diagramFullSize: string;
     nextCaseStudy: string;
     viewAsJson: string;
+    /** Introduces the career-trace strip on a case study. */
+    inCareer: string;
   };
 };
 

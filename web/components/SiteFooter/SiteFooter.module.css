@@ -1,7 +1,7 @@
-/* Bookends the page with the same ink band as the header. */
 .footer {
-  background: var(--color-ink);
-  color: var(--color-on-ink-muted);
+  border-top: 2px solid var(--color-text);
+  background: var(--color-surface-sunk);
+  color: var(--color-text-muted);
   font-size: var(--text-sm);
 }
 
@@ -22,17 +22,7 @@
 }
 
 .links a {
-  color: var(--color-on-ink);
-  text-decoration-color: var(--color-ink-line);
-}
-
-.links a:hover {
-  color: var(--color-on-ink);
-  text-decoration-color: var(--led-live);
-}
-
-.links a:focus-visible {
-  box-shadow: 0 0 0 3px var(--color-ink), 0 0 0 5px var(--led-live);
+  color: var(--color-text);
 }
 
 .company,

@@ -27,7 +27,7 @@ export default function ApiPage() {
           <>
             <p>{apiPage.intro}</p>
             <div className={styles.actions}>
-              <ButtonLink link={apiPage.openapiLink} variant="onInkSecondary" />
+              <ButtonLink link={apiPage.openapiLink} variant="secondary" />
             </div>
           </>
         }

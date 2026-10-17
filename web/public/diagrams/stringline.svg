@@ -1,25 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 740" width="760" height="740" role="img" aria-labelledby="t d" font-family="'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 740" width="760" height="740" role="img" aria-labelledby="t d" font-family="Archivo, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
   <title id="t">Stringline six-step pipeline</title>
   <desc id="d">Data comes from Dynamics 365 Business Central over OData and passes through six steps in order: ingestion, classification, bank reconciliation, anomaly detection, plain-English commentary, and sector intelligence through web search. Every step gets a confidence score: deterministic scores for measurable steps and Claude self-assessment for narrative steps. The pipeline produces a branded Word month-end pack and an Excel reviewer checklist for SharePoint.</desc>
 
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 z" fill="#4f4f5c"/>
+      <path d="M0 0 L10 5 L0 10 z" fill="#55555e"/>
     </marker>
     <style>
-      .label { font-size: 13px; fill: #2b2870; font-weight: 600; }
-      .box { fill: #ffffff; stroke: #b9b9c6; stroke-width: 1.5; }
-      .step { fill: #ffffff; stroke: #2b2870; stroke-width: 1.5; }
-      .num { fill: #2b2870; }
+      .label { font-size: 13px; fill: #512bd4; font-weight: 600; }
+      .box { fill: #ffffff; stroke: #c4c4bc; stroke-width: 1.5; }
+      .step { fill: #ffffff; stroke: #512bd4; stroke-width: 1.5; }
+      .num { fill: #512bd4; }
       .num-text { font-size: 13px; font-weight: 700; fill: #ffffff; }
-      .title { font-size: 16px; font-weight: 700; fill: #15151c; }
-      .sub { font-size: 13px; fill: #4f4f5c; }
-      .score { fill: #ecebf6; }
-      .score-title { font-size: 16px; font-weight: 700; fill: #2b2870; }
-      .score-text { font-size: 13px; fill: #2b2870; }
-      .score-strong { font-size: 13px; font-weight: 600; fill: #2b2870; }
-      .line { stroke: #4f4f5c; stroke-width: 1.5; fill: none; }
-      .dash { stroke: #2b2870; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+      .title { font-size: 16px; font-weight: 700; fill: #141418; }
+      .sub { font-size: 13px; fill: #55555e; }
+      .score { fill: #ece8fb; }
+      .score-title { font-size: 16px; font-weight: 700; fill: #512bd4; }
+      .score-text { font-size: 13px; fill: #512bd4; }
+      .score-strong { font-size: 13px; font-weight: 600; fill: #512bd4; }
+      .line { stroke: #55555e; stroke-width: 1.5; fill: none; }
+      .dash { stroke: #512bd4; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
     </style>
   </defs>
 

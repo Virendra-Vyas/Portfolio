@@ -4,7 +4,7 @@ import styles from "./ButtonLink.module.css";
 
 type ButtonLinkProps = {
   link: AnyLink;
-  variant?: "primary" | "secondary" | "onInk" | "onInkSecondary";
+  variant?: "primary" | "secondary";
 };
 
 export function ButtonLink({ link, variant = "primary" }: ButtonLinkProps) {

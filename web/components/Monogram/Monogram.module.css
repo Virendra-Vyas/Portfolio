@@ -3,15 +3,13 @@
 }
 
 .tile {
-  fill: var(--color-accent);
-  stroke: var(--color-ink-line);
-  stroke-width: 2;
+  fill: var(--color-text);
 }
 
 .letters {
-  stroke: var(--color-on-ink);
+  stroke: var(--color-surface);
 }
 
-.light {
-  fill: var(--led-live);
+.span {
+  fill: #9b84ff; /* a lighter step of .NET violet, 5.9:1 on the ink tile */
 }

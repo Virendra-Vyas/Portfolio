@@ -1,5 +1,5 @@
 .header {
-  padding-block: var(--space-6) var(--space-8);
+  padding-block: var(--space-6) var(--space-7);
 }
 
 .topRow {
@@ -9,49 +9,54 @@
   gap: var(--space-2) var(--space-5);
 }
 
-.json,
-.back {
-  color: var(--color-on-ink-muted);
-  text-decoration-color: var(--color-ink-line);
-}
-
-.json:hover,
-.back:hover {
-  color: var(--color-on-ink);
-  text-decoration-color: var(--led-live);
-}
-
-.json:focus-visible,
-.back:focus-visible {
-  box-shadow: 0 0 0 3px var(--color-ink), 0 0 0 5px var(--led-live);
-}
-
+.back,
 .json {
-  font-size: var(--text-xs);
-  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
 }
 
 .back {
-  font-size: var(--text-sm);
   font-weight: var(--weight-medium);
 }
 
+.back:hover,
+.json:hover {
+  color: var(--color-text);
+}
+
 .status {
-  margin-top: var(--space-6);
+  margin-top: var(--space-7);
 }
 
 .title {
   margin-top: var(--space-3);
-  color: var(--color-on-ink);
-  font-size: var(--text-3xl);
-  font-variation-settings: "wdth" 85;
-  letter-spacing: -0.03em;
+  padding-bottom: var(--space-4);
+  border-bottom: 2px solid var(--color-text);
+  font-size: clamp(2.75rem, 1rem + 7vw, 7rem);
+  font-weight: 800;
+  font-variation-settings: "wdth" var(--wdth-display);
+  letter-spacing: -0.045em;
+  line-height: 0.9;
+}
+
+.body {
+  display: grid;
+  gap: var(--space-6) var(--space-7);
+  margin-top: var(--space-5);
+}
+
+@media (min-width: 56rem) {
+  .body {
+    grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  }
+
+  .body dl {
+    grid-template-columns: 1fr;
+  }
 }
 
 .summary {
-  margin-top: var(--space-4);
   max-width: var(--width-prose);
-  color: var(--color-on-ink-muted);
   font-size: var(--text-lg);
   line-height: var(--leading-snug);
 }
@@ -64,14 +69,19 @@
 }
 
 .tech {
-  margin-top: var(--space-5);
+  margin-top: var(--space-6);
 }
 
 .techHeading {
   margin-bottom: var(--space-2);
-  color: var(--color-on-ink-muted);
+  color: var(--color-text-muted);
   font-family: var(--font-sans);
   font-size: var(--text-xs);
   font-weight: var(--weight-regular);
-  font-variant-numeric: tabular-nums;
+}
+
+.strip {
+  margin-top: var(--space-6);
+  padding-top: var(--space-5);
+  border-top: var(--border-width) solid var(--color-border);
 }

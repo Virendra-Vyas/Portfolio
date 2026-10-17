@@ -3,7 +3,7 @@
 }
 
 .tinted {
-  background: var(--color-surface);
+  background: var(--color-surface-sunk);
   border-block: var(--border-width) solid var(--color-border);
 }
 
@@ -17,6 +17,9 @@
 
 .heading {
   font-size: var(--text-2xl);
+  font-weight: 800;
+  font-variation-settings: "wdth" 115;
+  letter-spacing: -0.03em;
 }
 
 .more {
