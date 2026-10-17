@@ -10,8 +10,8 @@ import styles from "./Outcomes.module.css";
 export function Outcomes({ items }: { items: Outcome[] }) {
   return (
     <ol className={`${styles.list} kind-employment`}>
-      {items.map((item) => (
-        <li key={item.label} className={styles.item}>
+      {items.map((item, index) => (
+        <li key={item.label} className={styles.item} data-reveal style={{ ["--reveal-i" as string]: index }}>
           <p className={styles.label}>
             <span className={styles.icon}>
               <Icon name={item.icon} size={18} />

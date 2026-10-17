@@ -11,7 +11,7 @@ import styles from "./Founder.module.css";
 export function Founder({ founder }: { founder: HomePage["founder"] }) {
   return (
     <div className={styles.founder}>
-      <div className={`${styles.company} kind-company`}>
+      <div className={`${styles.company} kind-company`} data-reveal>
         <span className={styles.badge}>
           <Icon name="building" size={26} />
         </span>
@@ -21,8 +21,13 @@ export function Founder({ founder }: { founder: HomePage["founder"] }) {
       <div>
         <h3 className={styles.label}>{founder.venturesLabel}</h3>
         <ul className={styles.ventures}>
-          {founder.ventures.map((venture) => (
-            <li key={venture.name} className={`${styles.venture} kind-${venture.kind}`}>
+          {founder.ventures.map((venture, index) => (
+            <li
+              key={venture.name}
+              className={`${styles.venture} kind-${venture.kind}`}
+              data-reveal
+              style={{ ["--reveal-i" as string]: index + 1 }}
+            >
               <span className={styles.icon}>
                 <Icon name={venture.icon} size={22} />
               </span>

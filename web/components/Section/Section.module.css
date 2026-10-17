@@ -7,17 +7,9 @@
   border-block: var(--border-width) solid var(--color-border);
 }
 
-/* The closing band: light on ink, with the three span colours across the top edge. */
+/* The closing band: deep ocean, reached through a line of waves. */
 .dark {
-  background:
-    linear-gradient(
-        90deg,
-        var(--span-employment) 0 54%,
-        var(--span-company) 54% 84%,
-        var(--span-freelance) 84% 100%
-      )
-      top / 100% 6px no-repeat,
-    var(--color-dark);
+  background: var(--color-dark);
   color: var(--color-on-dark);
 }
 
@@ -44,8 +36,18 @@
 .heading {
   font-size: var(--text-2xl);
   font-weight: 800;
-  font-variation-settings: "wdth" 115;
   letter-spacing: -0.03em;
+}
+
+/* A short ocean-to-coral stroke under every section heading. */
+.heading::after {
+  content: "";
+  display: block;
+  width: 3.5rem;
+  height: 4px;
+  margin-top: var(--space-3);
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--span-employment), var(--span-company) 55%, var(--color-coral));
 }
 
 .more {

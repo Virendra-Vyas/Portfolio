@@ -3,50 +3,57 @@
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  min-height: 2.75rem;
+  min-height: 2.875rem;
   padding: var(--space-2) var(--space-5);
-  border: 2px solid var(--color-text);
-  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  border-radius: 999px;
   font-size: var(--text-sm);
-  font-weight: var(--weight-semibold);
+  font-weight: 700;
   text-decoration: none;
   transition:
     background-color var(--duration-fast),
     color var(--duration-fast),
-    border-color var(--duration-fast);
+    border-color var(--duration-fast),
+    transform var(--duration-fast) var(--ease-out),
+    box-shadow var(--duration-fast) var(--ease-out);
+}
+
+.button:hover {
+  transform: translateY(-2px);
 }
 
 .primary {
-  border-color: var(--color-accent);
   background: var(--color-accent);
   color: var(--color-on-accent);
+  box-shadow: 0 8px 20px -8px rgb(11 79 138 / 0.6);
 }
 
 .primary:hover {
-  border-color: var(--color-accent-hover);
   background: var(--color-accent-hover);
   color: var(--color-on-accent);
+  box-shadow: 0 12px 24px -8px rgb(11 79 138 / 0.7);
 }
 
 .secondary {
-  background: transparent;
-  color: var(--color-text);
+  border-color: var(--color-border-strong);
+  background: var(--color-surface);
+  color: var(--color-accent);
 }
 
 .secondary:hover {
-  background: var(--color-text);
-  color: var(--color-bg);
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  color: var(--color-accent-hover);
 }
 
-/* On the dark contact band. */
+/* On the deep-ocean contact band. */
 .inverse {
-  border-color: var(--color-surface);
   background: var(--color-surface);
-  color: var(--color-text);
+  color: var(--color-dark);
+  box-shadow: 0 8px 24px -8px rgb(0 0 0 / 0.5);
 }
 
 .inverse:hover {
-  border-color: var(--tint-employment);
-  background: var(--tint-employment);
-  color: var(--color-text);
+  background: var(--tint-freelance);
+  color: var(--color-dark);
 }

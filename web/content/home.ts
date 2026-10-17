@@ -4,6 +4,36 @@ import { site } from "./site";
 
 /** Section headings and calls to action for the home page. The body content comes from the other content files. */
 export const home: HomePage = {
+  statsLabel: "At a glance",
+  stats: [
+    { value: 9, prefix: "~", label: "Years of commercial C# and .NET, about", icon: "code", kind: "employment" },
+    { value: 5, label: "Engineers I lead at Datascope Systems", icon: "users", kind: "employment" },
+    { value: 2, label: "Engineers mentored from mid-level to senior", icon: "badge-check", kind: "employment" },
+    { value: 40, suffix: "+", label: "UK government API endpoints behind GovBridge", icon: "landmark", kind: "company" },
+  ],
+  marqueeLabel: "Core stack",
+  marquee: [
+    "C#",
+    ".NET 10",
+    "ASP.NET Core",
+    "EF Core",
+    "React",
+    "TypeScript",
+    "Next.js",
+    "Azure",
+    "Azure Service Bus",
+    "SQL Server",
+    "PostgreSQL",
+    "Redis",
+    "Docker",
+    "Terraform",
+    "GitHub Actions",
+    "xUnit",
+    "OAuth 2.0",
+    "HMRC Making Tax Digital",
+    "Stripe",
+    "SignalR",
+  ],
   trace: {
     heading: "Career trace",
     caption:

@@ -7,7 +7,7 @@ export function PracticeList({ practices }: { practices: AiPractice[] }) {
   return (
     <ol className={styles.list}>
       {practices.map((practice) => (
-        <li key={practice.heading} className={styles.item}>
+        <li key={practice.heading} className={styles.item} data-reveal>
           <span className={styles.icon}>
             <Icon name={practice.icon} size={22} />
           </span>

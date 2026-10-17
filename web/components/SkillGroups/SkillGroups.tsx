@@ -3,11 +3,22 @@ import { SmartLink } from "@/components/SmartLink/SmartLink";
 import { Icon } from "@/lib/icons";
 import styles from "./SkillGroups.module.css";
 
-export function SkillGroups({ groups, evidenceLabel }: { groups: SkillGroup[]; evidenceLabel: string }) {
+export function SkillGroups({
+  groups,
+  evidenceLabel,
+}: {
+  groups: SkillGroup[];
+  evidenceLabel: string;
+}) {
   return (
     <div className={styles.grid}>
-      {groups.map((group) => (
-        <section key={group.name} className={styles.group}>
+      {groups.map((group, index) => (
+        <section
+          key={group.name}
+          className={styles.group}
+          data-reveal
+          style={{ ["--reveal-i" as string]: index % 3 }}
+        >
           <h3 className={styles.name}>
             <span className={styles.icon}>
               <Icon name={group.icon} size={18} />

@@ -15,9 +15,15 @@ type SectionProps = {
 export function Section({ id, copy, children, tone = "plain" }: SectionProps) {
   const headingId = `${id}-heading`;
   return (
-    <section id={id} aria-labelledby={headingId} className={tone === "plain" ? styles.section : `${styles.section} ${styles[tone]}`}>
+    <section
+      id={id}
+      aria-labelledby={headingId}
+      className={
+        tone === "plain" ? styles.section : `${styles.section} ${styles[tone]}`
+      }
+    >
       <Container>
-        <div className={styles.head}>
+        <div className={styles.head} data-reveal>
           <h2 id={headingId} className={styles.heading}>
             {copy.heading}
           </h2>
@@ -27,7 +33,11 @@ export function Section({ id, copy, children, tone = "plain" }: SectionProps) {
             </SmartLink>
           ) : null}
         </div>
-        {copy.intro ? <p className={styles.intro}>{copy.intro}</p> : null}
+        {copy.intro ? (
+          <p className={styles.intro} data-reveal>
+            {copy.intro}
+          </p>
+        ) : null}
         <div className={styles.body}>{children}</div>
       </Container>
     </section>

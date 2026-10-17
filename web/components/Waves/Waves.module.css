@@ -1,0 +1,45 @@
+.waves {
+  position: relative;
+  height: 4.5rem;
+  overflow: hidden;
+  margin-top: calc(var(--space-6) * -1);
+  pointer-events: none;
+}
+
+/* Each layer is twice the width of the screen, so sliding it by half loops seamlessly. */
+.layer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200%;
+  max-width: none; /* overrides the global cap on images and SVGs */
+  height: 100%;
+}
+
+.back path {
+  opacity: 0.35;
+}
+
+.dark path {
+  fill: var(--color-dark);
+}
+
+.sunk path {
+  fill: var(--color-surface-sunk);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .back {
+    animation: swell 22s linear infinite;
+  }
+
+  .front {
+    animation: swell 14s linear infinite reverse;
+  }
+
+  @keyframes swell {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}

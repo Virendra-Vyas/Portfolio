@@ -58,9 +58,8 @@
 .heading {
   margin-bottom: var(--space-2);
   color: var(--color-accent);
-  font-family: var(--font-mono);
   font-size: 0.75rem;
-  font-weight: var(--weight-medium);
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -99,8 +98,9 @@
 
 .dates {
   color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
+  font-size: 0.8125rem;
+  font-weight: var(--weight-semibold);
+  font-variant-numeric: tabular-nums;
   white-space: nowrap;
 }
 
@@ -173,8 +173,8 @@
     margin: 0;
     padding: 0;
     border: 0;
-    font-size: 8.8pt;
-    line-height: 1.38;
+    font-size: 8.5pt;
+    line-height: 1.36;
   }
 
   .header {

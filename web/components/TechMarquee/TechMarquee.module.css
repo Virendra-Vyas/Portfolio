@@ -1,0 +1,86 @@
+.marquee {
+  overflow: hidden;
+  padding-block: var(--space-3);
+  /* Fade the strip out at both edges. */
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+.track {
+  display: flex;
+  width: max-content;
+}
+
+.list {
+  display: flex;
+  gap: var(--space-3);
+  padding: 0 var(--space-3) 0 0;
+  margin: 0;
+  list-style: none;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+}
+
+/* A small dot that cycles through the three span colours. */
+.item::before {
+  content: "";
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  background: var(--span-employment);
+}
+
+.item:nth-child(3n + 2)::before {
+  background: var(--span-company);
+}
+
+.item:nth-child(3n)::before {
+  background: var(--span-freelance);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .track {
+    animation: scroll 48s linear infinite;
+  }
+
+  .marquee:hover .track {
+    animation-play-state: paused;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+}
+
+/* Standing still, the strip wraps instead, and the duplicate copy goes. */
+@media (prefers-reduced-motion: reduce) {
+  .marquee {
+    mask-image: none;
+  }
+
+  .track {
+    width: auto;
+  }
+
+  .list {
+    flex-wrap: wrap;
+  }
+
+  .list[aria-hidden="true"] {
+    display: none;
+  }
+}

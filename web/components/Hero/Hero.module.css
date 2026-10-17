@@ -1,21 +1,75 @@
+/* Sky light falling from the top, with a warm coral glow on the right: the ocean and coral palette. */
 .hero {
+  position: relative;
   padding-block: var(--space-7) var(--space-8);
+  background:
+    radial-gradient(60rem 28rem at 88% -6%, rgb(255 107 87 / 0.14), transparent 70%),
+    radial-gradient(56rem 30rem at 6% -10%, rgb(31 111 184 / 0.16), transparent 70%),
+    linear-gradient(180deg, var(--color-surface-sunk), var(--color-bg) 34rem);
+  overflow: hidden;
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-4) var(--space-1) var(--space-3);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: 999px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+}
+
+.pulse {
+  position: relative;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: var(--span-company);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .pulse::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--span-company);
+    animation: ping 2s var(--ease-out) infinite;
+  }
+
+  @keyframes ping {
+    to {
+      transform: scale(2.8);
+      opacity: 0;
+    }
+  }
 }
 
 /* The name is sized against its container, so it always runs exactly edge to edge. */
 .top {
   container-type: inline-size;
+  margin-top: var(--space-5);
 }
 
-/* The name is the one big typographic gesture: Archivo at full width, set tight. */
 .name {
-  /* Two lines on a phone ("Virendra" is about 4.9em wide), one line (about 8.05em with the space) from 40rem. */
-  font-size: 20cqi;
+  /* Two lines on a phone, one line from 40rem. In Manrope ExtraBold "Virendra" is 3.84em wide and the
+     whole name 6.17em, so these sizes fill about 97% of the container. */
+  font-size: 25cqi;
   font-weight: 800;
-  font-variation-settings: "wdth" var(--wdth-display);
-  letter-spacing: -0.045em;
-  line-height: 0.86;
+  letter-spacing: -0.04em;
+  line-height: 0.95;
   overflow-wrap: normal;
+  /* Deep ocean into sea green. The fallback colour is used where text gradients are unsupported. */
+  color: var(--color-text);
+  background: linear-gradient(100deg, var(--color-text) 0%, var(--color-accent) 55%, var(--ink-company) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding-bottom: 0.06em;
 }
 
 .word {
@@ -24,7 +78,7 @@
 
 @container (min-width: 40rem) {
   .name {
-    font-size: 12.2cqi;
+    font-size: 15.8cqi;
   }
 
   .word {
@@ -35,9 +89,9 @@
 .intro {
   display: grid;
   gap: var(--space-5) var(--space-7);
-  margin-top: var(--space-6);
-  padding-top: calc(var(--space-5) + 8px);
-  /* The mark, stretched into a rule: three spans with a gap between each. */
+  margin-top: var(--space-5);
+  padding-top: calc(var(--space-5) + 6px);
+  /* The three span colours as one rule. */
   background: linear-gradient(
       90deg,
       var(--span-employment) 0 54%,
@@ -46,7 +100,7 @@
       transparent 84% 85%,
       var(--span-freelance) 85% 100%
     )
-    top / 100% 8px no-repeat;
+    top / 100% 6px no-repeat;
 }
 
 @media (min-width: 56rem) {
@@ -57,16 +111,15 @@
 
 .headline {
   font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
-  font-weight: var(--weight-medium);
-  font-variation-settings: "wdth" 104;
-  letter-spacing: -0.015em;
-  line-height: 1.25;
+  font-weight: var(--weight-semibold);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
   text-wrap: balance;
 }
 
 .summary {
   color: var(--color-text-muted);
-  max-width: 44ch;
+  max-width: 46ch;
 }
 
 .actions {
@@ -74,6 +127,14 @@
   flex-wrap: wrap;
   gap: var(--space-3);
   margin-top: var(--space-5);
+}
+
+.stats {
+  margin-top: var(--space-7);
+}
+
+.marquee {
+  margin-top: var(--space-6);
 }
 
 .facts {

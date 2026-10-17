@@ -10,6 +10,7 @@ import { CaseStudyCard } from "@/components/CaseStudyCard/CaseStudyCard";
 import { ContactCta } from "@/components/ContactCta/ContactCta";
 import { Founder } from "@/components/Founder/Founder";
 import { Hero } from "@/components/Hero/Hero";
+import { Waves } from "@/components/Waves/Waves";
 import { Outcomes } from "@/components/Outcomes/Outcomes";
 import { Section } from "@/components/Section/Section";
 import { SkillGroups } from "@/components/SkillGroups/SkillGroups";
@@ -38,8 +39,9 @@ export default function Home() {
       <Hero
         name={site.name}
         profile={profile}
-        facts={profileFacts}
-        trace={home.trace}
+        // Availability is already in the hero's status pill.
+        facts={profileFacts.filter((fact) => fact.term !== profile.factLabels.availability)}
+        home={home}
         primaryAction={home.primaryAction}
         secondaryAction={home.secondaryAction}
         cvAction={home.cvAction}
@@ -91,6 +93,7 @@ export default function Home() {
           status={apiPage.teaserStatus}
         />
       </Section>
+      <Waves to="dark" />
       <Section id="contact" copy={home.contact} tone="dark">
         <ContactCta
           profile={profile}

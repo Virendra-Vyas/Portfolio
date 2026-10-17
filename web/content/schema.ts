@@ -285,10 +285,25 @@ export type Venture = {
   href: InternalHref;
 };
 
+/** A headline number. The label says in words what it counts, including "about" where it is approximate. */
+export type Stat = {
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  label: string;
+  icon: IconName;
+  kind: "employment" | "company" | "freelance";
+};
+
 /** Years of commercial use, drawn to scale. `label` says it in words, including "about" where it is approximate. */
 export type SkillYears = { skill: string; years: number; label: string };
 
 export type HomePage = {
+  statsLabel: string;
+  stats: Stat[];
+  marqueeLabel: string;
+  /** The core stack, scrolled across the hero. Every item is in content/skills.ts. */
+  marquee: string[];
   trace: {
     heading: string;
     caption: string;

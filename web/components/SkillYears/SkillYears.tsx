@@ -16,7 +16,7 @@ const AXIS_YEARS = 10;
  */
 export function SkillYears({ items, heading, caption }: SkillYearsProps) {
   return (
-    <figure className={styles.chart} aria-labelledby="skill-years-heading">
+    <figure className={styles.chart} aria-labelledby="skill-years-heading" data-reveal>
       <figcaption className={styles.head}>
         <h3 id="skill-years-heading" className={styles.heading}>
           {heading}
@@ -24,8 +24,8 @@ export function SkillYears({ items, heading, caption }: SkillYearsProps) {
         <p className={styles.caption}>{caption}</p>
       </figcaption>
       <ol className={styles.rows} style={{ "--axis": AXIS_YEARS } as CSSProperties}>
-        {items.map((item) => (
-          <li key={item.skill} className={styles.row}>
+        {items.map((item, index) => (
+          <li key={item.skill} className={styles.row} style={{ ["--i" as string]: index }}>
             <span className={styles.skill}>{item.skill}</span>
             <span className={styles.track} aria-hidden="true">
               <span className={styles.bar} style={{ width: `${(item.years / AXIS_YEARS) * 100}%` }} />
