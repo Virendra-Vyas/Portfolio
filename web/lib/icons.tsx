@@ -20,6 +20,7 @@ import {
   Landmark,
   Mail,
   MapPin,
+  Moon,
   PanelsTopLeft,
   Pause,
   Play,
@@ -29,6 +30,7 @@ import {
   ServerCog,
   ShieldCheck,
   Store,
+  Sun,
   Terminal,
   UserCheck,
   Users,
@@ -91,4 +93,10 @@ export function LinkIcon({ href, size = 18, className }: { href: string; size?: 
 export function PlaybackIcon({ playing, size = 16 }: { playing: boolean; size?: number }) {
   const Component = playing ? Pause : Play;
   return <Component size={size} strokeWidth={2} aria-hidden="true" focusable="false" />;
+}
+
+/** The theme switch's glyph: a moon to offer dark, a sun to offer light. */
+export function ThemeIcon({ dark, size = 18 }: { dark: boolean; size?: number }) {
+  const Component = dark ? Sun : Moon;
+  return <Component size={size} strokeWidth={1.9} aria-hidden="true" focusable="false" />;
 }

@@ -7,6 +7,7 @@
  * every text pair meets WCAG AA (lowest is 5.0:1).
  */
 :root {
+  color-scheme: light;
   --color-bg: #f8fbfe;
   --color-surface: #ffffff;
   --color-surface-sunk: #edf4fb;     /* sky: alternate bands */
@@ -53,6 +54,13 @@
   --code-key: #9cc9f5;               /* 8.9:1 */
   --code-string: #7fe3cf;            /* 10.2:1 */
   --code-punct: #8fa3bc;             /* 6.0:1 */
+
+  /* Hero light, and shadows that carry a colour */
+  --glow-ocean: rgb(31 111 184 / 0.16);
+  --glow-coral: rgb(255 107 87 / 0.14);
+  --shadow-accent: 0 8px 20px -8px rgb(11 79 138 / 0.6);
+  --shadow-accent-hover: 0 12px 24px -8px rgb(11 79 138 / 0.7);
+  --shadow-float: 0 8px 24px -8px rgb(10 37 64 / 0.5);
 
   /* Elevation, tinted toward the ocean rather than grey */
   --shadow-sm: 0 1px 2px rgb(10 37 64 / 0.06), 0 2px 8px -2px rgb(10 37 64 / 0.08);
@@ -112,6 +120,119 @@
   --duration-fast: 160ms;
   --duration-slow: 700ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/*
+ * Dark theme: the same palette at night. It follows the system setting unless the visitor has chosen a
+ * theme with the header toggle (data-theme on <html>, set before first paint). Screen only, so printing
+ * and the CV PDF always use the light theme.
+ */
+@media screen and (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
+    --color-bg: #0b1524;               /* ocean at night */
+    --color-surface: #111f33;
+    --color-surface-sunk: #0e1a2b;
+    --color-text: #e6eef8;             /* 15.7:1 */
+    --color-text-muted: #a3b3c9;       /* 8.6:1, 7.8:1 on surface */
+    --color-border: #22344d;
+    --color-border-strong: #6b82a3;    /* 4.2:1 on surface */
+    --color-accent: #7dbbf7;           /* 9.0:1 */
+    --color-accent-hover: #a7d1fa;
+    --color-accent-soft: #13284a;      /* accent text on it: 7.2:1 */
+    --color-on-accent: #0b1524;        /* 9.0:1 on accent */
+    --color-coral: #ff7a66;
+    --color-coral-ink: #ff9b8a;        /* 9.0:1 */
+    --color-positive: #4fd1a5;         /* 9.6:1; 7.2:1 or better on every tint */
+    --color-positive-soft: #0e2e28;
+    --color-caution: #f2b45a;          /* 10.0:1 */
+    --color-idle: #a2adc2;             /* 8.1:1 */
+    --color-negative: #ff8a80;         /* 7.3:1 on surface */
+    --color-focus: #7dbbf7;
+
+    /* Validated against the dark surface for colour-blind separation. */
+    --span-employment: #4282e6;
+    --span-company: #10a08c;
+    --span-freelance: #eb5f4a;
+
+    --tint-employment: #13284a;
+    --tint-company: #0c3330;
+    --tint-freelance: #3a1e1c;
+    --ink-employment: #8ec5f7;         /* 8.0:1 on its tint */
+    --ink-company: #6fdcc8;            /* 8.3:1 */
+    --ink-freelance: #ffa597;          /* 8.0:1 */
+
+    --color-dark: #050d19;
+    --color-on-dark: #f2f7fc;
+    --color-on-dark-muted: #a9bcd3;    /* 10.0:1 */
+    --color-on-dark-link: #8ecdf7;     /* 11.3:1 */
+
+    --color-code-bg: #07111f;
+    --color-code-line: #1a2c45;
+
+    --glow-ocean: rgb(66 130 230 / 0.22);
+    --glow-coral: rgb(235 95 74 / 0.14);
+    --shadow-accent: 0 8px 22px -8px rgb(125 187 247 / 0.45);
+    --shadow-accent-hover: 0 12px 26px -8px rgb(125 187 247 / 0.55);
+    --shadow-float: 0 8px 24px -8px rgb(0 0 0 / 0.7);
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4), 0 2px 8px -2px rgb(0 0 0 / 0.35);
+    --shadow-md: 0 2px 4px rgb(0 0 0 / 0.35), 0 14px 32px -12px rgb(0 0 0 / 0.6);
+    --shadow-lg: 0 4px 8px rgb(0 0 0 / 0.35), 0 28px 56px -20px rgb(0 0 0 / 0.7);
+  }
+}
+
+@media screen {
+  :root[data-theme="dark"] {
+    color-scheme: dark;
+    --color-bg: #0b1524;               /* ocean at night */
+    --color-surface: #111f33;
+    --color-surface-sunk: #0e1a2b;
+    --color-text: #e6eef8;             /* 15.7:1 */
+    --color-text-muted: #a3b3c9;       /* 8.6:1, 7.8:1 on surface */
+    --color-border: #22344d;
+    --color-border-strong: #6b82a3;    /* 4.2:1 on surface */
+    --color-accent: #7dbbf7;           /* 9.0:1 */
+    --color-accent-hover: #a7d1fa;
+    --color-accent-soft: #13284a;      /* accent text on it: 7.2:1 */
+    --color-on-accent: #0b1524;        /* 9.0:1 on accent */
+    --color-coral: #ff7a66;
+    --color-coral-ink: #ff9b8a;        /* 9.0:1 */
+    --color-positive: #4fd1a5;         /* 9.6:1; 7.2:1 or better on every tint */
+    --color-positive-soft: #0e2e28;
+    --color-caution: #f2b45a;          /* 10.0:1 */
+    --color-idle: #a2adc2;             /* 8.1:1 */
+    --color-negative: #ff8a80;         /* 7.3:1 on surface */
+    --color-focus: #7dbbf7;
+
+    /* Validated against the dark surface for colour-blind separation. */
+    --span-employment: #4282e6;
+    --span-company: #10a08c;
+    --span-freelance: #eb5f4a;
+
+    --tint-employment: #13284a;
+    --tint-company: #0c3330;
+    --tint-freelance: #3a1e1c;
+    --ink-employment: #8ec5f7;         /* 8.0:1 on its tint */
+    --ink-company: #6fdcc8;            /* 8.3:1 */
+    --ink-freelance: #ffa597;          /* 8.0:1 */
+
+    --color-dark: #050d19;
+    --color-on-dark: #f2f7fc;
+    --color-on-dark-muted: #a9bcd3;    /* 10.0:1 */
+    --color-on-dark-link: #8ecdf7;     /* 11.3:1 */
+
+    --color-code-bg: #07111f;
+    --color-code-line: #1a2c45;
+
+    --glow-ocean: rgb(66 130 230 / 0.22);
+    --glow-coral: rgb(235 95 74 / 0.14);
+    --shadow-accent: 0 8px 22px -8px rgb(125 187 247 / 0.45);
+    --shadow-accent-hover: 0 12px 26px -8px rgb(125 187 247 / 0.55);
+    --shadow-float: 0 8px 24px -8px rgb(0 0 0 / 0.7);
+    --shadow-sm: 0 1px 2px rgb(0 0 0 / 0.4), 0 2px 8px -2px rgb(0 0 0 / 0.35);
+    --shadow-md: 0 2px 4px rgb(0 0 0 / 0.35), 0 14px 32px -12px rgb(0 0 0 / 0.6);
+    --shadow-lg: 0 4px 8px rgb(0 0 0 / 0.35), 0 28px 56px -20px rgb(0 0 0 / 0.7);
+  }
 }
 
 /* A component sets one of these to take on that kind's colours as --kind, --kind-tint and --kind-ink. */

@@ -21,6 +21,7 @@ export const site: Site = {
     ],
   },
   notFound: { title: "Page not found", linkLabel: "Back to the home page" },
+  themeToggleLabel: "Dark theme",
   footer: {
     links: [{ label: "How I use AI", href: "/ai/" }],
     company: "Yug Solutions Ltd, registered in England and Wales",

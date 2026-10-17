@@ -7,7 +7,7 @@
   background: var(--color-code-bg);
   color: var(--code-text);
   overflow: hidden;
-  box-shadow: 0 24px 48px -32px rgb(20 20 24 / 0.6);
+  box-shadow: var(--shadow-lg);
 }
 
 .bar {

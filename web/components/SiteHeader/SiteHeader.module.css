@@ -53,8 +53,29 @@
   font-size: var(--text-xs);
 }
 
-/* Lets the link row scroll inside the header instead of widening the page. */
+/* Lets the link row scroll inside the header instead of widening the page. On a phone the menu takes
+   its own row under the name, and the theme switch stays beside the name. */
 .nav {
+  order: 3;
+  flex-basis: 100%;
   min-width: 0;
   max-width: 100%;
+}
+
+.theme {
+  order: 2;
+  margin-left: auto;
+}
+
+@media (min-width: 48rem) {
+  .nav {
+    order: 2;
+    flex-basis: auto;
+    margin-left: auto;
+  }
+
+  .theme {
+    order: 3;
+    margin-left: 0;
+  }
 }
