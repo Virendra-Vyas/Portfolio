@@ -10,7 +10,7 @@
   display: grid;
   align-content: start;
   gap: var(--space-3);
-  padding: var(--space-5);
+  padding: var(--space-4);
   border: var(--border-width) solid var(--color-border);
   border-top: 4px solid var(--kind);
   border-radius: var(--radius-lg);

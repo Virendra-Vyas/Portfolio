@@ -65,18 +65,18 @@
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Consolas, monospace;
 
   --text-xs: 0.8125rem;   /* 13px */
-  --text-sm: 0.9375rem;   /* 15px */
-  --text-base: 1.0625rem; /* 17px */
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
-  --text-2xl: clamp(1.75rem, 1.35rem + 1.6vw, 2.5rem);
-  --text-3xl: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
-  --text-display: clamp(3.25rem, 1rem + 9vw, 9.5rem);
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-lg: 1.125rem;
+  --text-xl: 1.3125rem;
+  --text-2xl: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --text-3xl: clamp(1.875rem, 1.4rem + 2vw, 2.75rem);
+  --text-display: clamp(2.5rem, 1.6rem + 4vw, 4.5rem);
 
 
   --leading-tight: 1.08;
   --leading-snug: 1.35;
-  --leading-body: 1.65;
+  --leading-body: 1.6;
 
   --weight-regular: 400;
   --weight-medium: 500;
