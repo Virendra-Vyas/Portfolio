@@ -61,9 +61,65 @@ export const home: HomePage = {
     intro: "Short engineering write-ups: the problem, what I did, what came of it, and where it honestly stands.",
     link: { label: "All work", href: "/work/" },
   },
-  ai: {
-    heading: "How I work with AI",
-    link: { label: "More on how I use and build with AI", href: "/ai/" },
+  founder: {
+    heading: "Founder of Yug Solutions",
+    intro:
+      "Alongside my role at Datascope, I run my own company. Yug Solutions Ltd is a bootstrapped UK software company building products that solve real problems. I founded it in November 2024 and I am its only founder.",
+    company: "Yug Solutions Ltd",
+    facts: [
+      { term: "Founded", detail: "November 2024", icon: "calendar-clock" },
+      { term: "My role", detail: "Founder and Principal Engineer", icon: "building" },
+      { term: "How it works with clients", detail: "Contract work, outside IR35", icon: "badge-check" },
+    ],
+    venturesLabel: "Built through Yug Solutions",
+    ventures: [
+      {
+        name: "GovBridge UK",
+        kind: "company",
+        icon: "landmark",
+        label: "Own product",
+        role: "Founder and sole engineer",
+        detail: "One API gateway for HMRC, Companies House, DVLA, Land Registry and FHRS. Live, early-stage.",
+        href: "/work/govbridge/",
+      },
+      {
+        name: "Stringline",
+        kind: "company",
+        icon: "bot",
+        label: "Own project",
+        role: "Sole engineer",
+        detail: "Automating a month-end finance close. A public proof of concept.",
+        href: "/work/stringline/",
+      },
+      {
+        name: "IntelliBooks",
+        kind: "freelance",
+        icon: "calculator",
+        label: "Client work",
+        role: "Lead Engineer and Sole Architect",
+        detail: "A greenfield accounting and tax application with HMRC integrations. July 2025 to February 2026.",
+        href: "/work/intellibooks/",
+      },
+      {
+        name: "ConnectResearch",
+        kind: "freelance",
+        icon: "store",
+        label: "Client work",
+        role: "Tech Lead",
+        detail: "A multi-tenant B2B marketplace with Stripe milestone payments. July to December 2025.",
+        href: "/work/connectresearch/",
+      },
+    ],
+  },
+  experience: {
+    heading: "Skills and experience",
+    intro:
+      "About nine years of commercial software across enterprise SaaS, fintech, UK government API integrations and IoT access control, from junior engineer to leading a team of five.",
+    link: { label: "Every skill, with evidence", href: "/about/#skills" },
+    yearsHeading: "Years of commercial use",
+    yearsCaption: "My core stack, measured in years of professional work.",
+    groupsHeading: "What I work with",
+    groups: ["Front end", "Data", "Cloud and delivery", "Integrations", "Security", "Leadership"],
   },
   contact: {
     heading: "Get in touch",

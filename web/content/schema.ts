@@ -41,6 +41,8 @@ export type Site = {
     /** Companies House number. Shown only once confirmed. */
     companyNumber?: string;
     privacyNote: string;
+    /** Pages kept out of the main navigation but still linked. */
+    links: NavItem[];
   };
 };
 
@@ -62,7 +64,14 @@ export type IconName =
   | "workflow"
   | "gauge"
   | "user-check"
-  | "plug";
+  | "plug"
+  | "building"
+  | "users"
+  | "code"
+  | "layout"
+  | "database"
+  | "cloud"
+  | "shield";
 
 /* ------------------------------------------------------------------ Profile */
 
@@ -193,6 +202,7 @@ export type ProjectCard = {
 
 export type SkillGroup = {
   name: string;
+  icon: IconName;
   items: string[];
   /** Where the skill was used, so a reader can check it. */
   evidence: AnyLink[];
@@ -262,6 +272,22 @@ export type SectionCopy = {
   link?: AnyLink;
 };
 
+/** Something built under my company: its own product, or client work done through it. */
+export type Venture = {
+  name: string;
+  /** "company" for my own products, "freelance" for client work through the company. */
+  kind: "company" | "freelance";
+  icon: IconName;
+  /** A short label, e.g. "Own product" or "Client work". */
+  label: string;
+  role: string;
+  detail: string;
+  href: InternalHref;
+};
+
+/** Years of commercial use, drawn to scale. `label` says it in words, including "about" where it is approximate. */
+export type SkillYears = { skill: string; years: number; label: string };
+
 export type HomePage = {
   trace: {
     heading: string;
@@ -280,7 +306,19 @@ export type HomePage = {
   secondaryAction: AnyLink;
   cvAction: AnyLink;
   work: SectionCopy;
-  ai: SectionCopy;
+  founder: SectionCopy & {
+    company: string;
+    facts: Fact[];
+    venturesLabel: string;
+    ventures: Venture[];
+  };
+  experience: SectionCopy & {
+    yearsHeading: string;
+    yearsCaption: string;
+    groupsHeading: string;
+    /** Names of the skill groups (content/skills.ts) shown on the home page, in order. */
+    groups: string[];
+  };
   contact: SectionCopy;
 };
 

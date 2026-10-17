@@ -3,9 +3,9 @@ import type { Fact, Profile } from "./schema";
 export const profile: Profile = {
   hero: {
     headline:
-      "Senior full-stack .NET engineer. I lead and build production systems for fintech, government APIs and connected devices, and AI agents that are evaluated, not trusted blindly.",
+      "Senior full-stack .NET engineer and founder of Yug Solutions. I lead engineering teams and build production systems for fintech, UK government APIs and connected devices.",
     summary:
-      "About nine years of commercial C# and .NET. I lead a team of five as Lead Software Engineer at Datascope Systems, and I build my own products through Yug Solutions Ltd, a bootstrapped UK software company I founded in November 2024.",
+      "About nine years of commercial C# and .NET, with React on the front end. I lead a team of five as Lead Software Engineer at Datascope Systems, and in November 2024 I founded Yug Solutions Ltd, a bootstrapped UK software company building products that solve real problems.",
   },
   location: "Eastbourne, East Sussex, UK",
   rightToWork: "UK settled status (ILR). No sponsorship needed.",
@@ -29,17 +29,17 @@ export const profile: Profile = {
       link: { label: "GovBridge case study", href: "/work/govbridge/" },
     },
     {
-      title: "AI that is measured, not trusted",
+      title: "Two engineers mentored from mid-level to senior",
       detail:
-        "A six-step multi-agent pipeline on the Claude API with hybrid confidence scoring, and a tool-calling agent with an evaluation harness and golden dataset.",
-      link: { label: "Stringline case study", href: "/work/stringline/" },
+        "At Datascope Systems I lead a team of five, run code review and set the team's engineering standards, and I have mentored two engineers from mid-level to senior level.",
+      link: { label: "DeviceHub case study", href: "/work/devicehub/" },
     },
   ],
   about: [
     "I'm a senior full-stack engineer based in Eastbourne. I've spent about nine years writing C# and .NET commercially, across enterprise SaaS, fintech, government API integrations and IoT access control, with React on the front end for most of that time.",
     "Since August 2022 I've been Lead Software Engineer at Datascope Systems, where I lead five engineers and own delivery of DeviceHub end to end. That covers architecture, code review, release coordination and working directly with business stakeholders, while staying hands-on in the code.",
     "In November 2024 I founded Yug Solutions Ltd, a bootstrapped UK software company building products that solve real problems. Through it I build GovBridge UK and take on contract work. Before Datascope I worked at Mondaq and Goodmaysys Software Technologies, after an MSc in Computing at De Montfort University.",
-    "I use AI heavily in my work, and I treat its output the way I treat any other code: reviewed, tested and measured before it ships.",
+    "I lead by staying close to the code. I run code review, set my team's engineering standards and have mentored two engineers from mid-level to senior level. Most of my work sits where details matter: HMRC tax submissions, money transfer, payments, and access control for devices in the field.",
   ],
   education: [
     {
