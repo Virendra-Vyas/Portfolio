@@ -6,7 +6,7 @@ import { site } from "./site";
 export const home: HomePage = {
   statsLabel: "At a glance",
   stats: [
-    { value: 9, prefix: "~", label: "Years of commercial C# and .NET, about", icon: "code", kind: "employment" },
+    { value: 9, prefix: "~", label: "Years of commercial C# and .NET", icon: "code", kind: "employment" },
     { value: 5, label: "Engineers I lead at Datascope Systems", icon: "users", kind: "employment" },
     { value: 2, label: "Engineers mentored from mid-level to senior", icon: "badge-check", kind: "employment" },
     { value: 40, suffix: "+", label: "UK government API endpoints behind GovBridge", icon: "landmark", kind: "company" },
