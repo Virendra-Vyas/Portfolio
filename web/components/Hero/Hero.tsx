@@ -31,14 +31,7 @@ export function Hero({ name, profile, facts, home, primaryAction, secondaryActio
           {profile.availability}
         </p>
         <div className={styles.top}>
-          <h1 className={styles.name}>
-            {name.split(" ").map((word, index, words) => (
-              <span key={word} className={styles.word}>
-                {word}
-                {index < words.length - 1 ? " " : null}
-              </span>
-            ))}
-          </h1>
+          <h1 className={styles.name}>{name}</h1>
         </div>
         <div className={styles.intro}>
           <p className={styles.headline}>{profile.hero.headline}</p>

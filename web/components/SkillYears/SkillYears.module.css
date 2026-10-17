@@ -2,7 +2,7 @@
   --skill-col: 8.5rem;
   --value-col: 9rem;
   margin: 0;
-  padding: var(--space-5);
+  padding: var(--space-4) var(--space-5);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-lg);
   background: var(--color-surface);

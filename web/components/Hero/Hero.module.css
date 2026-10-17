@@ -1,7 +1,7 @@
 /* Sky light falling from the top, with a warm coral glow on the right: the ocean and coral palette. */
 .hero {
   position: relative;
-  padding-block: var(--space-7) var(--space-8);
+  padding-block: var(--space-6) var(--space-7);
   background:
     radial-gradient(60rem 28rem at 88% -6%, rgb(255 107 87 / 0.14), transparent 70%),
     radial-gradient(56rem 30rem at 6% -10%, rgb(31 111 184 / 0.16), transparent 70%),
@@ -49,20 +49,17 @@
   }
 }
 
-/* The name is sized against its container, so it always runs exactly edge to edge. */
 .top {
-  container-type: inline-size;
-  margin-top: var(--space-5);
+  margin-top: var(--space-4);
 }
 
+/* Inline-block so the gradient spans the name itself, not the whole row. */
 .name {
-  /* Two lines on a phone, one line from 40rem. In Manrope ExtraBold "Virendra" is 3.84em wide and the
-     whole name 6.17em, so these sizes fill about 97% of the container. */
-  font-size: 25cqi;
+  display: inline-block;
+  font-size: var(--text-display);
   font-weight: 800;
-  letter-spacing: -0.04em;
-  line-height: 0.95;
-  overflow-wrap: normal;
+  letter-spacing: -0.035em;
+  line-height: 1;
   /* Deep ocean into sea green. The fallback colour is used where text gradients are unsupported. */
   color: var(--color-text);
   background: linear-gradient(100deg, var(--color-text) 0%, var(--color-accent) 55%, var(--ink-company) 100%);
@@ -70,20 +67,6 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   padding-bottom: 0.06em;
-}
-
-.word {
-  display: block;
-}
-
-@container (min-width: 40rem) {
-  .name {
-    font-size: 15.8cqi;
-  }
-
-  .word {
-    display: inline;
-  }
 }
 
 .intro {
@@ -110,7 +93,7 @@
 }
 
 .headline {
-  font-size: clamp(1.375rem, 1.1rem + 1vw, 1.875rem);
+  font-size: clamp(1.125rem, 1rem + 0.6vw, 1.375rem);
   font-weight: var(--weight-semibold);
   letter-spacing: -0.02em;
   line-height: 1.3;
@@ -130,17 +113,17 @@
 }
 
 .stats {
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }
 
 .marquee {
-  margin-top: var(--space-6);
+  margin-top: var(--space-5);
 }
 
 .facts {
-  margin-top: var(--space-6);
+  margin-top: var(--space-5);
 }
 
 .trace {
-  margin-top: var(--space-7);
+  margin-top: var(--space-6);
 }

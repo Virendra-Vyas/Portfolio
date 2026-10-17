@@ -14,7 +14,7 @@
 .company {
   display: grid;
   gap: var(--space-5);
-  padding: var(--space-6) var(--space-5);
+  padding: var(--space-5);
   border-radius: var(--radius-lg);
   background: var(--kind-tint);
   box-shadow: inset 0 6px 0 var(--kind), var(--shadow-sm);
@@ -29,8 +29,8 @@
 .badge {
   display: grid;
   place-items: center;
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   color: var(--kind-ink);
@@ -38,7 +38,7 @@
 
 .name {
   font-family: var(--font-display);
-  font-size: var(--text-2xl);
+  font-size: var(--text-xl);
   font-weight: 800;
   letter-spacing: -0.03em;
   line-height: 1.05;
@@ -114,7 +114,7 @@
 }
 
 .title {
-  font-size: var(--text-lg);
+  font-size: var(--text-base);
   font-weight: 800;
   letter-spacing: -0.02em;
 }
