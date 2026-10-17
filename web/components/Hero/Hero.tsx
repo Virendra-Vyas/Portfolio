@@ -56,7 +56,7 @@ export function Hero({ name, profile, facts, home, primaryAction, secondaryActio
         </div>
       </Container>
       <div className={styles.marquee}>
-        <TechMarquee items={home.marquee} label={home.marqueeLabel} />
+        <TechMarquee items={home.marquee} label={home.marqueeLabel} controls={home.marqueeControls} />
       </div>
       <Container>
         <div className={styles.facts}>

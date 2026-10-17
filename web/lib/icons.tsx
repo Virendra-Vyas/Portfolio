@@ -21,6 +21,8 @@ import {
   Mail,
   MapPin,
   PanelsTopLeft,
+  Pause,
+  Play,
   Plug,
   Repeat,
   Router,
@@ -83,4 +85,10 @@ export function LinkIcon({ href, size = 18, className }: { href: string; size?: 
   return Component ? (
     <Component size={size} strokeWidth={1.75} className={className} aria-hidden="true" focusable="false" />
   ) : null;
+}
+
+/** Pause and play glyphs for media-style toggles. */
+export function PlaybackIcon({ playing, size = 16 }: { playing: boolean; size?: number }) {
+  const Component = playing ? Pause : Play;
+  return <Component size={size} strokeWidth={2} aria-hidden="true" focusable="false" />;
 }

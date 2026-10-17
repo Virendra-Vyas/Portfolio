@@ -302,6 +302,8 @@ export type HomePage = {
   statsLabel: string;
   stats: Stat[];
   marqueeLabel: string;
+  /** Labels for the strip's pause button (WCAG 2.2.2: moving content needs a way to stop it). */
+  marqueeControls: { pause: string; play: string };
   /** The core stack, scrolled across the hero. Every item is in content/skills.ts. */
   marquee: string[];
   trace: {

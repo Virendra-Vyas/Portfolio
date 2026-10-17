@@ -1,8 +1,39 @@
 .marquee {
+  position: relative;
+}
+
+.viewport {
   overflow: hidden;
   padding-block: var(--space-3);
   /* Fade the strip out at both edges. */
   mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+
+/* A pause button at the right-hand end of the strip. */
+.toggle {
+  position: absolute;
+  top: 50%;
+  right: max(var(--gutter), env(safe-area-inset-right, 0px));
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  margin-top: -1.375rem;
+  border: var(--border-width) solid var(--color-border-strong);
+  border-radius: 50%;
+  background: var(--color-surface);
+  box-shadow: var(--shadow-sm);
+  color: var(--color-accent);
+  cursor: pointer;
+}
+
+.toggle:hover {
+  background: var(--color-accent-soft);
+}
+
+.toggle:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
 }
 
 .track {
@@ -55,7 +86,8 @@
     animation: scroll 48s linear infinite;
   }
 
-  .marquee:hover .track {
+  .marquee:hover .track,
+  .paused .track {
     animation-play-state: paused;
   }
 
@@ -68,8 +100,13 @@
 
 /* Standing still, the strip wraps instead, and the duplicate copy goes. */
 @media (prefers-reduced-motion: reduce) {
-  .marquee {
+  .viewport {
     mask-image: none;
+  }
+
+  /* Nothing moves, so there is nothing to pause. */
+  .toggle {
+    display: none;
   }
 
   .track {

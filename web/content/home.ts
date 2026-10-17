@@ -12,6 +12,7 @@ export const home: HomePage = {
     { value: 40, suffix: "+", label: "UK government API endpoints behind GovBridge", icon: "landmark", kind: "company" },
   ],
   marqueeLabel: "Core stack",
+  marqueeControls: { pause: "Pause the scrolling stack", play: "Play the scrolling stack" },
   marquee: [
     "C#",
     ".NET 10",
