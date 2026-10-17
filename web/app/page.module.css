@@ -4,3 +4,13 @@
   list-style: none;
   border-bottom: var(--border-width) solid var(--color-border);
 }
+
+.experience {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.subheading {
+  margin-bottom: var(--space-4);
+  font-size: var(--text-lg);
+}

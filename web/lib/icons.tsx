@@ -7,8 +7,12 @@ import {
   Bot,
   BriefcaseBusiness,
   Bug,
+  Building2,
   Calculator,
   CalendarClock,
+  Cloud,
+  CodeXml,
+  Database,
   Download,
   FlaskConical,
   FolderGit2,
@@ -16,13 +20,18 @@ import {
   Landmark,
   Mail,
   MapPin,
+  PanelsTopLeft,
+  Pause,
+  Play,
   Plug,
   Repeat,
   Router,
   ServerCog,
+  ShieldCheck,
   Store,
   Terminal,
   UserCheck,
+  Users,
   Workflow,
   type LucideIcon,
 } from "lucide-react";
@@ -46,6 +55,13 @@ const icons: Record<IconName, LucideIcon> = {
   gauge: Gauge,
   "user-check": UserCheck,
   plug: Plug,
+  building: Building2,
+  users: Users,
+  code: CodeXml,
+  layout: PanelsTopLeft,
+  database: Database,
+  cloud: Cloud,
+  shield: ShieldCheck,
 };
 
 type IconProps = { name: IconName; size?: number; className?: string };
@@ -69,4 +85,10 @@ export function LinkIcon({ href, size = 18, className }: { href: string; size?: 
   return Component ? (
     <Component size={size} strokeWidth={1.75} className={className} aria-hidden="true" focusable="false" />
   ) : null;
+}
+
+/** Pause and play glyphs for media-style toggles. */
+export function PlaybackIcon({ playing, size = 16 }: { playing: boolean; size?: number }) {
+  const Component = playing ? Pause : Play;
+  return <Component size={size} strokeWidth={2} aria-hidden="true" focusable="false" />;
 }

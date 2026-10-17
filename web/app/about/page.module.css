@@ -3,3 +3,8 @@
   gap: var(--space-4);
   max-width: var(--width-prose);
 }
+
+.skills {
+  display: grid;
+  gap: var(--space-7);
+}

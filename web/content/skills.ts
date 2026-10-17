@@ -1,9 +1,10 @@
-import type { SkillGroup } from "./schema";
+import type { SkillGroup, SkillYears } from "./schema";
 
 /** Each group links to where the skill was used, so a reader can check it. */
 export const skills: SkillGroup[] = [
   {
     name: "C# and .NET (about 9 years)",
+    icon: "code",
     items: [
       ".NET 7, 8 and 10",
       "ASP.NET Core",
@@ -21,6 +22,7 @@ export const skills: SkillGroup[] = [
   },
   {
     name: "Front end",
+    icon: "layout",
     items: [
       "React (about 7 years)",
       "TypeScript (4 years)",
@@ -35,6 +37,7 @@ export const skills: SkillGroup[] = [
   },
   {
     name: "Data",
+    icon: "database",
     items: [
       "SQL Server",
       "PostgreSQL, including pgvector",
@@ -50,6 +53,7 @@ export const skills: SkillGroup[] = [
   },
   {
     name: "Cloud and delivery",
+    icon: "cloud",
     items: [
       "Azure: Functions, Service Bus, App Service, Key Vault, Application Insights, DevOps",
       "Docker",
@@ -67,11 +71,13 @@ export const skills: SkillGroup[] = [
   },
   {
     name: "Testing",
+    icon: "flask",
     items: ["xUnit", "Moq", "Integration testing", "Test-driven delivery"],
     evidence: [{ label: "DeviceHub", href: "/work/devicehub/" }],
   },
   {
     name: "Security",
+    icon: "shield",
     items: [
       "OAuth 2.0",
       "OpenID Connect",
@@ -86,32 +92,8 @@ export const skills: SkillGroup[] = [
     ],
   },
   {
-    name: "AI engineering",
-    items: [
-      "Claude API",
-      "Claude Code",
-      "Tool-calling agents",
-      "MCP server",
-      "Multi-agent pipelines",
-      "Evaluation harnesses",
-      "OpenAI embeddings",
-      "pgvector semantic search",
-    ],
-    evidence: [
-      { label: "Stringline", href: "/work/stringline/" },
-      { label: "How I work with AI", href: "/ai/" },
-    ],
-  },
-  {
-    name: "Python (secondary language)",
-    items: ["AI pipelines and agents", "Scraping", "Data processing and reporting"],
-    evidence: [
-      { label: "Stringline", href: "/work/stringline/" },
-      { label: "GovBridge UK", href: "/work/govbridge/" },
-    ],
-  },
-  {
     name: "Integrations",
+    icon: "plug",
     items: [
       "HMRC Making Tax Digital: VAT, Income Tax, PAYE, CIS",
       "HMRC Corporation Tax (CT600 through GovTalk)",
@@ -130,13 +112,50 @@ export const skills: SkillGroup[] = [
   },
   {
     name: "Leadership",
+    icon: "users",
     items: [
       "Leading a team of five",
-      "Mentoring",
+      "Mentoring: two engineers taken from mid-level to senior",
       "Code review",
       "Engineering standards",
       "Stakeholder communication",
     ],
     evidence: [{ label: "DeviceHub", href: "/work/devicehub/" }],
   },
+  {
+    name: "AI engineering",
+    icon: "bot",
+    items: [
+      "Claude API",
+      "Claude Code",
+      "Tool-calling agents",
+      "MCP server",
+      "Multi-agent pipelines",
+      "Evaluation harnesses",
+      "OpenAI embeddings",
+      "pgvector semantic search",
+    ],
+    evidence: [
+      { label: "Stringline", href: "/work/stringline/" },
+      { label: "How I work with AI", href: "/ai/" },
+    ],
+  },
+  {
+    name: "Python (secondary language)",
+    icon: "terminal",
+    items: ["AI pipelines and agents", "Scraping", "Data processing and reporting"],
+    evidence: [
+      { label: "Stringline", href: "/work/stringline/" },
+      { label: "GovBridge UK", href: "/work/govbridge/" },
+    ],
+  },
+];
+
+/** The core stack in years of commercial use, from the CV. */
+export const skillYears: SkillYears[] = [
+  { skill: "C# and .NET", years: 9, label: "About 9 years" },
+  { skill: "React", years: 7, label: "About 7 years" },
+  { skill: "CI/CD", years: 5, label: "5 years" },
+  { skill: "TypeScript", years: 4, label: "4 years" },
+  { skill: "Next.js", years: 1.8, label: "About 1.8 years" },
 ];

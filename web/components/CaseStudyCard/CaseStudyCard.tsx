@@ -23,7 +23,7 @@ export function CaseStudyCard({ study, headingLevel: Heading = "h3", maxTags = 5
   const hidden = study.tech.length - tags.length;
 
   return (
-    <article className={`${styles.row} kind-${caseStudyKind(study.slug)}`}>
+    <article className={`${styles.row} kind-${caseStudyKind(study.slug)}`} data-reveal>
       <div className={styles.lead}>
         <span className={styles.icon}>
           <Icon name={study.icon} size={24} />

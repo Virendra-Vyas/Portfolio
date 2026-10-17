@@ -12,7 +12,6 @@
 
 .availability {
   font-size: var(--text-2xl);
-  font-variation-settings: "wdth" 110;
   letter-spacing: -0.02em;
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);

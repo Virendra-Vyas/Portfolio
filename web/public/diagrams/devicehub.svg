@@ -1,21 +1,21 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" role="img" aria-labelledby="t d" font-family="Archivo, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 400" width="960" height="400" role="img" aria-labelledby="t d" font-family="Manrope, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
   <title id="t">DeviceHub role-based access control</title>
   <desc id="d">Requests flow from the React app to the backend-for-frontend, then to the core API, then to the database. The React app has an AuthContext with a can() helper that drives permission-driven UI. The backend-for-frontend and the core API both enforce permissions, using JWT bearer authentication and a dedicated authorisation library. Roles and permissions live in the database and are managed through EF Core migrations.</desc>
 
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 z" fill="#55555e"/>
+      <path d="M0 0 L10 5 L0 10 z" fill="#4a5a70"/>
     </marker>
     <style>
-      .label { font-size: 13px; fill: #512bd4; font-weight: 600; }
-      .box { fill: #ffffff; stroke: #c4c4bc; stroke-width: 1.5; }
-      .key { fill: #f7f6fd; stroke: #512bd4; stroke-width: 2; }
-      .title { font-size: 16px; font-weight: 700; fill: #141418; }
-      .sub { font-size: 13px; fill: #55555e; }
-      .chip { fill: #ece8fb; }
-      .chip-text { font-size: 13px; font-weight: 500; fill: #512bd4; }
-      .line { stroke: #55555e; stroke-width: 1.5; fill: none; }
-      .dash { stroke: #512bd4; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+      .label { font-size: 13px; fill: #0b4f8a; font-weight: 600; }
+      .box { fill: #ffffff; stroke: #c3d1e0; stroke-width: 1.5; }
+      .key { fill: #f3f8fd; stroke: #0b4f8a; stroke-width: 2; }
+      .title { font-size: 16px; font-weight: 700; fill: #0f1b2d; }
+      .sub { font-size: 13px; fill: #4a5a70; }
+      .chip { fill: #e3effb; }
+      .chip-text { font-size: 13px; font-weight: 500; fill: #0b4f8a; }
+      .line { stroke: #4a5a70; stroke-width: 1.5; fill: none; }
+      .dash { stroke: #0b4f8a; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
     </style>
   </defs>
 

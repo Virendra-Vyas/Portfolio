@@ -1,4 +1,5 @@
 import type { Site } from "@/content/schema";
+import Link from "next/link";
 import { Container } from "@/components/Container/Container";
 import { Monogram } from "@/components/Monogram/Monogram";
 import styles from "./SiteFooter.module.css";
@@ -19,6 +20,11 @@ export function SiteFooter({ site }: { site: Site }) {
               <a href={link.href} rel="me noopener">
                 {link.label}
               </a>
+            </li>
+          ))}
+          {footer.links.map((link) => (
+            <li key={link.href}>
+              <Link href={link.href}>{link.label}</Link>
             </li>
           ))}
         </ul>
