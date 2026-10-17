@@ -101,7 +101,10 @@ The site is served by a Worker with no script: `web/wrangler.jsonc` points it at
    - Deploy command: `npx wrangler deploy`
    - API token: create one if the dropdown says the configured token is unavailable.
 3. No build variables are needed: the production URLs are the defaults, and `web/.node-version` pins Node 22.
-4. Settings > Domains & Routes > add `virendravyas.dev` (and `www.virendravyas.dev`).
+4. Settings > Domains & Routes > add `virendravyas.dev` only. Don't attach `www` to the Worker as well,
+   or the full site is served from two addresses. To make `www.virendravyas.dev` work, redirect it to the apex
+   with a Redirect Rule (Rules > Redirect Rules > "Redirect from WWW to root"), plus a proxied DNS record for
+   `www`. See https://developers.cloudflare.com/workers/configuration/routing/custom-domains/#redirect-between-www-and-root-domain
 
 Check the result locally with `npm run build && npx wrangler dev`.
 
