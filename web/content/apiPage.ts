@@ -23,6 +23,7 @@ export const apiPage: ApiPageCopy = {
     response: "Response",
     error: "The request failed. Try again, or open the URL directly.",
   },
+  teaserStatus: "200 OK",
   teaser: {
     heading: "This portfolio is also an API",
     intro:

@@ -32,3 +32,33 @@
   background: var(--color-accent-soft);
   color: var(--color-accent-hover);
 }
+
+/* On the ink band: a light primary and an outlined secondary. */
+.onInk {
+  border-color: var(--color-on-ink);
+  background: var(--color-on-ink);
+  color: var(--color-ink);
+}
+
+.onInk:hover {
+  border-color: var(--led-live);
+  background: var(--led-live);
+  color: var(--color-ink);
+}
+
+.onInkSecondary {
+  border-color: var(--color-ink-line);
+  background: transparent;
+  color: var(--color-on-ink);
+}
+
+.onInkSecondary:hover {
+  border-color: var(--color-on-ink-muted);
+  background: color-mix(in srgb, var(--color-on-ink) 6%, transparent);
+  color: var(--color-on-ink);
+}
+
+.onInk:focus-visible,
+.onInkSecondary:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-ink), 0 0 0 5px var(--led-live);
+}

@@ -220,6 +220,18 @@ export type Writing = {
 
 /* --------------------------------------------------------------------- Home */
 
+/** A measured change, drawn to scale: values are percentages of the same quantity before and after. */
+export type Outcome = {
+  label: string;
+  before: string;
+  after: string;
+  /** For a bar drawn to scale; omit when the change is not a percentage. */
+  scale?: { from: number; to: number };
+  /** A short qualifier shown under the change. */
+  note?: string;
+  source: AnyLink;
+};
+
 export type SectionCopy = {
   heading: string;
   intro?: string;
@@ -227,10 +239,11 @@ export type SectionCopy = {
 };
 
 export type HomePage = {
+  board: { heading: string; caption: string; systemLabel: string; statusLabel: string };
+  outcomes: SectionCopy & { items: Outcome[] };
   primaryAction: AnyLink;
   secondaryAction: AnyLink;
   cvAction: AnyLink;
-  proof: SectionCopy;
   work: SectionCopy;
   ai: SectionCopy;
   contact: SectionCopy;
@@ -326,6 +339,8 @@ export type ApiPageCopy = {
   };
   /** Short teaser used on the home page. */
   teaser: SectionCopy;
+  /** Status line shown on the home page console; the endpoint is static, so it always answers 200. */
+  teaserStatus: string;
 };
 
 /* ----------------------------------------------------------------------- CV */

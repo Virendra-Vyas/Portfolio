@@ -1,0 +1,26 @@
+.band {
+  position: relative;
+  overflow: hidden;
+  background: var(--color-ink);
+  color: var(--color-on-ink);
+  isolation: isolate;
+}
+
+.band::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(var(--color-ink-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-ink-line) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.35;
+  mask-image: linear-gradient(180deg, #000 0%, transparent 85%);
+}
+
+/* Links inside a band read on ink. */
+.band a:not([class]) {
+  color: var(--color-on-ink);
+  text-decoration-color: var(--led-live);
+}

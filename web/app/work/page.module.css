@@ -5,3 +5,10 @@
   padding: 0;
   list-style: none;
 }
+
+.index {
+  display: grid;
+  padding: 0;
+  list-style: none;
+  border-bottom: var(--border-width) solid var(--color-border);
+}

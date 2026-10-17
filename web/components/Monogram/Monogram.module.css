@@ -1,0 +1,17 @@
+.mark {
+  flex: none;
+}
+
+.tile {
+  fill: var(--color-accent);
+  stroke: var(--color-ink-line);
+  stroke-width: 2;
+}
+
+.letters {
+  stroke: var(--color-on-ink);
+}
+
+.light {
+  fill: var(--led-live);
+}

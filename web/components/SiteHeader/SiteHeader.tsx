@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Site } from "@/content/schema";
 import { Container } from "@/components/Container/Container";
+import { Monogram } from "@/components/Monogram/Monogram";
 import { NavLinks } from "@/components/NavLinks/NavLinks";
 import styles from "./SiteHeader.module.css";
 
@@ -9,10 +10,13 @@ export function SiteHeader({ site }: { site: Site }) {
     <header className={styles.header}>
       <Container className={styles.inner}>
         <Link href="/" className={styles.brand}>
-          <span className={styles.name}>{site.name}</span>
-          <span className={styles.role}>{site.role}</span>
+          <Monogram size={34} />
+          <span className={styles.text}>
+            <span className={styles.name}>{site.name}</span>
+            <span className={styles.role}>{site.role}</span>
+          </span>
         </Link>
-        <nav aria-label="Main">
+        <nav aria-label="Main" className={styles.nav}>
           <NavLinks items={site.nav} />
         </nav>
       </Container>

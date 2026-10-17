@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 740" width="760" height="740" role="img" aria-labelledby="t d" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 740" width="760" height="740" role="img" aria-labelledby="t d" font-family="'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
   <title id="t">Stringline six-step pipeline</title>
   <desc id="d">Data comes from Dynamics 365 Business Central over OData and passes through six steps in order: ingestion, classification, bank reconciliation, anomaly detection, plain-English commentary, and sector intelligence through web search. Every step gets a confidence score: deterministic scores for measurable steps and Claude self-assessment for narrative steps. The pipeline produces a branded Word month-end pack and an Excel reviewer checklist for SharePoint.</desc>
 
@@ -7,7 +7,7 @@
       <path d="M0 0 L10 5 L0 10 z" fill="#4f4f5c"/>
     </marker>
     <style>
-      .label { font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; letter-spacing: 0.06em; fill: #2b2870; font-weight: 500; }
+      .label { font-size: 13px; fill: #2b2870; font-weight: 600; }
       .box { fill: #ffffff; stroke: #b9b9c6; stroke-width: 1.5; }
       .step { fill: #ffffff; stroke: #2b2870; stroke-width: 1.5; }
       .num { fill: #2b2870; }
@@ -23,7 +23,7 @@
     </style>
   </defs>
 
-  <text class="label" x="20" y="24">SOURCE</text>
+  <text class="label" x="20" y="24">Source</text>
   <rect class="box" x="20" y="36" width="420" height="64" rx="8"/>
   <text class="title" x="230" y="64" text-anchor="middle">Dynamics 365 Business Central</text>
   <text class="sub" x="230" y="86" text-anchor="middle">OData</text>
@@ -68,7 +68,7 @@
   <path class="dash" d="M440 388 H480"/>
   <path class="dash" d="M440 464 H480"/>
   <path class="dash" d="M440 540 H480"/>
-  <text class="label" x="480" y="120">EVERY STEP</text>
+  <text class="label" x="480" y="120">Every step</text>
   <rect class="score" x="480" y="132" width="260" height="436" rx="8"/>
   <text class="score-title" x="500" y="168">Confidence score</text>
   <text class="score-strong" x="500" y="212">Measurable steps</text>
@@ -81,7 +81,7 @@
   <!-- Outputs -->
   <path class="line" d="M230 568 V600 H190 V640" marker-end="url(#arrow)"/>
   <path class="line" d="M230 600 H560 V640" marker-end="url(#arrow)"/>
-  <text class="label" x="20" y="626">OUTPUT</text>
+  <text class="label" x="20" y="626">Output</text>
   <rect class="box" x="20" y="644" width="340" height="72" rx="8"/>
   <text class="title" x="190" y="674" text-anchor="middle">Word month-end pack</text>
   <text class="sub" x="190" y="696" text-anchor="middle">Branded .docx</text>

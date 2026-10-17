@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { IBM_Plex_Mono, Inter } from "next/font/google";
+import { Bricolage_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
 import { site } from "@/content/site";
 import { SkipLink } from "@/components/SkipLink/SkipLink";
 import { SiteHeader } from "@/components/SiteHeader/SiteHeader";
@@ -10,12 +10,24 @@ import "./globals.css";
 // "optional" avoids a late re-paint of the large headline when the font arrives after first paint,
 // which Lighthouse otherwise counts as the Largest Contentful Paint. The font is preloaded, so it is
 // almost always ready in time; if not, the metric-matched fallback is used for that visit.
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "optional" });
+const bricolage = Bricolage_Grotesque({
+  subsets: ["latin"],
+  variable: "--font-bricolage",
+  axes: ["wdth"],
+  display: "optional",
+});
+const plexSans = IBM_Plex_Sans({
+  subsets: ["latin"],
+  variable: "--font-plex-sans",
+  display: "optional",
+});
 const plexMono = IBM_Plex_Mono({
   subsets: ["latin"],
   weight: ["400", "500"],
   variable: "--font-plex-mono",
   display: "swap",
+  // Only code samples use it, never the first screen, so it need not compete with the preloads above.
+  preload: false,
 });
 
 const MAIN_ID = "main";
@@ -42,7 +54,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${inter.variable} ${plexMono.variable}`}>
+    <html lang="en-GB" className={`${bricolage.variable} ${plexSans.variable} ${plexMono.variable}`}>
       <body>
         <SkipLink targetId={MAIN_ID} />
         <SiteHeader site={site} />

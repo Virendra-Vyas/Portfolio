@@ -1,6 +1,6 @@
 import { ai } from "@/content/ai";
 import { apiPage } from "@/content/apiPage";
-import { featuredCaseStudies } from "@/content/caseStudies";
+import { caseStudies, featuredCaseStudies } from "@/content/caseStudies";
 import { home } from "@/content/home";
 import { profile, profileFacts } from "@/content/profile";
 import { site } from "@/content/site";
@@ -9,7 +9,7 @@ import { ApiTeaser } from "@/components/ApiTeaser/ApiTeaser";
 import { CaseStudyCard } from "@/components/CaseStudyCard/CaseStudyCard";
 import { ContactCta } from "@/components/ContactCta/ContactCta";
 import { Hero } from "@/components/Hero/Hero";
-import { ProofPoints } from "@/components/ProofPoints/ProofPoints";
+import { Outcomes } from "@/components/Outcomes/Outcomes";
 import { Section } from "@/components/Section/Section";
 import { endpoints, profileResponse } from "@/lib/publicApi";
 import styles from "./page.module.css";
@@ -29,15 +29,17 @@ export default function Home() {
         name={site.name}
         profile={profile}
         facts={profileFacts}
+        studies={caseStudies}
+        board={home.board}
         primaryAction={home.primaryAction}
         secondaryAction={home.secondaryAction}
         cvAction={home.cvAction}
       />
-      <Section id="proof" copy={home.proof} tone="tinted">
-        <ProofPoints points={profile.proofPoints} />
+      <Section id="outcomes" copy={home.outcomes}>
+        <Outcomes items={home.outcomes.items} />
       </Section>
       <Section id="work" copy={home.work}>
-        <ul className={styles.cards}>
+        <ul className={styles.index}>
           {featuredCaseStudies.map((study) => (
             <li key={study.slug}>
               <CaseStudyCard study={study} />
@@ -49,7 +51,7 @@ export default function Home() {
         <AiTeaser ai={ai} />
       </Section>
       <Section id="api" copy={apiPage.teaser}>
-        <ApiTeaser request={`GET ${endpoints.profile}`} excerpt={excerpt} />
+        <ApiTeaser request={`GET ${endpoints.profile}`} excerpt={excerpt} status={apiPage.teaserStatus} />
       </Section>
       <Section id="contact" copy={home.contact} tone="tinted">
         <ContactCta profile={profile} contact={site.contact} primaryAction={home.primaryAction} />
