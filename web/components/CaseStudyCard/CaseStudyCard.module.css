@@ -33,9 +33,10 @@
 }
 
 .title {
-  font-size: var(--text-2xl);
-  font-variation-settings: "wdth" 85;
-  letter-spacing: -0.025em;
+  font-size: var(--text-xl);
+  font-weight: 800;
+  font-variation-settings: "wdth" 118;
+  letter-spacing: -0.03em;
 }
 
 .link {

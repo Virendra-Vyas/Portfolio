@@ -41,6 +41,7 @@ h4 {
   font-family: var(--font-display);
   line-height: var(--leading-tight);
   font-weight: var(--weight-bold);
+  font-variation-settings: "wdth" 106;
   letter-spacing: -0.02em;
   text-wrap: balance;
 }

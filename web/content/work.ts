@@ -18,5 +18,6 @@ export const work: WorkPage = {
     diagramFullSize: "Open the diagram full size",
     nextCaseStudy: "Next case study",
     viewAsJson: "View as JSON",
+    inCareer: "Where it sits in my career",
   },
 };

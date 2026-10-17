@@ -1,48 +1,44 @@
 /*
- * Design tokens. Light pages with one dark "control room" band (the home hero, the API console).
- * Concept: the portfolio as a running system. Status lights encode real project status;
- * navy comes from the CV, green from the Yug Solutions mark, amber marks prototypes.
- * Contrast ratios are against the surface each colour is used on; all text pairs meet WCAG AA.
+ * Design tokens. Concept: the career as a request trace. Paper and ink, with .NET violet as the
+ * one accent and three span colours that encode the kind of engagement (validated for colour-blind
+ * separation). One type family, Archivo, whose width axis carries the personality: expanded for
+ * display, normal for reading, condensed for dates and durations.
+ * Contrast ratios are against --color-bg unless noted; all text pairs meet WCAG AA.
  */
 :root {
-  /* Light surfaces (slightly blue-biased neutrals, toward the navy) */
-  --color-bg: #fafafd;
-  --color-surface: #f1f0f8;          /* panels, alternate bands */
-  --color-text: #17162b;             /* 17.0:1 on bg */
-  --color-text-muted: #4d4b66;       /* 8.0:1 on bg */
-  --color-border: #e0dfec;
-  --color-border-strong: #b8b6cf;
-  --color-accent: #2b2870;           /* navy from CV, 12.3:1 on bg */
-  --color-accent-hover: #1d1a52;
-  --color-accent-soft: #e9e8f6;
-  --color-positive: #16794a;         /* "live" text on light, 5.2:1 */
-  --color-positive-soft: #e3f3ea;
-  --color-caution: #8a5a00;          /* "prototype" text on light, 5.7:1 */
-  --color-caution-soft: #fbf0d9;
-  --color-idle: #5e5c78;             /* "complete / not launched" text on light, 6.2:1 */
-  --color-negative: #a3261b;         /* errors, 7.4:1 */
-  --color-focus: #2b2870;
+  --color-bg: #f4f4f1;               /* paper */
+  --color-surface: #ffffff;          /* panels, the trace */
+  --color-surface-sunk: #ebebe6;     /* alternate bands */
+  --color-text: #141418;             /* 16.7:1 */
+  --color-text-muted: #55555e;       /* 6.7:1, 6.2:1 on sunk */
+  --color-border: #dadad3;
+  --color-border-strong: #85857d;    /* 3.6:1, for control outlines */
+  --color-accent: #512bd4;           /* .NET violet, 7.2:1 */
+  --color-accent-hover: #3d1fa6;
+  --color-accent-soft: #ece8fb;      /* accent text on it: 6.6:1 */
+  --color-on-accent: #ffffff;        /* 7.9:1 on accent */
+  --color-positive: #0b7a5c;         /* 4.8:1 */
+  --color-caution: #9a5200;          /* 5.3:1 */
+  --color-idle: #5e5e68;             /* 5.8:1 */
+  --color-negative: #b42318;         /* 6.6:1 on surface */
+  --color-focus: #512bd4;
 
-  /* Dark band ("control room") */
-  --color-ink: #14123a;              /* band background */
-  --color-ink-panel: #1e1b52;        /* panels on the band */
-  --color-ink-line: #34306f;         /* rules and borders on the band */
-  --color-on-ink: #eeedf9;           /* 15.4:1 on ink */
-  --color-on-ink-muted: #adaad6;     /* 8.1:1 on ink, 7.1:1 on panel */
+  /* Trace spans, by kind of engagement. Fills only: labels sit beside them in ink. */
+  --span-employment: #512bd4;
+  --span-company: #009a7a;
+  --span-freelance: #c96a12;
 
-  /* Status lights (also used as text on ink: all 5.4:1 or better) */
-  --led-live: #4cc48d;
-  --led-prototype: #edb04a;
-  --led-idle: #8d8ab5;
-
-  /* Code on ink */
-  --code-key: #b9b5ff;               /* 8.3:1 on panel */
-  --code-string: #7fd6a6;            /* 9.1:1 on panel */
-  --code-punct: #8d8ab5;             /* 4.8:1 on panel */
+  /* Code console */
+  --color-code-bg: #17171c;
+  --color-code-line: #2c2c35;
+  --code-text: #e9e9ee;              /* 14.8:1 on code bg */
+  --code-key: #c4b5fd;               /* 9.7:1 */
+  --code-string: #7ee0c0;            /* 11.3:1 */
+  --code-punct: #9a9aa6;             /* 6.4:1 */
 
   /* Typography */
-  --font-display: var(--font-bricolage), "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --font-sans: var(--font-plex-sans), "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
+  --font-display: var(--font-archivo), "Segoe UI", system-ui, sans-serif;
+  --font-sans: var(--font-archivo), "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Consolas, monospace;
 
   --text-xs: 0.8125rem;   /* 13px */
@@ -52,7 +48,11 @@
   --text-xl: 1.5rem;
   --text-2xl: clamp(1.75rem, 1.35rem + 1.6vw, 2.5rem);
   --text-3xl: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
-  --text-display: clamp(3rem, 1.6rem + 6vw, 6.5rem);
+  --text-display: clamp(3.25rem, 1rem + 9vw, 9.5rem);
+
+  /* Archivo width axis */
+  --wdth-display: 125;
+  --wdth-data: 82;
 
   --leading-tight: 1.08;
   --leading-snug: 1.35;
@@ -83,7 +83,7 @@
   /* Shape: small radius for controls, larger only for the panels that need to read as objects */
   --radius-sm: 4px;
   --radius-md: 6px;
-  --radius-lg: 14px;
+  --radius-lg: 10px;
   --border-width: 1px;
   --focus-ring: 0 0 0 3px var(--color-bg), 0 0 0 5px var(--color-focus);
 

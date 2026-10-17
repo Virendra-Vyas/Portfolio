@@ -1,0 +1,75 @@
+.strip {
+  margin: 0;
+}
+
+.caption {
+  color: var(--color-text-muted);
+  font-size: var(--text-sm);
+}
+
+.plot {
+  position: relative;
+  margin-top: var(--space-3);
+  padding-bottom: 1.5rem;
+  background: repeating-linear-gradient(
+      90deg,
+      var(--color-border) 0 1px,
+      transparent 1px calc(100% * 12 / var(--months))
+    )
+    top / 100% calc(100% - 1.5rem) no-repeat;
+}
+
+.row {
+  position: relative;
+  display: block;
+  height: 9px;
+}
+
+.bar {
+  position: absolute;
+  top: 2px;
+  height: 5px;
+  min-width: 3px;
+  border-radius: 3px;
+  background: var(--color-border);
+}
+
+.on {
+  top: 0;
+  height: 9px;
+  background: var(--span);
+}
+
+.employment {
+  --span: var(--span-employment);
+}
+
+.company {
+  --span: var(--span-company);
+}
+
+.freelance {
+  --span: var(--span-freelance);
+}
+
+.years {
+  position: absolute;
+  inset: auto 0 0;
+  height: 1.25rem;
+}
+
+.years span {
+  position: absolute;
+  padding-left: 3px;
+  border-left: var(--border-width) solid var(--color-border-strong);
+  color: var(--color-text-muted);
+  font-size: var(--text-xs);
+  font-variation-settings: "wdth" var(--wdth-data);
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 30rem) {
+  .years span:nth-child(even) {
+    color: transparent;
+  }
+}

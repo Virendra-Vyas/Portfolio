@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Archivo, IBM_Plex_Mono } from "next/font/google";
 import { site } from "@/content/site";
 import { SkipLink } from "@/components/SkipLink/SkipLink";
 import { SiteHeader } from "@/components/SiteHeader/SiteHeader";
@@ -10,15 +10,11 @@ import "./globals.css";
 // "optional" avoids a late re-paint of the large headline when the font arrives after first paint,
 // which Lighthouse otherwise counts as the Largest Contentful Paint. The font is preloaded, so it is
 // almost always ready in time; if not, the metric-matched fallback is used for that visit.
-const bricolage = Bricolage_Grotesque({
+// One variable family for everything but code: the width axis does the work of a second typeface.
+const archivo = Archivo({
   subsets: ["latin"],
-  variable: "--font-bricolage",
+  variable: "--font-archivo",
   axes: ["wdth"],
-  display: "optional",
-});
-const plexSans = IBM_Plex_Sans({
-  subsets: ["latin"],
-  variable: "--font-plex-sans",
   display: "optional",
 });
 const plexMono = IBM_Plex_Mono({
@@ -54,7 +50,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${bricolage.variable} ${plexSans.variable} ${plexMono.variable}`}>
+    <html lang="en-GB" className={`${archivo.variable} ${plexMono.variable}`}>
       <body>
         <SkipLink targetId={MAIN_ID} />
         <SiteHeader site={site} />

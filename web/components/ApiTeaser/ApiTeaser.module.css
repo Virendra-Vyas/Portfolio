@@ -1,13 +1,13 @@
-/* A slice of the control room: the same ink as the hero, so the API reads as part of the system. */
+/* A terminal: the one dark surface on the site, because that is where an API is read. */
 .console {
   margin: 0;
   min-width: 0;
-  border: var(--border-width) solid var(--color-ink-line);
+  border: var(--border-width) solid var(--color-code-line);
   border-radius: var(--radius-lg);
-  background: var(--color-ink-panel);
-  color: var(--color-on-ink);
+  background: var(--color-code-bg);
+  color: var(--code-text);
   overflow: hidden;
-  box-shadow: 0 24px 50px -30px var(--color-ink);
+  box-shadow: 0 24px 48px -32px rgb(20 20 24 / 0.6);
 }
 
 .bar {
@@ -16,8 +16,7 @@
   justify-content: space-between;
   gap: var(--space-2) var(--space-4);
   padding: var(--space-3) var(--space-5);
-  border-bottom: var(--border-width) solid var(--color-ink-line);
-  background: var(--color-ink);
+  border-bottom: var(--border-width) solid var(--color-code-line);
   font-family: var(--font-mono);
   font-size: var(--text-sm);
 }
@@ -27,12 +26,12 @@
 }
 
 .method {
-  color: var(--led-live);
+  color: var(--code-string);
   font-weight: var(--weight-medium);
 }
 
 .status {
-  color: var(--led-live);
+  color: var(--code-string);
 }
 
 .status::before {
@@ -42,7 +41,7 @@
   height: 0.5rem;
   margin-right: var(--space-2);
   border-radius: 50%;
-  background: var(--led-live);
+  background: var(--code-string);
   vertical-align: 0.05em;
 }
 
@@ -50,13 +49,13 @@
   margin: 0;
   padding: var(--space-5);
   overflow-x: auto;
-  color: var(--color-on-ink);
+  color: var(--code-text);
   font-size: var(--text-sm);
   line-height: 1.75;
 }
 
 .body:focus-visible {
-  box-shadow: inset 0 0 0 2px var(--led-live);
+  box-shadow: inset 0 0 0 2px var(--code-string);
   border-radius: 0;
 }
 

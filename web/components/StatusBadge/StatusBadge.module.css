@@ -1,10 +1,10 @@
-/* A status light plus words: colour is never the only signal. */
+/* A marker plus words: colour is never the only signal. */
 .badge {
-  --led: var(--color-idle);
+  --status: var(--color-idle);
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
-  color: var(--led-text, var(--color-idle));
+  color: var(--status);
   font-size: var(--text-xs);
   font-weight: var(--weight-semibold);
   line-height: var(--leading-snug);
@@ -13,31 +13,22 @@
 
 .badge::before {
   content: "";
-  width: 0.55rem;
-  height: 0.55rem;
-  border-radius: 50%;
-  background: var(--led);
-  box-shadow: 0 0 0 3px color-mix(in srgb, var(--led) 20%, transparent);
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 2px;
+  background: var(--status);
 }
 
 .live,
 .production {
-  --led: var(--led-live);
-  --led-text: var(--color-positive);
+  --status: var(--color-positive);
 }
 
 .prototype {
-  --led: var(--led-prototype);
-  --led-text: var(--color-caution);
+  --status: var(--color-caution);
 }
 
 .complete,
 .notLaunched {
-  --led: var(--led-idle);
-  --led-text: var(--color-idle);
-}
-
-/* On ink the light colours are bright enough to be the text colour too (5.4:1 or better). */
-.ink {
-  color: var(--led);
+  --status: var(--color-idle);
 }
