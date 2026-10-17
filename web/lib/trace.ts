@@ -113,3 +113,8 @@ export function buildTrace(now: Date = new Date()): Trace {
 
   return { spans, originYear, months, years, total };
 }
+
+/** The kind of engagement behind a case study, for its colour. Work with no timeline role is my own company's. */
+export function caseStudyKind(slug: string): SpanKind {
+  return timeline.find((entry) => entry.caseStudy === `/work/${slug}/`)?.kind ?? "company";
+}

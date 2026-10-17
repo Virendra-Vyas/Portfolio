@@ -7,6 +7,32 @@
   border-block: var(--border-width) solid var(--color-border);
 }
 
+/* The closing band: light on ink, with the three span colours across the top edge. */
+.dark {
+  background:
+    linear-gradient(
+        90deg,
+        var(--span-employment) 0 54%,
+        var(--span-company) 54% 84%,
+        var(--span-freelance) 84% 100%
+      )
+      top / 100% 6px no-repeat,
+    var(--color-dark);
+  color: var(--color-on-dark);
+}
+
+.dark .intro {
+  color: var(--color-on-dark-muted);
+}
+
+.dark a:not([class*="button"]) {
+  color: var(--color-on-dark-link);
+}
+
+.dark a:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-dark), 0 0 0 5px var(--color-on-dark-link);
+}
+
 .head {
   display: flex;
   flex-wrap: wrap;

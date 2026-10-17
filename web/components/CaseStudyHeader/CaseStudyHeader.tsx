@@ -6,7 +6,9 @@ import { FactList } from "@/components/FactList/FactList";
 import { StatusBadge } from "@/components/StatusBadge/StatusBadge";
 import { TagList } from "@/components/TagList/TagList";
 import { TraceStrip } from "@/components/TraceStrip/TraceStrip";
+import { Icon } from "@/lib/icons";
 import { endpoints } from "@/lib/publicApi";
+import { caseStudyKind } from "@/lib/trace";
 import styles from "./CaseStudyHeader.module.css";
 
 type CaseStudyHeaderProps = {
@@ -16,7 +18,7 @@ type CaseStudyHeaderProps = {
 
 export function CaseStudyHeader({ study, labels }: CaseStudyHeaderProps) {
   return (
-    <header>
+    <header className={`${styles.band} kind-${caseStudyKind(study.slug)}`}>
       <Container className={styles.header}>
         <div className={styles.topRow}>
           <Link href="/work/" className={styles.back}>
@@ -29,6 +31,9 @@ export function CaseStudyHeader({ study, labels }: CaseStudyHeaderProps) {
           </a>
         </div>
         <div className={styles.status}>
+          <span className={styles.icon}>
+            <Icon name={study.icon} size={30} />
+          </span>
           <StatusBadge status={study.status} />
         </div>
         <h1 className={styles.title}>{study.title}</h1>

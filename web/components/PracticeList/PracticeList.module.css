@@ -7,10 +7,28 @@
 
 .item {
   display: grid;
-  gap: var(--space-3);
-  max-width: var(--width-prose);
-  padding-left: var(--space-6);
-  border-left: 2px solid var(--color-accent);
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: var(--space-3) var(--space-4);
+  max-width: calc(var(--width-prose) + 4rem);
+}
+
+.item > :not(.icon) {
+  grid-column: 2;
+}
+
+.icon {
+  grid-row: 1 / span 3;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: var(--radius-lg);
+  background: var(--tint-employment);
+  color: var(--ink-employment);
+}
+
+.link {
+  justify-self: start;
 }
 
 .heading {

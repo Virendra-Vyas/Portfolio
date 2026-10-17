@@ -2,14 +2,14 @@
   flex: none;
 }
 
-.tile {
-  fill: var(--color-text);
+.employment {
+  fill: var(--span-employment);
 }
 
-.letters {
-  stroke: var(--color-surface);
+.company {
+  fill: var(--span-company);
 }
 
-.span {
-  fill: #9b84ff; /* a lighter step of .NET violet, 5.9:1 on the ink tile */
+.freelance {
+  fill: var(--span-freelance);
 }

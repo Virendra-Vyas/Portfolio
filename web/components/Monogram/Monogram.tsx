@@ -1,19 +1,15 @@
 import styles from "./Monogram.module.css";
 
-/** The VV mark: the same drawing as app/icon.svg. The bar under the letters is a trace span. */
+/**
+ * The mark: a three-span waterfall, the career trace reduced to its shape, in the three span colours.
+ * The same drawing as app/icon.svg.
+ */
 export function Monogram({ size = 32 }: { size?: number }) {
   return (
     <svg className={styles.mark} width={size} height={size} viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-      <rect className={styles.tile} width="64" height="64" rx="8" />
-      <path
-        className={styles.letters}
-        d="M9 12 L17.5 40 L26 12 M38 12 L46.5 40 L55 12"
-        fill="none"
-        strokeWidth="6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <rect className={styles.span} x="9" y="49" width="38" height="6" rx="3" />
+      <rect className={styles.employment} x="4" y="10" width="32" height="12" rx="6" />
+      <rect className={styles.company} x="16" y="26" width="38" height="12" rx="6" />
+      <rect className={styles.freelance} x="30" y="42" width="30" height="12" rx="6" />
     </svg>
   );
 }

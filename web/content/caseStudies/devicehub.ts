@@ -2,6 +2,7 @@ import type { CaseStudy } from "../schema";
 
 export const devicehub: CaseStudy = {
   slug: "devicehub",
+  icon: "router",
   title: "DeviceHub",
   summary:
     "Leading a team of five on an IoT device management and access-control platform: role-based access control, real-time messaging, field hardware, security fixes and a zero-incident .NET 7 to .NET 10 migration.",

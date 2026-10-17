@@ -22,6 +22,7 @@ export const home: HomePage = {
     items: [
       {
         label: "Automated test coverage",
+        icon: "flask",
         before: "Roughly 40%",
         after: "85%",
         note: "In two sprints.",
@@ -30,18 +31,21 @@ export const home: HomePage = {
       },
       {
         label: "Release cadence",
+        icon: "repeat",
         before: "Weekly",
         after: "Daily",
         source: { label: "DeviceHub", href: "/work/devicehub/" },
       },
       {
         label: "Regression defects",
+        icon: "bug",
         before: "Before CI/CD",
         after: "About 35% fewer",
         source: { label: "DeviceHub", href: "/work/devicehub/" },
       },
       {
         label: "Live platform migration",
+        icon: "server-cog",
         before: ".NET 7",
         after: ".NET 10",
         note: "Zero incidents, delivered in staged, test-driven steps.",

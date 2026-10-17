@@ -44,10 +44,30 @@ export type Site = {
   };
 };
 
+/** Icons are presentation, so content names them and lib/icons.tsx draws them. */
+export type IconName =
+  | "landmark"
+  | "router"
+  | "bot"
+  | "store"
+  | "calculator"
+  | "map-pin"
+  | "badge-check"
+  | "calendar-clock"
+  | "flask"
+  | "repeat"
+  | "bug"
+  | "server-cog"
+  | "terminal"
+  | "workflow"
+  | "gauge"
+  | "user-check"
+  | "plug";
+
 /* ------------------------------------------------------------------ Profile */
 
 /** A label/value pair, rendered as a definition list. */
-export type Fact = { term: string; detail: string };
+export type Fact = { term: string; detail: string; icon?: IconName };
 
 export type ProofPoint = {
   /** The claim in a few words, e.g. "Zero-incident .NET 7 to .NET 10 migration". */
@@ -134,6 +154,8 @@ export type Diagram = {
 export type CaseStudy = {
   slug: string;
   title: string;
+  /** What the system is, drawn on its card and header. */
+  icon: IconName;
   /** One or two sentences for cards and meta descriptions. */
   summary: string;
   role: string;
@@ -180,6 +202,7 @@ export type SkillGroup = {
 
 export type AiPractice = {
   heading: string;
+  icon: IconName;
   body: string;
   evidence?: AnyLink;
 };
@@ -223,6 +246,7 @@ export type Writing = {
 /** A measured change, drawn to scale: values are percentages of the same quantity before and after. */
 export type Outcome = {
   label: string;
+  icon: IconName;
   before: string;
   after: string;
   /** For a bar drawn to scale; omit when the change is not a percentage. */

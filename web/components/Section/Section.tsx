@@ -8,14 +8,14 @@ type SectionProps = {
   id: string;
   copy: SectionCopy;
   children: ReactNode;
-  tone?: "plain" | "tinted";
+  tone?: "plain" | "tinted" | "dark";
 };
 
 /** A page section with a heading, optional intro and optional "see more" link, labelled for assistive tech. */
 export function Section({ id, copy, children, tone = "plain" }: SectionProps) {
   const headingId = `${id}-heading`;
   return (
-    <section id={id} aria-labelledby={headingId} className={tone === "tinted" ? `${styles.section} ${styles.tinted}` : styles.section}>
+    <section id={id} aria-labelledby={headingId} className={tone === "plain" ? styles.section : `${styles.section} ${styles[tone]}`}>
       <Container>
         <div className={styles.head}>
           <h2 id={headingId} className={styles.heading}>

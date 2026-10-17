@@ -1,4 +1,5 @@
 import type { ContactPage, Site } from "@/content/schema";
+import { LinkIcon } from "@/lib/icons";
 import styles from "./ContactRoutes.module.css";
 
 type ContactRoutesProps = {
@@ -10,7 +11,12 @@ export function ContactRoutes({ contact, copy }: ContactRoutesProps) {
   return (
     <dl className={styles.list}>
       <div className={styles.row}>
-        <dt className={styles.term}>{copy.emailLabel}</dt>
+        <dt className={styles.term}>
+          <span className={styles.icon}>
+            <LinkIcon href={`mailto:${contact.email}`} />
+          </span>
+          {copy.emailLabel}
+        </dt>
         <dd className={styles.detail}>
           <a href={`mailto:${contact.email}`} className={styles.email}>
             {contact.email}
@@ -19,7 +25,12 @@ export function ContactRoutes({ contact, copy }: ContactRoutesProps) {
       </div>
       {contact.links.map((link) => (
         <div key={link.href} className={styles.row}>
-          <dt className={styles.term}>{link.label}</dt>
+          <dt className={styles.term}>
+            <span className={styles.icon}>
+              <LinkIcon href={link.href} />
+            </span>
+            {link.label}
+          </dt>
           <dd className={styles.detail}>
             <a href={link.href} rel="me noopener">
               {link.href.replace(/^https:\/\/(www\.)?/, "")}

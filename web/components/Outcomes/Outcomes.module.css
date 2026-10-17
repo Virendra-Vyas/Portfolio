@@ -11,7 +11,7 @@
   align-content: start;
   gap: var(--space-3);
   padding-top: var(--space-4);
-  border-top: 2px solid var(--color-text);
+  border-top: 3px solid var(--kind);
 }
 
 /* The bar spans both columns where there is room: it is the one chart on the page. */
@@ -31,8 +31,22 @@
 }
 
 .label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   color: var(--color-text-muted);
   font-size: var(--text-sm);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-md);
+  background: var(--kind-tint);
+  color: var(--kind-ink);
 }
 
 .change {
@@ -69,7 +83,7 @@
 }
 
 .after {
-  color: var(--color-accent);
+  color: var(--kind-ink);
   font-size: var(--text-xl);
   font-weight: var(--weight-bold);
   letter-spacing: -0.02em;
@@ -103,7 +117,7 @@
 }
 
 .gain {
-  background: var(--color-accent);
+  background: var(--kind);
   transform-origin: left center;
 }
 
@@ -129,7 +143,7 @@
 }
 
 .tickAfter {
-  color: var(--color-accent);
+  color: var(--kind-ink);
   font-weight: var(--weight-semibold);
 }
 

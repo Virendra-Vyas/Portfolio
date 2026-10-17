@@ -2,6 +2,7 @@ import type { CaseStudy } from "../schema";
 
 export const govbridge: CaseStudy = {
   slug: "govbridge",
+  icon: "landmark",
   title: "GovBridge UK",
   summary:
     "A unified API gateway that puts HMRC Making Tax Digital, Companies House, DVLA, Land Registry and FHRS behind one consistent contract. Live, early-stage and in active development.",
