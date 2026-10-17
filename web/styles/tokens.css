@@ -18,6 +18,7 @@
   --color-accent-soft: #ece8fb;      /* accent text on it: 6.6:1 */
   --color-on-accent: #ffffff;        /* 7.9:1 on accent */
   --color-positive: #0b7a5c;         /* 4.8:1 */
+  --color-positive-soft: #e2f2ea;    /* success panels and the GET badge; positive text on it: 4.6:1 */
   --color-caution: #9a5200;          /* 5.3:1 */
   --color-idle: #5e5e68;             /* 5.8:1 */
   --color-negative: #b42318;         /* 6.6:1 on surface */
