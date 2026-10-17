@@ -11,15 +11,28 @@
 
 @media (min-width: 40rem) {
   .row {
-    grid-template-columns: 8rem 1fr;
-    align-items: baseline;
+    grid-template-columns: 10rem 1fr;
+    align-items: center;
   }
 }
 
 .term {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
   color: var(--color-text-muted);
-  font-size: var(--text-xs);
-  font-variant-numeric: tabular-nums;
+  font-size: var(--text-sm);
+}
+
+.icon {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: var(--radius-md);
+  background: var(--tint-employment);
+  color: var(--ink-employment);
 }
 
 .detail {

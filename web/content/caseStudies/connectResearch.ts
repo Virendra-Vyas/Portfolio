@@ -2,6 +2,7 @@ import type { CaseStudy } from "../schema";
 
 export const connectResearch: CaseStudy = {
   slug: "connectresearch",
+  icon: "store",
   title: "ConnectResearch",
   summary:
     "Tech Lead on a multi-tenant B2B marketplace connecting researchers with domain-expert consultants: event-driven backend on Azure Service Bus, a rules-driven financial engine, Stripe milestone payments and embedding-based matching.",

@@ -2,6 +2,7 @@ import type { CaseStudy } from "../schema";
 
 export const intellibooks: CaseStudy = {
   slug: "intellibooks",
+  icon: "calculator",
   title: "IntelliBooks",
   summary:
     "A greenfield accounting and tax application for a regulated domain, built as sole engineer and architect, with HMRC integrations under OAuth 2.0 tested against the HMRC sandbox. Not currently commercially launched.",

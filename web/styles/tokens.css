@@ -1,7 +1,8 @@
 /*
  * Design tokens. Concept: the career as a request trace. Paper and ink, with .NET violet as the
- * one accent and three span colours that encode the kind of engagement (validated for colour-blind
- * separation). One type family, Archivo, whose width axis carries the personality: expanded for
+ * accent and three span colours that encode the kind of engagement (validated for colour-blind
+ * separation). Those three hues also colour the rest of the site, so a colour always means the same
+ * kind of work. One type family, Archivo, whose width axis carries the personality: expanded for
  * display, normal for reading, condensed for dates and durations.
  * Contrast ratios are against --color-bg unless noted; all text pairs meet WCAG AA.
  */
@@ -17,8 +18,8 @@
   --color-accent-hover: #3d1fa6;
   --color-accent-soft: #ece8fb;      /* accent text on it: 6.6:1 */
   --color-on-accent: #ffffff;        /* 7.9:1 on accent */
-  --color-positive: #0b7a5c;         /* 4.8:1 */
-  --color-positive-soft: #e2f2ea;    /* success panels and the GET badge; positive text on it: 4.6:1 */
+  --color-positive: #096b51;         /* 6.1:1; 5.0:1 or better on every tint */
+  --color-positive-soft: #e2f2ea;    /* success panels and the GET badge; positive text on it: 5.6:1 */
   --color-caution: #9a5200;          /* 5.3:1 */
   --color-idle: #5e5e68;             /* 5.8:1 */
   --color-negative: #b42318;         /* 6.6:1 on surface */
@@ -28,6 +29,21 @@
   --span-employment: #512bd4;
   --span-company: #009a7a;
   --span-freelance: #c96a12;
+
+  /* The same three hues as a palette for the whole site: a tint for fields and bands, and an ink
+     for text and icons on that tint (6:1 or better on its tint, on paper and on white). */
+  --tint-employment: #ebe6fd;
+  --tint-company: #dcf2ec;
+  --tint-freelance: #fbeddc;
+  --ink-employment: #4a24c8;
+  --ink-company: #00684f;
+  --ink-freelance: #8f4600;
+
+  /* The dark band that closes the home page (and the code console) */
+  --color-dark: #141418;
+  --color-on-dark: #f4f4f1;          /* 16.7:1 on dark */
+  --color-on-dark-muted: #b4b4bd;    /* 8.9:1 */
+  --color-on-dark-link: #c4b5fd;     /* 9.9:1 */
 
   /* Code console */
   --color-code-bg: #17171c;
@@ -91,4 +107,23 @@
   /* Motion */
   --duration-fast: 140ms;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* A component sets one of these to take on that kind's colours as --kind, --kind-tint and --kind-ink. */
+.kind-employment {
+  --kind: var(--span-employment);
+  --kind-tint: var(--tint-employment);
+  --kind-ink: var(--ink-employment);
+}
+
+.kind-company {
+  --kind: var(--span-company);
+  --kind-tint: var(--tint-company);
+  --kind-ink: var(--ink-company);
+}
+
+.kind-freelance {
+  --kind: var(--span-freelance);
+  --kind-tint: var(--tint-freelance);
+  --kind-ink: var(--ink-freelance);
 }

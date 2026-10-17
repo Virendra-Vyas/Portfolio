@@ -52,7 +52,7 @@ export default function Home() {
       <Section id="api" copy={apiPage.teaser}>
         <ApiTeaser request={`GET ${endpoints.profile}`} excerpt={excerpt} status={apiPage.teaserStatus} />
       </Section>
-      <Section id="contact" copy={home.contact} tone="tinted">
+      <Section id="contact" copy={home.contact} tone="dark">
         <ContactCta profile={profile} contact={site.contact} primaryAction={home.primaryAction} />
       </Section>
     </>

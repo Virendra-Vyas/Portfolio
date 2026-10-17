@@ -2,6 +2,7 @@ import type { CaseStudy } from "../schema";
 
 export const stringline: CaseStudy = {
   slug: "stringline",
+  icon: "bot",
   title: "Stringline",
   summary:
     "A six-step multi-agent pipeline on the Claude API that automates a construction company's month-end finance close, with every step scored for confidence. Phase 0 proof of concept, public on GitHub.",

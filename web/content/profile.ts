@@ -69,7 +69,7 @@ export const profile: Profile = {
 
 /** Location, right to work and availability as label/value pairs. */
 export const profileFacts: Fact[] = [
-  { term: profile.factLabels.location, detail: profile.location },
-  { term: profile.factLabels.rightToWork, detail: profile.rightToWork },
-  { term: profile.factLabels.availability, detail: profile.availability },
+  { term: profile.factLabels.location, detail: profile.location, icon: "map-pin" },
+  { term: profile.factLabels.rightToWork, detail: profile.rightToWork, icon: "badge-check" },
+  { term: profile.factLabels.availability, detail: profile.availability, icon: "calendar-clock" },
 ];

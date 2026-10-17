@@ -9,7 +9,7 @@
 
 /* The name is the one big typographic gesture: Archivo at full width, set tight. */
 .name {
-  /* Two lines on a phone ("Virendra" is about 4.9em wide), one line (about 7.7em) from 40rem. */
+  /* Two lines on a phone ("Virendra" is about 4.9em wide), one line (about 8.05em with the space) from 40rem. */
   font-size: 20cqi;
   font-weight: 800;
   font-variation-settings: "wdth" var(--wdth-display);
@@ -24,7 +24,7 @@
 
 @container (min-width: 40rem) {
   .name {
-    font-size: 12.7cqi;
+    font-size: 12.2cqi;
   }
 
   .word {
@@ -36,8 +36,17 @@
   display: grid;
   gap: var(--space-5) var(--space-7);
   margin-top: var(--space-6);
-  padding-top: var(--space-5);
-  border-top: 2px solid var(--color-text);
+  padding-top: calc(var(--space-5) + 8px);
+  /* The mark, stretched into a rule: three spans with a gap between each. */
+  background: linear-gradient(
+      90deg,
+      var(--span-employment) 0 54%,
+      transparent 54% 55%,
+      var(--span-company) 55% 84%,
+      transparent 84% 85%,
+      var(--span-freelance) 85% 100%
+    )
+    top / 100% 8px no-repeat;
 }
 
 @media (min-width: 56rem) {

@@ -1,14 +1,23 @@
 import type { Outcome } from "@/content/schema";
 import { SmartLink } from "@/components/SmartLink/SmartLink";
+import { Icon } from "@/lib/icons";
 import styles from "./Outcomes.module.css";
 
-/** Before-and-after pairs. Percentages get a 0–100 bar drawn to scale; the rest are shown as a change of state. */
+/**
+ * Before-and-after pairs. Percentages get a 0–100 bar drawn to scale; the rest are shown as a change of state.
+ * They all come from employed work (DeviceHub), so they wear that kind's colour.
+ */
 export function Outcomes({ items }: { items: Outcome[] }) {
   return (
-    <ol className={styles.list}>
+    <ol className={`${styles.list} kind-employment`}>
       {items.map((item) => (
         <li key={item.label} className={styles.item}>
-          <p className={styles.label}>{item.label}</p>
+          <p className={styles.label}>
+            <span className={styles.icon}>
+              <Icon name={item.icon} size={18} />
+            </span>
+            {item.label}
+          </p>
           <div className={styles.change}>
             <span className={styles.before}>{item.before}</span>
             <span className={styles.arrow} aria-hidden="true" />
