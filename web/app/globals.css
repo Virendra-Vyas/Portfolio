@@ -12,6 +12,13 @@ html {
   text-size-adjust: 100%;
 }
 
+/* The header is sticky from 48rem up: keep anchor targets and keyboard focus clear of it (WCAG 2.4.11). */
+@media (min-width: 48rem) {
+  html {
+    scroll-padding-top: calc(var(--header-height) + var(--space-5));
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;
