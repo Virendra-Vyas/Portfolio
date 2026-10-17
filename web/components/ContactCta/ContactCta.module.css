@@ -30,9 +30,9 @@
 }
 
 .email {
-  font-family: var(--font-mono);
   font-size: var(--text-sm);
   overflow-wrap: anywhere;
+  font-variant-numeric: tabular-nums;
 }
 
 .links {

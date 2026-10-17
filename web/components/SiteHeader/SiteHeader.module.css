@@ -1,6 +1,12 @@
+/* The ink band carries the identity on every page; on the home page it runs straight into the hero. */
+/* Sticky only where the header is one compact row; on a phone it would eat the screen. */
 .header {
-  border-bottom: var(--border-width) solid var(--color-border);
-  background: var(--color-bg);
+  position: relative;
+  z-index: 20;
+  background: color-mix(in srgb, var(--color-ink) 92%, transparent);
+  backdrop-filter: saturate(140%) blur(10px);
+  border-bottom: var(--border-width) solid var(--color-ink-line);
+  color: var(--color-on-ink);
 }
 
 .inner {
@@ -15,22 +21,47 @@
 
 .brand {
   display: flex;
-  flex-direction: column;
-  color: var(--color-text);
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-on-ink);
   text-decoration: none;
-  line-height: var(--leading-snug);
 }
 
 .brand:hover {
-  color: var(--color-text);
+  color: var(--color-on-ink);
+}
+
+.brand:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-ink), 0 0 0 5px var(--led-live);
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  line-height: var(--leading-snug);
 }
 
 .name {
+  font-family: var(--font-display);
+  font-size: 1.0625rem;
   font-weight: var(--weight-bold);
   letter-spacing: -0.01em;
 }
 
 .role {
-  color: var(--color-text-muted);
+  color: var(--color-on-ink-muted);
   font-size: var(--text-xs);
+}
+
+@media (min-width: 48rem) {
+  .header {
+    position: sticky;
+    top: 0;
+  }
+}
+
+/* Lets the link row scroll inside the header instead of widening the page. */
+.nav {
+  min-width: 0;
+  max-width: 100%;
 }

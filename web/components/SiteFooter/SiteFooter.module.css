@@ -1,27 +1,41 @@
+/* Bookends the page with the same ink band as the header. */
 .footer {
-  margin-top: var(--space-9);
-  border-top: var(--border-width) solid var(--color-border);
-  background: var(--color-surface);
+  background: var(--color-ink);
+  color: var(--color-on-ink-muted);
   font-size: var(--text-sm);
 }
 
 .inner {
   display: grid;
   gap: var(--space-3);
-  padding-block: var(--space-6) var(--space-7);
+  padding-block: var(--space-7);
 }
 
 .links {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-2) var(--space-5);
+  margin-top: var(--space-2);
   padding: 0;
   list-style: none;
   font-weight: var(--weight-medium);
 }
 
+.links a {
+  color: var(--color-on-ink);
+  text-decoration-color: var(--color-ink-line);
+}
+
+.links a:hover {
+  color: var(--color-on-ink);
+  text-decoration-color: var(--led-live);
+}
+
+.links a:focus-visible {
+  box-shadow: 0 0 0 3px var(--color-ink), 0 0 0 5px var(--led-live);
+}
+
 .company,
 .note {
-  color: var(--color-text-muted);
   max-width: var(--width-prose);
 }

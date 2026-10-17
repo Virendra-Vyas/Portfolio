@@ -1,29 +1,73 @@
-.figure {
+/* A slice of the control room: the same ink as the hero, so the API reads as part of the system. */
+.console {
   margin: 0;
   min-width: 0;
-  border: var(--border-width) solid var(--color-border);
-  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-ink-line);
+  border-radius: var(--radius-lg);
+  background: var(--color-ink-panel);
+  color: var(--color-on-ink);
   overflow: hidden;
-  background: var(--color-bg);
+  box-shadow: 0 24px 50px -30px var(--color-ink);
+}
+
+.bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--space-2) var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  border-bottom: var(--border-width) solid var(--color-ink-line);
+  background: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: var(--text-sm);
 }
 
 .request {
-  padding: var(--space-3) var(--space-4);
-  border-bottom: var(--border-width) solid var(--color-border);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
   overflow-wrap: anywhere;
 }
 
 .method {
-  color: var(--color-positive);
+  color: var(--led-live);
   font-weight: var(--weight-medium);
+}
+
+.status {
+  color: var(--led-live);
+}
+
+.status::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: var(--space-2);
+  border-radius: 50%;
+  background: var(--led-live);
+  vertical-align: 0.05em;
 }
 
 .body {
   margin: 0;
-  padding: var(--space-4);
+  padding: var(--space-5);
   overflow-x: auto;
-  font-size: var(--text-xs);
-  line-height: 1.7;
+  color: var(--color-on-ink);
+  font-size: var(--text-sm);
+  line-height: 1.75;
+}
+
+.body:focus-visible {
+  box-shadow: inset 0 0 0 2px var(--led-live);
+  border-radius: 0;
+}
+
+.key {
+  color: var(--code-key);
+}
+
+.string {
+  color: var(--code-string);
+}
+
+.punct {
+  color: var(--code-punct);
 }

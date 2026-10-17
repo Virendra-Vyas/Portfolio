@@ -31,9 +31,10 @@ h2,
 h3,
 h4 {
   margin: 0;
+  font-family: var(--font-display);
   line-height: var(--leading-tight);
   font-weight: var(--weight-bold);
-  letter-spacing: -0.015em;
+  letter-spacing: -0.02em;
   text-wrap: balance;
 }
 
@@ -51,6 +52,12 @@ p {
 
 main {
   flex: 1;
+  padding-bottom: var(--space-9);
+}
+
+/* Pages that end in a full-width band run straight into the footer. */
+main:has(> section:last-child) {
+  padding-bottom: 0;
 }
 
 main:focus {

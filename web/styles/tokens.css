@@ -1,25 +1,48 @@
 /*
- * Design tokens. Light mode only (brief, section 12).
- * Contrast ratios are against --color-bg (#ffffff) unless noted; all text pairs meet WCAG AA.
+ * Design tokens. Light pages with one dark "control room" band (the home hero, the API console).
+ * Concept: the portfolio as a running system. Status lights encode real project status;
+ * navy comes from the CV, green from the Yug Solutions mark, amber marks prototypes.
+ * Contrast ratios are against the surface each colour is used on; all text pairs meet WCAG AA.
  */
 :root {
-  /* Colour */
-  --color-bg: #ffffff;
-  --color-surface: #f6f6f9;          /* panels, code blocks */
-  --color-text: #15151c;             /* 18.2:1 */
-  --color-text-muted: #4f4f5c;       /* 8.0:1 */
-  --color-border: #dedee6;
-  --color-border-strong: #b9b9c6;
-  --color-accent: #2b2870;           /* navy from CV, 12.8:1 */
+  /* Light surfaces (slightly blue-biased neutrals, toward the navy) */
+  --color-bg: #fafafd;
+  --color-surface: #f1f0f8;          /* panels, alternate bands */
+  --color-text: #17162b;             /* 17.0:1 on bg */
+  --color-text-muted: #4d4b66;       /* 8.0:1 on bg */
+  --color-border: #e0dfec;
+  --color-border-strong: #b8b6cf;
+  --color-accent: #2b2870;           /* navy from CV, 12.3:1 on bg */
   --color-accent-hover: #1d1a52;
-  --color-accent-soft: #ecebf6;      /* tinted background; accent text on it 10.8:1 */
-  --color-positive: #1b6e45;         /* small green accent, 6.2:1 */
-  --color-positive-soft: #e7f3ec;
+  --color-accent-soft: #e9e8f6;
+  --color-positive: #16794a;         /* "live" text on light, 5.2:1 */
+  --color-positive-soft: #e3f3ea;
+  --color-caution: #8a5a00;          /* "prototype" text on light, 5.7:1 */
+  --color-caution-soft: #fbf0d9;
+  --color-idle: #5e5c78;             /* "complete / not launched" text on light, 6.2:1 */
   --color-negative: #a3261b;         /* errors, 7.4:1 */
   --color-focus: #2b2870;
 
+  /* Dark band ("control room") */
+  --color-ink: #14123a;              /* band background */
+  --color-ink-panel: #1e1b52;        /* panels on the band */
+  --color-ink-line: #34306f;         /* rules and borders on the band */
+  --color-on-ink: #eeedf9;           /* 15.4:1 on ink */
+  --color-on-ink-muted: #adaad6;     /* 8.1:1 on ink, 7.1:1 on panel */
+
+  /* Status lights (also used as text on ink: all 5.4:1 or better) */
+  --led-live: #4cc48d;
+  --led-prototype: #edb04a;
+  --led-idle: #8d8ab5;
+
+  /* Code on ink */
+  --code-key: #b9b5ff;               /* 8.3:1 on panel */
+  --code-string: #7fd6a6;            /* 9.1:1 on panel */
+  --code-punct: #8d8ab5;             /* 4.8:1 on panel */
+
   /* Typography */
-  --font-sans: var(--font-inter), system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-display: var(--font-bricolage), "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-sans: var(--font-plex-sans), "Segoe UI", system-ui, -apple-system, Roboto, sans-serif;
   --font-mono: var(--font-plex-mono), ui-monospace, "SFMono-Regular", Consolas, monospace;
 
   --text-xs: 0.8125rem;   /* 13px */
@@ -27,10 +50,11 @@
   --text-base: 1.0625rem; /* 17px */
   --text-lg: 1.25rem;
   --text-xl: 1.5rem;
-  --text-2xl: clamp(1.75rem, 1.4rem + 1.4vw, 2.25rem);
-  --text-3xl: clamp(2.125rem, 1.6rem + 2.4vw, 3.25rem);
+  --text-2xl: clamp(1.75rem, 1.35rem + 1.6vw, 2.5rem);
+  --text-3xl: clamp(2.25rem, 1.5rem + 3vw, 3.75rem);
+  --text-display: clamp(3rem, 1.6rem + 6vw, 6.5rem);
 
-  --leading-tight: 1.15;
+  --leading-tight: 1.08;
   --leading-snug: 1.35;
   --leading-body: 1.65;
 
@@ -51,17 +75,19 @@
   --space-9: 6rem;
 
   /* Layout */
-  --width-page: 72rem;
+  --width-page: 74rem;
   --width-prose: 42rem;
   --gutter: clamp(1rem, 0.5rem + 2.5vw, 2rem);
   --header-height: 4rem;
 
-  /* Shape */
+  /* Shape: small radius for controls, larger only for the panels that need to read as objects */
   --radius-sm: 4px;
-  --radius-md: 8px;
+  --radius-md: 6px;
+  --radius-lg: 14px;
   --border-width: 1px;
   --focus-ring: 0 0 0 3px var(--color-bg), 0 0 0 5px var(--color-focus);
 
   /* Motion */
-  --duration-fast: 120ms;
+  --duration-fast: 140ms;
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
 }

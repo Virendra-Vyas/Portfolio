@@ -4,11 +4,12 @@ type TagListProps = {
   tags: string[];
   /** Accessible name for the list, e.g. "Technologies". */
   label: string;
+  tone?: "plain" | "ink";
 };
 
-export function TagList({ tags, label }: TagListProps) {
+export function TagList({ tags, label, tone = "plain" }: TagListProps) {
   return (
-    <ul className={styles.list} aria-label={label}>
+    <ul className={tone === "ink" ? `${styles.list} ${styles.ink}` : styles.list} aria-label={label}>
       {tags.map((tag) => (
         <li key={tag} className={styles.tag}>
           {tag}

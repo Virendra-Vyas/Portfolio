@@ -9,7 +9,7 @@ export function NextLink({ study, label }: { study: CaseStudy; label: string }) 
       <Link href={`/work/${study.slug}/`} className={styles.link}>
         <span className={styles.label}>{label}</span>
         <span className={styles.title}>
-          {study.title} <span aria-hidden="true">→</span>
+          {study.title}
         </span>
       </Link>
     </Container>

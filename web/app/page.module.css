@@ -1,7 +1,6 @@
-.cards {
+.index {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(min(100%, 19rem), 1fr));
-  gap: var(--space-5);
   padding: 0;
   list-style: none;
+  border-bottom: var(--border-width) solid var(--color-border);
 }

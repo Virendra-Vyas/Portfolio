@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" role="img" aria-labelledby="t d" font-family="Inter, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 680" width="960" height="680" role="img" aria-labelledby="t d" font-family="'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif">
   <title id="t">GovBridge UK architecture</title>
   <desc id="d">Three kinds of client call the GovBridge API: developers' applications over REST with an API key, the React developer portal on Cloudflare Pages, and AI clients (a Python tool-calling agent and an MCP server). The GovBridge API is an ASP.NET Core service on Render in Frankfurt that exposes one consistent contract over 40+ endpoints, with rate limiting per API key, encrypted OAuth token storage, HMRC fraud prevention headers, log redaction of NINO, UTR and VRN, a SandboxOnly guard attribute and explicit "HMRC not connected" errors. It uses PostgreSQL on Supabase and Redis on Upstash, and calls six UK government services: HMRC Making Tax Digital (VAT, Income Tax, PAYE, CIS, Savings Income), HMRC GovTalk for Corporation Tax CT600 returns with an IRmark, Companies House, DVLA, Land Registry and the Food Hygiene Rating Scheme.</desc>
 
@@ -7,7 +7,7 @@
       <path d="M0 0 L10 5 L0 10 z" fill="#4f4f5c"/>
     </marker>
     <style>
-      .label { font-family: 'IBM Plex Mono', ui-monospace, Consolas, monospace; font-size: 12px; letter-spacing: 0.06em; fill: #2b2870; font-weight: 500; }
+      .label { font-size: 13px; fill: #2b2870; font-weight: 600; }
       .box { fill: #ffffff; stroke: #b9b9c6; stroke-width: 1.5; }
       .title { font-size: 16px; font-weight: 700; fill: #15151c; }
       .sub { font-size: 13px; fill: #4f4f5c; }
@@ -20,7 +20,7 @@
   </defs>
 
   <!-- Clients -->
-  <text class="label" x="20" y="24">CLIENTS</text>
+  <text class="label" x="20" y="24">Clients</text>
   <rect class="box" x="20" y="36" width="280" height="80" rx="8"/>
   <text class="title" x="160" y="68" text-anchor="middle">Developers' applications</text>
   <text class="sub" x="160" y="92" text-anchor="middle">REST with an API key</text>
@@ -60,7 +60,7 @@
   <path class="line" d="M620 380 V446" marker-end="url(#arrow)"/>
 
   <!-- Data -->
-  <text class="label" x="20" y="464">DATA</text>
+  <text class="label" x="20" y="464">Data</text>
   <rect class="box" x="20" y="476" width="240" height="80" rx="8"/>
   <text class="title" x="140" y="510" text-anchor="middle">PostgreSQL</text>
   <text class="sub" x="140" y="534" text-anchor="middle">Supabase</text>
@@ -69,7 +69,7 @@
   <text class="sub" x="140" y="630" text-anchor="middle">Upstash</text>
 
   <!-- Government APIs -->
-  <text class="label" x="300" y="464">UK GOVERNMENT APIS</text>
+  <text class="label" x="300" y="464">UK government APIs</text>
   <rect class="box" x="300" y="476" width="200" height="80" rx="8"/>
   <text class="title" x="400" y="500" text-anchor="middle">HMRC MTD</text>
   <text class="sub" x="400" y="522" text-anchor="middle">VAT, Income Tax, PAYE,</text>

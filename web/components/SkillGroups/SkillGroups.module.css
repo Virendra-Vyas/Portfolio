@@ -35,7 +35,5 @@
 
 .evidenceLabel {
   color: var(--color-text-muted);
-  font-family: var(--font-mono);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
 }

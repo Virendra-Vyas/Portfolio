@@ -3,7 +3,6 @@
   gap: var(--space-7);
   padding: 0;
   list-style: none;
-  counter-reset: practice;
 }
 
 .item {
@@ -12,21 +11,12 @@
   max-width: var(--width-prose);
   padding-left: var(--space-6);
   border-left: 2px solid var(--color-accent);
-  counter-increment: practice;
 }
 
 .heading {
   font-size: var(--text-xl);
 }
 
-.heading::before {
-  content: counter(practice, decimal-leading-zero) " ";
-  color: var(--color-accent);
-  font-family: var(--font-mono);
-  font-size: var(--text-sm);
-  font-weight: var(--weight-medium);
-  vertical-align: 0.15em;
-}
 
 .link {
   font-size: var(--text-sm);

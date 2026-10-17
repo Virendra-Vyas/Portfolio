@@ -15,7 +15,7 @@ export default function WorkIndex() {
     <>
       <PageHeader title={work.title} intro={work.intro} />
       <Section id="case-studies" copy={work.caseStudies}>
-        <ul className={styles.grid}>
+        <ul className={styles.index}>
           {caseStudies.map((study) => (
             <li key={study.slug}>
               <CaseStudyCard study={study} maxTags={8} />

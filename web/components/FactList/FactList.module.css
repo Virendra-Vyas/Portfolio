@@ -9,14 +9,24 @@
 
 .term {
   color: var(--color-text-muted);
-  font-family: var(--font-mono);
   font-size: var(--text-xs);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
 }
 
 .detail {
   margin: var(--space-1) 0 0;
   font-size: var(--text-sm);
   font-weight: var(--weight-medium);
+}
+
+.ink {
+  border-top-color: var(--color-ink-line);
+}
+
+.ink .term {
+  color: var(--color-on-ink-muted);
+}
+
+.ink .detail {
+  color: var(--color-on-ink);
 }

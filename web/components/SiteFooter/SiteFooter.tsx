@@ -1,5 +1,6 @@
 import type { Site } from "@/content/schema";
 import { Container } from "@/components/Container/Container";
+import { Monogram } from "@/components/Monogram/Monogram";
 import styles from "./SiteFooter.module.css";
 
 export function SiteFooter({ site }: { site: Site }) {
@@ -8,6 +9,7 @@ export function SiteFooter({ site }: { site: Site }) {
   return (
     <footer className={styles.footer}>
       <Container className={styles.inner}>
+        <Monogram size={40} />
         <ul className={styles.links} aria-label="Contact links">
           <li>
             <a href={`mailto:${contact.email}`}>{contact.email}</a>

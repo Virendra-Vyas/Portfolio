@@ -1,28 +1,41 @@
-.card {
+/* An index row, not a card: rows share columns so titles, summaries and stacks line up down the list. */
+.row {
   position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-3);
-  height: 100%;
-  padding: var(--space-5);
-  border: var(--border-width) solid var(--color-border);
+  display: grid;
+  gap: var(--space-3) var(--space-7);
+  padding: var(--space-6) var(--space-4);
+  margin-inline: calc(var(--space-4) * -1);
+  border-top: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-md);
-  background: var(--color-bg);
-  transition: border-color var(--duration-fast);
+  transition: background-color var(--duration-fast);
 }
 
-.card:hover {
-  border-color: var(--color-accent);
+@media (min-width: 56rem) {
+  .row {
+    grid-template-columns: minmax(0, 18rem) minmax(0, 1fr) minmax(0, 15rem);
+    align-items: start;
+  }
 }
 
-/* Focus ring on the whole card when its link is focused. */
-.card:has(.link:focus-visible) {
+.row:hover {
+  background: var(--color-surface);
+}
+
+.row:has(.link:focus-visible) {
   box-shadow: var(--focus-ring);
 }
 
+.lead {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
 .title {
-  font-size: var(--text-xl);
+  font-size: var(--text-2xl);
+  font-variation-settings: "wdth" 85;
+  letter-spacing: -0.025em;
 }
 
 .link {
@@ -38,7 +51,6 @@
   box-shadow: none;
 }
 
-/* Stretch the title link over the whole card so the card is one click target. */
 .link::after {
   content: "";
   position: absolute;
@@ -52,10 +64,10 @@
 }
 
 .summary {
-  font-size: var(--text-sm);
+  min-width: 0;
+  max-width: var(--width-prose);
 }
 
 .tags {
-  margin-top: auto;
-  padding-top: var(--space-2);
+  min-width: 0;
 }

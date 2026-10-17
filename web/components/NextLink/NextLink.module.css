@@ -12,10 +12,8 @@
 
 .label {
   color: var(--color-text-muted);
-  font-family: var(--font-mono);
   font-size: var(--text-xs);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  font-variant-numeric: tabular-nums;
 }
 
 .title {
