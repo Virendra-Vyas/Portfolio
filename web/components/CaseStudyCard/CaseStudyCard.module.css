@@ -50,7 +50,7 @@
   border-radius: var(--radius-lg);
   background: var(--kind-tint);
   color: var(--kind-ink);
-  box-shadow: inset 0 -3px 0 var(--kind);
+  box-shadow: inset 0 0 0 1px var(--color-border);
 }
 
 .title {

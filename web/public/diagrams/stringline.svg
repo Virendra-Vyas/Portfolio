@@ -4,22 +4,22 @@
 
   <defs>
     <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-      <path d="M0 0 L10 5 L0 10 z" fill="#4a5a70"/>
+      <path d="M0 0 L10 5 L0 10 z" fill="#5c5c5c"/>
     </marker>
     <style>
-      .label { font-size: 13px; fill: #0b4f8a; font-weight: 600; }
-      .box { fill: #ffffff; stroke: #c3d1e0; stroke-width: 1.5; }
-      .step { fill: #ffffff; stroke: #0b4f8a; stroke-width: 1.5; }
-      .num { fill: #0b4f8a; }
+      .label { font-size: 13px; fill: #0a0a0a; font-weight: 600; }
+      .box { fill: #ffffff; stroke: #d4d4d4; stroke-width: 1.5; }
+      .step { fill: #ffffff; stroke: #0a0a0a; stroke-width: 1.5; }
+      .num { fill: #0a0a0a; }
       .num-text { font-size: 13px; font-weight: 700; fill: #ffffff; }
-      .title { font-size: 16px; font-weight: 700; fill: #0f1b2d; }
-      .sub { font-size: 13px; fill: #4a5a70; }
-      .score { fill: #e3effb; }
-      .score-title { font-size: 16px; font-weight: 700; fill: #0b4f8a; }
-      .score-text { font-size: 13px; fill: #0b4f8a; }
-      .score-strong { font-size: 13px; font-weight: 600; fill: #0b4f8a; }
-      .line { stroke: #4a5a70; stroke-width: 1.5; fill: none; }
-      .dash { stroke: #0b4f8a; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
+      .title { font-size: 16px; font-weight: 700; fill: #0a0a0a; }
+      .sub { font-size: 13px; fill: #5c5c5c; }
+      .score { fill: #f2f2f2; }
+      .score-title { font-size: 16px; font-weight: 700; fill: #0a0a0a; }
+      .score-text { font-size: 13px; fill: #0a0a0a; }
+      .score-strong { font-size: 13px; font-weight: 600; fill: #0a0a0a; }
+      .line { stroke: #5c5c5c; stroke-width: 1.5; fill: none; }
+      .dash { stroke: #0a0a0a; stroke-width: 1.5; stroke-dasharray: 4 4; fill: none; }
     </style>
   </defs>
 

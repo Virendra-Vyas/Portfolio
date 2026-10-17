@@ -1,11 +1,8 @@
-/* Sky light falling from the top, with a warm coral glow on the right: the ocean and coral palette. */
+/* A soft grey falling to white: neutral light, no colour. */
 .hero {
   position: relative;
   padding-block: var(--space-6) var(--space-7);
-  background:
-    radial-gradient(60rem 28rem at 88% -6%, var(--glow-coral), transparent 70%),
-    radial-gradient(56rem 30rem at 6% -10%, var(--glow-ocean), transparent 70%),
-    linear-gradient(180deg, var(--color-surface-sunk), var(--color-bg) 34rem);
+  background: linear-gradient(180deg, var(--color-surface-sunk), var(--color-bg) 34rem);
   overflow: hidden;
 }
 
@@ -28,7 +25,7 @@
   width: 0.625rem;
   height: 0.625rem;
   border-radius: 50%;
-  background: var(--span-company);
+  background: var(--color-positive);
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -37,7 +34,7 @@
     position: absolute;
     inset: 0;
     border-radius: 50%;
-    background: var(--span-company);
+    background: var(--color-positive);
     animation: ping 2s var(--ease-out) infinite;
   }
 
@@ -53,37 +50,19 @@
   margin-top: var(--space-4);
 }
 
-/* Inline-block so the gradient spans the name itself, not the whole row. */
 .name {
-  display: inline-block;
   font-size: var(--text-display);
   font-weight: 800;
   letter-spacing: -0.035em;
   line-height: 1;
-  /* Deep ocean into sea green. The fallback colour is used where text gradients are unsupported. */
-  color: var(--color-text);
-  background: linear-gradient(100deg, var(--color-text) 0%, var(--color-accent) 55%, var(--ink-company) 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-bottom: 0.06em;
 }
 
 .intro {
   display: grid;
   gap: var(--space-5) var(--space-7);
   margin-top: var(--space-5);
-  padding-top: calc(var(--space-5) + 6px);
-  /* The three span colours as one rule. */
-  background: linear-gradient(
-      90deg,
-      var(--span-employment) 0 54%,
-      transparent 54% 55%,
-      var(--span-company) 55% 84%,
-      transparent 84% 85%,
-      var(--span-freelance) 85% 100%
-    )
-    top / 100% 6px no-repeat;
+  padding-top: var(--space-5);
+  border-top: 2px solid var(--color-text);
 }
 
 @media (min-width: 56rem) {
