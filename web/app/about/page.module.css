@@ -1,3 +1,25 @@
+/* The story on the left, the portrait beside it; on a phone the portrait follows the story. */
+.intro {
+  display: grid;
+  gap: var(--space-7);
+}
+
+.portrait {
+  width: min(14rem, 100%);
+}
+
+@media (min-width: 48rem) {
+  .intro {
+    grid-template-columns: minmax(0, var(--width-prose)) clamp(14rem, 28vw, 20rem);
+    justify-content: space-between;
+    align-items: start;
+  }
+
+  .portrait {
+    width: auto;
+  }
+}
+
 .story {
   display: grid;
   gap: var(--space-4);

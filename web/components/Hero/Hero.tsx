@@ -2,6 +2,7 @@ import type { AnyLink, Fact, HomePage, Profile } from "@/content/schema";
 import { ButtonLink } from "@/components/ButtonLink/ButtonLink";
 import { Container } from "@/components/Container/Container";
 import { FactList } from "@/components/FactList/FactList";
+import { Portrait } from "@/components/Portrait/Portrait";
 import { Stats } from "@/components/Stats/Stats";
 import { TechMarquee } from "@/components/TechMarquee/TechMarquee";
 import { Trace } from "@/components/Trace/Trace";
@@ -26,23 +27,33 @@ export function Hero({ name, profile, facts, home, primaryAction, secondaryActio
   return (
     <header className={styles.hero}>
       <Container>
-        <p className={styles.status}>
-          <span className={styles.pulse} aria-hidden="true" />
-          {profile.availability}
-        </p>
-        <div className={styles.top}>
-          <h1 className={styles.name}>{name}</h1>
-        </div>
-        <div className={styles.intro}>
-          <p className={styles.headline}>{profile.hero.headline}</p>
-          <div className={styles.side}>
-            <p className={styles.summary}>{profile.hero.summary}</p>
-            <div className={styles.actions}>
-              <ButtonLink link={primaryAction} variant="primary" />
-              <ButtonLink link={secondaryAction} variant="secondary" />
-              <ButtonLink link={cvAction} variant="secondary" />
+        <div className={styles.lead}>
+          <div className={styles.text}>
+            <p className={styles.status}>
+              <span className={styles.pulse} aria-hidden="true" />
+              {profile.availability}
+            </p>
+            <div className={styles.top}>
+              <h1 className={styles.name}>{name}</h1>
+            </div>
+            <div className={styles.intro}>
+              <p className={styles.headline}>{profile.hero.headline}</p>
+              <div className={styles.side}>
+                <p className={styles.summary}>{profile.hero.summary}</p>
+                <div className={styles.actions}>
+                  <ButtonLink link={primaryAction} variant="primary" />
+                  <ButtonLink link={secondaryAction} variant="secondary" />
+                  <ButtonLink link={cvAction} variant="secondary" />
+                </div>
+              </div>
             </div>
           </div>
+          <Portrait
+            className={styles.portrait}
+            photo={profile.photo}
+            sizes="(min-width: 74rem) 19rem, (min-width: 48rem) 24vw, 8rem"
+            priority
+          />
         </div>
         <div className={styles.stats}>
           <Stats items={home.stats} label={home.statsLabel} />

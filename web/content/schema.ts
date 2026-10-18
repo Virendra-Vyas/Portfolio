@@ -99,11 +99,23 @@ export type Certification = {
   note?: string;
 };
 
+/** A photo served as AVIF and WebP at each width, with a JPEG fallback at `fallbackWidth`. */
+export type Photo = {
+  /** Path prefix under public/; files are `${src}-${width}.${ext}`. */
+  src: `/${string}`;
+  alt: string;
+  widths: number[];
+  fallbackWidth: number;
+  /** Intrinsic aspect ratio, so the image reserves its space before it loads. */
+  aspect: { width: number; height: number };
+};
+
 export type Profile = {
   hero: {
     headline: string;
     summary: string;
   };
+  photo: Photo;
   location: string;
   rightToWork: string;
   availability: string;

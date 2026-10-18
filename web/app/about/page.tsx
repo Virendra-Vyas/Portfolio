@@ -8,6 +8,7 @@ import { Credentials } from "@/components/Credentials/Credentials";
 import { FactList } from "@/components/FactList/FactList";
 import { Founder } from "@/components/Founder/Founder";
 import { PageHeader } from "@/components/PageHeader/PageHeader";
+import { Portrait } from "@/components/Portrait/Portrait";
 import { Section } from "@/components/Section/Section";
 import { SkillGroups } from "@/components/SkillGroups/SkillGroups";
 import { SkillYears } from "@/components/SkillYears/SkillYears";
@@ -23,12 +24,19 @@ export default function AboutPage() {
     <>
       <PageHeader title={about.title} intro={lead} />
       <Section id="story" copy={{ heading: about.storyHeading }}>
-        <div className={styles.story}>
-          {rest.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
-          ))}
+        <div className={styles.intro}>
+          <div className={styles.story}>
+            {rest.map((paragraph) => (
+              <p key={paragraph}>{paragraph}</p>
+            ))}
+            <FactList facts={profileFacts} />
+          </div>
+          <Portrait
+            className={styles.portrait}
+            photo={profile.photo}
+            sizes="(min-width: 74rem) 20rem, (min-width: 48rem) 28vw, 14rem"
+          />
         </div>
-        <FactList facts={profileFacts} />
       </Section>
       <Section id="founder" copy={{ heading: home.founder.heading, intro: home.founder.intro }} tone="tinted">
         <Founder founder={home.founder} />
