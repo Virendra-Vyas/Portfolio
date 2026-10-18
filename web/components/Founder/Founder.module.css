@@ -17,7 +17,7 @@
   padding: var(--space-5);
   border-radius: var(--radius-lg);
   background: var(--kind-tint);
-  box-shadow: inset 0 6px 0 var(--kind), var(--shadow-sm);
+  box-shadow: inset 0 3px 0 var(--color-text), var(--shadow-sm);
 }
 
 .company dl {

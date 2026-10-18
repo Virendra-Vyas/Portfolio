@@ -5,6 +5,7 @@ import { RevealObserver } from "@/components/Reveal/RevealObserver";
 import { SkipLink } from "@/components/SkipLink/SkipLink";
 import { SiteHeader } from "@/components/SiteHeader/SiteHeader";
 import { SiteFooter } from "@/components/SiteFooter/SiteFooter";
+import { themeInitScript } from "@/lib/theme";
 import "./globals.css";
 
 // Downloaded at build time and served from this site: the browser never contacts Google.
@@ -50,7 +51,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en-GB" className={`${manrope.variable} ${plexMono.variable}`}>
+    // The theme script may set data-theme before React hydrates, so the attribute can differ from the server's.
+    <html lang="en-GB" className={`${manrope.variable} ${plexMono.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
+      </head>
       <body>
         <SkipLink targetId={MAIN_ID} />
         <SiteHeader site={site} />

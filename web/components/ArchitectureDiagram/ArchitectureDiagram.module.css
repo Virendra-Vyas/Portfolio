@@ -13,7 +13,8 @@
   padding: var(--space-4);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-md);
-  background: var(--color-bg);
+  /* Diagrams are drawn in ink on white, like a printed figure, so they keep a light canvas in both themes. */
+  background: #ffffff;
 }
 
 .image {

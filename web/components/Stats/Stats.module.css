@@ -30,15 +30,6 @@
     box-shadow var(--duration-fast) var(--ease-out);
 }
 
-/* A strip of the kind's colour along the top edge. */
-.stat::before {
-  content: "";
-  position: absolute;
-  inset: 0 0 auto;
-  height: 4px;
-  background: var(--kind);
-}
-
 .stat:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-md);

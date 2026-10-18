@@ -36,6 +36,8 @@ export type Site = {
     links: ExternalLink[];
   };
   notFound: { title: string; linkLabel: string };
+  /** Accessible name of the header's theme switch; it reports pressed when the dark theme is on. */
+  themeToggleLabel: string;
   footer: {
     company: string;
     /** Companies House number. Shown only once confirmed. */

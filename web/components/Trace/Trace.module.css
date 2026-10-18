@@ -16,7 +16,7 @@
   background: var(--color-surface);
   border: var(--border-width) solid var(--color-border);
   border-radius: var(--radius-lg);
-  box-shadow: 0 1px 0 var(--color-border), 0 24px 48px -32px rgb(20 20 24 / 0.35);
+  box-shadow: 0 1px 0 var(--color-border), var(--shadow-md);
   overflow: hidden;
 }
 
@@ -298,7 +298,7 @@
   color: var(--color-surface);
   font-size: var(--text-xs);
   line-height: var(--leading-snug);
-  box-shadow: 0 8px 24px -8px rgb(20 20 24 / 0.5);
+  box-shadow: var(--shadow-float);
 }
 
 .readout strong {

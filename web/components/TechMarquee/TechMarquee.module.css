@@ -68,21 +68,13 @@
   white-space: nowrap;
 }
 
-/* A small dot that cycles through the three span colours. */
+/* A small neutral dot before each name. */
 .item::before {
   content: "";
-  width: 0.5rem;
-  height: 0.5rem;
+  width: 0.375rem;
+  height: 0.375rem;
   border-radius: 50%;
-  background: var(--span-employment);
-}
-
-.item:nth-child(3n + 2)::before {
-  background: var(--span-company);
-}
-
-.item:nth-child(3n)::before {
-  background: var(--span-freelance);
+  background: var(--color-border-strong);
 }
 
 @media (prefers-reduced-motion: no-preference) {

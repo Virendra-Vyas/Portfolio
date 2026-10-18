@@ -3,6 +3,7 @@ import type { Site } from "@/content/schema";
 import { Container } from "@/components/Container/Container";
 import { Monogram } from "@/components/Monogram/Monogram";
 import { NavLinks } from "@/components/NavLinks/NavLinks";
+import { ThemeToggle } from "@/components/ThemeToggle/ThemeToggle";
 import styles from "./SiteHeader.module.css";
 
 export function SiteHeader({ site }: { site: Site }) {
@@ -19,6 +20,9 @@ export function SiteHeader({ site }: { site: Site }) {
         <nav aria-label="Main" className={styles.nav}>
           <NavLinks items={site.nav} />
         </nav>
+        <div className={styles.theme}>
+          <ThemeToggle label={site.themeToggleLabel} />
+        </div>
       </Container>
     </header>
   );

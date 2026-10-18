@@ -39,15 +39,15 @@
   letter-spacing: -0.03em;
 }
 
-/* A short ocean-to-coral stroke under every section heading. */
+/* A short ink stroke under every section heading. */
 .heading::after {
   content: "";
   display: block;
   width: 3.5rem;
-  height: 4px;
+  height: 3px;
   margin-top: var(--space-3);
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--span-employment), var(--span-company) 55%, var(--color-coral));
+  background: var(--color-text);
 }
 
 .more {

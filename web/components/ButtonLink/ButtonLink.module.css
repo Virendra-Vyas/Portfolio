@@ -25,13 +25,13 @@
 .primary {
   background: var(--color-accent);
   color: var(--color-on-accent);
-  box-shadow: 0 8px 20px -8px rgb(11 79 138 / 0.6);
+  box-shadow: var(--shadow-accent);
 }
 
 .primary:hover {
   background: var(--color-accent-hover);
   color: var(--color-on-accent);
-  box-shadow: 0 12px 24px -8px rgb(11 79 138 / 0.7);
+  box-shadow: var(--shadow-accent-hover);
 }
 
 .secondary {
@@ -46,11 +46,11 @@
   color: var(--color-accent-hover);
 }
 
-/* On the deep-ocean contact band. */
+/* On the deep-ocean contact band, which is dark in both themes, so the button stays light in both. */
 .inverse {
-  background: var(--color-surface);
+  background: var(--color-on-dark);
   color: var(--color-dark);
-  box-shadow: 0 8px 24px -8px rgb(0 0 0 / 0.5);
+  box-shadow: var(--shadow-float);
 }
 
 .inverse:hover {

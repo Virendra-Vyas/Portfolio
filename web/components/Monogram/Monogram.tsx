@@ -1,7 +1,7 @@
 import styles from "./Monogram.module.css";
 
 /**
- * The mark: a three-span waterfall, the career trace reduced to its shape, in the three span colours.
+ * The mark: a three-span waterfall, the career trace reduced to its shape, in ink at three strengths.
  * The same drawing as app/icon.svg.
  */
 export function Monogram({ size = 32 }: { size?: number }) {

@@ -1,7 +1,7 @@
-/* Each case study opens on its kind's tint, the colour its span has on the career trace. */
+/* Each case study opens on a quiet grey band; colour stays in its career-trace strip, where it is data. */
 .band {
   background: var(--kind-tint);
-  border-bottom: var(--border-width) solid color-mix(in srgb, var(--kind) 30%, transparent);
+  border-bottom: var(--border-width) solid var(--color-border);
 }
 
 .header {
@@ -45,13 +45,13 @@
   border-radius: var(--radius-lg);
   background: var(--color-surface);
   color: var(--kind-ink);
-  box-shadow: inset 0 -4px 0 var(--kind);
+  box-shadow: inset 0 0 0 1px var(--color-border);
 }
 
 .title {
   margin-top: var(--space-3);
   padding-bottom: var(--space-4);
-  border-bottom: 4px solid var(--kind);
+  border-bottom: 2px solid var(--color-text);
   font-size: clamp(2.25rem, 1.4rem + 3.5vw, 4rem);
   font-weight: 800;
   letter-spacing: -0.035em;
