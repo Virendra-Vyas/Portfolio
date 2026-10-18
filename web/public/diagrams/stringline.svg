@@ -23,6 +23,8 @@
     </style>
   </defs>
 
+  <rect id="canvas" width="100%" height="100%" fill="#ffffff"/>
+
   <text class="label" x="20" y="24">Source</text>
   <rect class="box" x="20" y="36" width="420" height="64" rx="8"/>
   <text class="title" x="230" y="64" text-anchor="middle">Dynamics 365 Business Central</text>
