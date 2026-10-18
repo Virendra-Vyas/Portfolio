@@ -6,6 +6,30 @@
   overflow: hidden;
 }
 
+/* Text on the left, the portrait on the right; on a phone the portrait sits small above the text. */
+.lead {
+  display: grid;
+  gap: var(--space-5) var(--space-7);
+}
+
+.portrait {
+  order: -1;
+  width: 8rem;
+}
+
+@media (min-width: 48rem) {
+  .lead {
+    grid-template-columns: minmax(0, 1fr) clamp(13rem, 24vw, 19rem);
+    align-items: start;
+  }
+
+  .portrait {
+    order: 0;
+    width: auto;
+    margin-top: var(--space-2);
+  }
+}
+
 .status {
   display: inline-flex;
   align-items: center;
@@ -65,7 +89,7 @@
   border-top: 2px solid var(--color-text);
 }
 
-@media (min-width: 56rem) {
+@media (min-width: 64rem) {
   .intro {
     grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
   }

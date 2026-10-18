@@ -1,0 +1,29 @@
+/* The photo sits on a card with an offset ink outline behind it, like a print pinned to a board. */
+.frame {
+  position: relative;
+  isolation: isolate;
+}
+
+.frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border: 2px solid var(--color-text);
+  border-radius: var(--radius-lg);
+  transform: translate(6px, 6px);
+}
+
+@media (min-width: 48rem) {
+  .frame::before {
+    transform: translate(10px, 10px);
+  }
+}
+
+.image {
+  width: 100%;
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface-sunk);
+  box-shadow: var(--shadow-md);
+}

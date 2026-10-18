@@ -7,6 +7,13 @@ export const profile: Profile = {
     summary:
       "About nine years of commercial C# and .NET, with React on the front end. I lead a team of five as Lead Software Engineer at Datascope Systems, and in November 2024 I founded Yug Solutions Ltd, a bootstrapped UK software company building products that solve real problems.",
   },
+  photo: {
+    src: "/images/virendra-vyas",
+    alt: "Virendra Vyas, in a dark green shirt and grey coat, photographed outdoors.",
+    widths: [160, 320, 480, 640, 960],
+    fallbackWidth: 640,
+    aspect: { width: 4, height: 5 },
+  },
   location: "Eastbourne, East Sussex, UK",
   rightToWork: "UK settled status (ILR). No sponsorship needed.",
   availability: "Open to select contract and permanent roles.",
