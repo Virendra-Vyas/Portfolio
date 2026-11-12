@@ -103,16 +103,10 @@
   text-wrap: balance;
 }
 
-.summary {
-  color: var(--color-text-muted);
-  max-width: 46ch;
-}
-
 .actions {
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-3);
-  margin-top: var(--space-5);
 }
 
 .stats {

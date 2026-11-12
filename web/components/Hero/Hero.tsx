@@ -38,8 +38,10 @@ export function Hero({ name, profile, facts, home, primaryAction, secondaryActio
             </div>
             <div className={styles.intro}>
               <p className={styles.headline}>{profile.hero.headline}</p>
+              {/* The longer summary (years, team size, founding date) repeats the headline and the
+                  stats below, so the hero leaves it to the CV and the API. Dropping it also puts the
+                  buttons on a phone's first screen. */}
               <div className={styles.side}>
-                <p className={styles.summary}>{profile.hero.summary}</p>
                 <div className={styles.actions}>
                   <ButtonLink link={primaryAction} variant="primary" />
                   <ButtonLink link={secondaryAction} variant="secondary" />
