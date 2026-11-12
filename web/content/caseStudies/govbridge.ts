@@ -18,17 +18,21 @@ export const govbridge: CaseStudy = {
     "React",
     "PostgreSQL (Supabase)",
     "Redis (Upstash)",
-    "Render",
-    "Cloudflare Pages",
+    "OVHcloud",
+    "Cloudflare",
     "Python",
   ],
-  links: [{ label: "api.govbridge.co.uk", href: "https://api.govbridge.co.uk" }],
+  links: [
+    { label: "govbridge.co.uk", href: "https://www.govbridge.co.uk" },
+    { label: "api.govbridge.co.uk", href: "https://api.govbridge.co.uk" },
+    { label: "Service status", href: "https://www.govbridge.co.uk/status" },
+  ],
   diagram: {
     src: "/diagrams/govbridge.svg",
     width: 960,
     height: 680,
     description:
-      "Three kinds of client call the GovBridge API: developers' applications over REST with an API key, the React developer portal on Cloudflare Pages, and AI clients (a Python tool-calling agent and an MCP server). The API is an ASP.NET Core service on Render in Frankfurt exposing one consistent contract over 40+ endpoints. Inside it: rate limiting per API key, encrypted OAuth token storage, HMRC fraud prevention headers, log redaction of NINO, UTR and VRN, a SandboxOnly guard attribute and explicit \"HMRC not connected\" errors. It uses PostgreSQL on Supabase and Redis on Upstash, and calls six UK government services: HMRC Making Tax Digital (VAT, Income Tax, PAYE, CIS, Savings Income), HMRC GovTalk for Corporation Tax CT600 returns with an IRmark, Companies House, DVLA, Land Registry and the Food Hygiene Rating Scheme.",
+      "Three kinds of client call the GovBridge API: developers' applications over REST with an API key, the React developer portal on Cloudflare, and AI clients (a Python tool-calling agent and an MCP server). The API is an ASP.NET Core service on OVHcloud in London, behind Cloudflare, exposing one consistent contract over 40+ endpoints. Inside it: rate limiting per API key, encrypted OAuth token storage, HMRC fraud prevention headers, log redaction of NINO, UTR and VRN, a SandboxOnly guard attribute and explicit \"HMRC not connected\" errors. It uses PostgreSQL on Supabase and Redis on Upstash, and calls six UK government services: HMRC Making Tax Digital (VAT, Income Tax, PAYE, CIS, Savings Income), HMRC GovTalk for Corporation Tax CT600 returns with an IRmark, Companies House, DVLA, Land Registry and the Food Hygiene Rating Scheme.",
   },
   problem: {
     heading: "Problem",
@@ -63,10 +67,18 @@ export const govbridge: CaseStudy = {
       points: [
         "Encrypted OAuth token storage.",
         "HMRC fraud prevention headers.",
-        "Rate limiting partitioned by authenticated API key.",
-        "Log redaction of National Insurance numbers, UTRs and VAT registration numbers.",
+        "API keys stored only as a hash, revocable at any time, with rate limiting partitioned by key.",
+        "National Insurance numbers, UTRs and VAT registration numbers masked in the API's logs.",
         "A SandboxOnly guard attribute for operations that must only run against the HMRC sandbox.",
         "Explicit \"HMRC not connected\" error handling.",
+        "Administration only through an approved Google account with 2-Step Verification. The service runs in a locked-down container without administrator rights.",
+        "Every change is scanned for known vulnerabilities and leaked secrets across code, dependencies and container images.",
+      ],
+    },
+    {
+      heading: "Backups and recovery",
+      paragraphs: [
+        "Encrypted database backups run every four hours, with an alert if one is missed, and are kept off-site. I rehearsed full restores on 4 and 9 October 2026 rather than assume the backups work.",
       ],
     },
     {
@@ -90,7 +102,7 @@ export const govbridge: CaseStudy = {
     {
       heading: "Architecture and hosting",
       paragraphs: [
-        "The API is an ASP.NET Core solution split into Api, Core and Data projects. It runs on Render in Frankfurt, with PostgreSQL on Supabase and Redis on Upstash. The developer portal is a React app on Cloudflare Pages.",
+        "The API is an ASP.NET Core solution split into Api, Core and Data projects. It runs on an OVHcloud server in London behind Cloudflare, with PostgreSQL on Supabase and Redis on Upstash, both in their London regions. It previously ran on Render in Frankfurt. The developer portal is a React app on Cloudflare.",
       ],
     },
   ],
@@ -114,7 +126,7 @@ export const govbridge: CaseStudy = {
       "Verify & Enrich: Companies House identity verification status under ECCTA, plus company enrichment, for KYB checks.",
       "A year-end Making Tax Digital Income Tax return engine for software vendors.",
       "Stripe self-serve checkout.",
-      "A public status page.",
+      "A signed data protection impact assessment and an independent penetration test, both before any live HMRC filing.",
     ],
   },
 };

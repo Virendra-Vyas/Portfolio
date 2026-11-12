@@ -62,11 +62,13 @@ export const skills: SkillGroup[] = [
       "GitHub Actions",
       "CI/CD (5 years)",
       "Cloudflare Pages, Render, Vercel",
+      "OVHcloud Linux server with nginx",
       "AWS at architecture and service-selection level",
     ],
     evidence: [
       { label: "DeviceHub", href: "/work/devicehub/" },
       { label: "ConnectResearch", href: "/work/connectresearch/" },
+      { label: "GovBridge", href: "/work/govbridge/" },
     ],
   },
   {
