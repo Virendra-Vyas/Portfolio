@@ -32,7 +32,7 @@ export const profile: Profile = {
     {
       title: "40+ UK government API endpoints behind one contract",
       detail:
-        "GovBridge UK puts HMRC Making Tax Digital, Companies House, DVLA, Land Registry and FHRS behind one gateway. Corporation Tax submission works end to end and was accepted by HMRC's real Transaction Engine.",
+        "GovBridge UK puts HMRC Making Tax Digital, Companies House, DVLA, Land Registry and FHRS behind one gateway. Corporation Tax submission works end to end and was accepted by HMRC's test Transaction Engine.",
       link: { label: "GovBridge case study", href: "/work/govbridge/" },
     },
     {

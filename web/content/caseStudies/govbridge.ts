@@ -5,11 +5,11 @@ export const govbridge: CaseStudy = {
   icon: "landmark",
   title: "GovBridge UK",
   summary:
-    "A unified API gateway that puts HMRC Making Tax Digital, Companies House, DVLA, Land Registry and FHRS behind one consistent contract. Live, early-stage and in active development.",
+    "A unified API gateway that puts HMRC Making Tax Digital, Companies House, DVLA, Land Registry and FHRS behind one consistent contract. In early access: Companies House, Land Registry, food hygiene and MOT history are live for customers; HMRC runs in HMRC's test environment only and DVLA is not yet available.",
   role: "Founder and sole engineer",
   context: "Yug Solutions Ltd, own product",
   period: "In active development",
-  status: { tone: "live", label: "Live, early-stage" },
+  status: { tone: "live", label: "Early access" },
   featured: true,
   order: 1,
   tech: [
@@ -55,7 +55,7 @@ export const govbridge: CaseStudy = {
     {
       heading: "The hard part: Corporation Tax",
       paragraphs: [
-        "Corporation Tax works differently from the rest of the gateway: a CT600 return is submitted through GovTalk and has to carry an IRmark. I got this working end to end, and a submission was accepted by HMRC's real Transaction Engine.",
+        "Corporation Tax works differently from the rest of the gateway: a CT600 return is submitted through GovTalk and has to carry an IRmark. I got this working end to end, and a submission was accepted by HMRC's test Transaction Engine.",
       ],
     },
     {
@@ -98,7 +98,7 @@ export const govbridge: CaseStudy = {
     heading: "Outcome",
     points: [
       "Live at api.govbridge.co.uk with 40+ endpoints behind one contract.",
-      "Corporation Tax (CT600) submission accepted by HMRC's real Transaction Engine.",
+      "Corporation Tax (CT600) submission accepted by HMRC's test Transaction Engine.",
       "A tool-calling agent with an evaluation harness, and an MCP server, built on the same gateway.",
     ],
   },

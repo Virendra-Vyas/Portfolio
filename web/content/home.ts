@@ -110,7 +110,9 @@ export const home: HomePage = {
         icon: "landmark",
         label: "Own product",
         role: "Founder and sole engineer",
-        detail: "One API gateway for HMRC, Companies House, DVLA, Land Registry and FHRS. Live, early-stage.",
+        // Matches "What works today" on govbridge.co.uk; update both together.
+        detail:
+          "One API for UK government data, in early access. Live today: Companies House, HM Land Registry, food hygiene ratings and MOT history. HMRC is in HMRC's test environment only; DVLA is not yet available.",
         href: "/work/govbridge/",
       },
       {
